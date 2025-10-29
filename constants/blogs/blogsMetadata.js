@@ -1,4 +1,26 @@
 export const BLOGS_METADATA = {
+  "10-must-have-ecommerce-tools-every-founder-should-know-in-2025": {
+  title: "10 Must-Have Ecommerce Tools Founders Need 2025",
+  description:
+    "Discover the top 10 ecommerce tools every founder should know in 2025. Boost growth, automate operations, and scale your store with smarter solutions.",
+  canonical:
+    "https://launchboxglobal.com/blog/10-must-have-ecommerce-tools-every-founder-should-know-in-2025/",
+},
+  "beyond-the-first-sale-ecommerce-development-that-truly-scales": {
+  title: "Beyond the First Sale: Scalable Ecommerce Development",
+  description:
+    "Discover how ecommerce development drives sustainable growth beyond launch. Learn data, strategy, and tech frameworks for building scalable online businesses.",
+  canonical:
+    "https://launchboxglobal.com/blogs/beyond-the-first-sale-ecommerce-development-that-truly-scales/",
+},
+
+"10-best-apps-for-real-estate-agents-in-2025-boost-productivity-and-close-more-deals": {
+  title: "10 Best Apps for Real Estate Agents in 2025",
+  description:
+    "Discover the best apps for real estate agents in 2025 to boost productivity, manage clients, and close more deals with smart real estate technology tools.",
+  canonical:
+    "https://launchboxglobal.com/blog/10-best-apps-for-real-estate-agents-in-2025-boost-productivity-&-close-more-deals/",
+},
   "swift-vs-kotlin-vs-ionic-which-framework-best-aligns-with-your-business-goals": {
   title: "Swift vs. Kotlin vs. Ionic: Choose the Best Framework",
   description:
