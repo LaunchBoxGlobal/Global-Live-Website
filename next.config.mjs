@@ -8,7 +8,6 @@ const nextConfig = {
       "aceternity.com",
       "secure.gravatar.com",
     ],
-    unoptimized:true,
     remotePatterns: [
       {
         protocol: "https",
