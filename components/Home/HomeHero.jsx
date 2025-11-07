@@ -23,7 +23,7 @@ const words = [
 const HomeHero = () => {
   // text-[34px] lg:text-[64px] xl:text-[84px] 2xl:text-[100px]
   return (
-    <section className="w-full bg-white relative pt-36 flex flex-col items-center justify-start gap-0 h-full md:h-auto lg:h-[100vh] lg:gap-[25px] overflow-hidden">
+    <section className="w-full bg-white relative pt-36 flex flex-col items-center justify-start gap-0 h-full md:h-auto  lg:gap-[25px] overflow-hidden">
       <h1 className="font-bold text-[9vw] md:text-[5.5vw] mb-1 text-center tracking-normal lg:leading-[78px] w-[100%]">
         <span className="flex items-center justify-center gap-2 lg:gap-6">
           Plan{" "}
