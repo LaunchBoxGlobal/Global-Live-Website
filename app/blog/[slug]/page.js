@@ -8,7 +8,7 @@ import Loader from "@/components/Common/Loader";
 export async function generateMetadata({ params }) {
   const res = await fetch(
     `https://public-api.wordpress.com/wp/v2/sites/blogs0864.wordpress.com/posts?slug=${params?.slug}`,
-    { cache: "force-cache" }
+    { cache: "no-store" }
   );
 
   const meta = BLOGS_METADATA[params?.slug] || {};
