@@ -1,5 +1,4 @@
 import React from "react";
-import HomeHero from "./HomeHero";
 // import HomeCustomerReviews from "./HomeCustomerReviews";
 // import HomeValueProposition from "./HomeValueProposition";
 // import HomeFaqs from "./HomeFaqs";
@@ -20,6 +19,7 @@ const Platforms = dynamic(() => import("../Common/Platforms"), {
 const Services = dynamic(() => import("./Services"), {
   loading: () => <></>,
 });
+const HomeHero = dynamic(() => import("./HomeHero"), { ssr: false, loading: () => <></> });
 const HomeComparison = dynamic(() => import("./HomeComparison"), {
   loading: () => <></>,
 });
