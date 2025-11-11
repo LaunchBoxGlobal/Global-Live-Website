@@ -68,7 +68,7 @@ const TableOfContent = ({ headings = [] }) => {
             className=""
           >
             {headings.length > 0 ? (
-              headings.map((heading, index) => (
+              headings.slice(1).map((heading, index) => (
                 <Link 
                 href={`#${heading}`}
                   key={index}
