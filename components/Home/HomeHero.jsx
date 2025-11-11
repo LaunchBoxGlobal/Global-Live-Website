@@ -4,6 +4,7 @@ import ContactButton from "../Global/ContactButton";
 import FlippingText from "./FlippingText";
 import Image from "next/image";
 import { GlobeDemo } from "../talk-to-us/GlobeDemo";
+import Globe from "../talk-to-us/Globe";
 
 const words = [
   "End-to-End Product Teams",
@@ -23,9 +24,9 @@ const words = [
 const HomeHero = () => {
   // text-[34px] lg:text-[64px] xl:text-[84px] 2xl:text-[100px]
   return (
-    <section className="w-full bg-white relative pt-36 flex flex-col items-center justify-start gap-0 h-full md:h-auto  lg:gap-[25px] overflow-hidden">
-      <h1 className="font-bold text-[9vw] md:text-[5.5vw] mb-1 text-center tracking-normal lg:leading-[78px] w-[100%]">
-        <span className="flex items-center justify-center gap-2 lg:gap-6">
+    <section className="w-full bg-white relative pt-36 flex flex-col items-center justify-start gap-0 h-full md:h-auto xl:h-[100vh] 2xl:h-auto  lg:gap-[25px] overflow-hidden">
+      <h1 className="font-bold relative z-10 text-[9vw] md:text-[5.5vw] mb-1 text-center tracking-normal lg:leading-[78px] w-[100%]">
+        <span className="flex items-center justify-center z-10 gap-2 lg:gap-6">
           Plan{" "}
           <img
             src={"/home-hero-heading-icon.webp"}
@@ -52,7 +53,7 @@ const HomeHero = () => {
         </div>
       </h1>
 
-      <div className="flex items-center justify-center gap-2 w-[95%] lg:w-[76%] relative -top-3 md:-top-6 2xl:top-4 padding-x">
+      <div className="flex items-center justify-center gap-2 w-[95%] lg:w-[76%] relative z-10 -top-3 md:-top-6 2xl:top-4 padding-x">
         <h2 className="text-base lg:text-[22px] 2xl:text-[26px] font-medium text-gray-500 text-center">
           Available in your Timezone, at Affordable Rates, with Full
           Transparency.
