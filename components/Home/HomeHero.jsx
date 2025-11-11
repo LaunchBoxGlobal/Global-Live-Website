@@ -4,7 +4,6 @@ import ContactButton from "../Global/ContactButton";
 import FlippingText from "./FlippingText";
 import Image from "next/image";
 import { GlobeDemo } from "../talk-to-us/GlobeDemo";
-import Globe from "../talk-to-us/Globe";
 
 const words = [
   "End-to-End Product Teams",
