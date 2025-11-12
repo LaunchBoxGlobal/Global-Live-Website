@@ -1,4 +1,11 @@
 export const BLOGS_METADATA = {
+  "why-most-ecommerce-development-projects-fail-before-scaling-and-how-to-avoid-it": {
+  title: "Why Most Ecommerce Development Projects Fail Before Scaling",
+  description:
+    "Discover why most ecommerce development projects fail before scaling and learn how to build a scalable online store that grows sustainably with expert guidance.",
+  canonical:
+    "https://launchboxglobal.com/blog/why-most-ecommerce-development-projects-fail-before-scaling-and-how-to-avoid-it/",
+},
   "10-must-have-ecommerce-tools-every-founder-should-know-in-2025": {
   title: "10 Must-Have Ecommerce Tools Founders Need 2025",
   description:
