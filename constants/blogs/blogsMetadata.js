@@ -1,4 +1,11 @@
 export const BLOGS_METADATA = {
+      "freelancer-vs-staff-augmentation-which-delivers-better-results": {
+  title: "Freelancers vs Staff Augmentation | LaunchBox Global",
+  description:
+    "Discover the key differences between freelancers and staff augmentation to choose the right model for your startup’s growth with LaunchBox Global.",
+  canonical:
+    "https://launchboxglobal.com/blog/freelancer-vs-staff-augmentation-which-delivers-better-results",
+},
     "the-fastest-way-to-validate-your-startup-ideas-before-you-spend-big": {
   title: "Validate Startup Ideas Fast with us | Save Money & Time",
   description:
