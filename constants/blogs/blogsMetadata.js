@@ -1,18 +1,24 @@
 export const BLOGS_METADATA = {
-      "freelancer-vs-staff-augmentation-which-delivers-better-results": {
+  "the-1-mistake-in-ecommerce-development-skipping-product-research": {
+  "title": "Skipping Product Research in Ecommerce Development | LaunchBox Global",
+  "description": "Avoid the major mistake in ecommerce development: skipping product research. Learn the essential steps to validate your idea and build an online store.",
+  "canonical": "https://launchboxglobal.com/blog/the-1-mistake-in-ecommerce-development-skipping-product-research"
+},
+  "freelancer-vs-staff-augmentation-which-delivers-better-results": {
   title: "Freelancers vs Staff Augmentation | LaunchBox Global",
   description:
     "Discover the key differences between freelancers and staff augmentation to choose the right model for your startup’s growth with LaunchBox Global.",
   canonical:
     "https://launchboxglobal.com/blog/freelancer-vs-staff-augmentation-which-delivers-better-results",
 },
-    "the-fastest-way-to-validate-your-startup-ideas-before-you-spend-big": {
+  "the-fastest-way-to-validate-your-startup-ideas-before-you-spend-big": {
   title: "Validate Startup Ideas Fast with us | Save Money & Time",
   description:
     "Validate your startup idea quickly and confidently with LaunchBox Global. Our process helps you test your concept before you invest your time and money.",
   canonical:
     "https://launchboxglobal.com/blog/the-fastest-way-to-validate-your-startup-ideas-before-you-spend-big",
 },
+
   "why-most-ecommerce-development-projects-fail-before-scaling-and-how-to-avoid-it": {
   title: "Why Most Ecommerce Development Projects Fail Before Scaling",
   description:
