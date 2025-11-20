@@ -16,7 +16,7 @@ async function BlogsData() {
   const postsRes = await fetch(
     `https://public-api.wordpress.com/wp/v2/sites/blogs0864.wordpress.com/posts?_embed=author&per_page=${count}`,
     {
-      cache: "default",
+     next: { revalidate: 600 }, 
       headers: {
         Authorization:
           `Bearer DWK4UhkW*^@OACYDrZTCGF%nwYs!zk*Im3z0h1jVTllrTWh%92PHXq6OCCIKeJy2`,
@@ -26,7 +26,7 @@ async function BlogsData() {
 
   const categoriesRes = await fetch(
     "https://public-api.wordpress.com/wp/v2/sites/blogs0864.wordpress.com/categories?per_page=100",
-    { cache: "default" }
+  next: { revalidate: 600 }, 
   );
 
   const blogs = await postsRes.json();
