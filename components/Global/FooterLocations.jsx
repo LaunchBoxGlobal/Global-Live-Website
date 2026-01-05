@@ -274,7 +274,10 @@ const FooterLocations = () => {
               <p className="text-lg">
                 Suite # 301, Emarah Suites, Sharah-e-Faisal Karachi
               </p>
-              <Link href={"tel:+922134522244"}>+92 21 345-222-44</Link>
+              <div className="flex flex-col gap-1">
+                <Link href={"tel:+922134522244"}>+92 21 345-222-44</Link>
+                <Link href={"tel:+922134533344"}>+92 21 345-333-44</Link>
+              </div>
             </div>
             <div className="">
               <iframe
