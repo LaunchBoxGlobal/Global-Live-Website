@@ -276,6 +276,7 @@ const FooterLocations = () => {
               </p>
               <div className="flex flex-col gap-1">
                 <Link href={"tel:+922134522244"}>+92 21 345-222-44</Link>
+                {/* added one more contact number */}
                 <Link href={"tel:+922134533344"}>+92 21 345-333-44</Link>
               </div>
             </div>
