@@ -1,0 +1,30 @@
+:root {
+  --primary-color: #00387d;
+  --green: #1ce98a;
+}
+
+.timeline-shadow:hover {
+  border: 1px solid var(--primary-color);
+  box-shadow: rgba(98, 118, 235, 0.2) 7px 7px 29px 10px;
+  transition: all 0.3s;
+}
+.responsive-clip {
+  height: 100%;
+  background: blue;
+  border: 10px solid orange;
+
+  clip-path: shape(
+    from top left,
+
+    /* top edge */ line to calc(100% - 48cqh) 0,
+
+    /* inward right curve */ curve to calc(100% - 48cqh) 100% with 100% 30% 100%
+      70%,
+
+    /* bottom edge */ line to bottom left,
+
+    /* left side rounded */ curve to top left with 0 70% 0 30%,
+
+    close
+  );
+}
