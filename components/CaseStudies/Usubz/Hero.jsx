@@ -1,9 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import Timeline from "./Timeline";
-// import Mockup from "./Mockup";
 import Link from "next/link";
-import Mockup from "../Fit110/Mockup";
 
 const Hero = () => {
   return (

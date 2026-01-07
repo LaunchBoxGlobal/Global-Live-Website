@@ -1,0 +1,50 @@
+:root {
+  --jetezee-primary-color: #e9b44c;
+}
+
+/*  */
+.jetezee-slider-image {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.8s ease-in-out;
+  /* opacity: 0.9; */
+}
+
+/* CENTER */
+.slidecenter {
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 40;
+  width: 803px;
+}
+
+/* LEFT */
+.slideleft {
+  left: 5%;
+  z-index: 30;
+  width: 693px;
+}
+
+/* FAR LEFT */
+.far-left {
+  left: 0%;
+  z-index: 20;
+  width: 543px;
+  /* opacity: 0.7; */
+}
+
+/* RIGHT */
+.slideright {
+  right: 5%;
+  z-index: 30;
+  width: 693px;
+}
+
+/* FAR RIGHT */
+.far-right {
+  right: 0%;
+  z-index: 20;
+  width: 543px;
+  /* opacity: 0.7; */
+}
