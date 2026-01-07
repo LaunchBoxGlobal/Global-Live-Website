@@ -6,7 +6,7 @@ const DiscoveryCard = ({ challenge, index }) => {
     <div
       className={`w-full max-w-[523px] h-[264px] bg-white z-10 rounded-[29.51px] p-5 lg:p-14 flex flex-col items-center justify-center gap-7 text-start relative ${
         index === 1 ? "lg:top-40" : index === 3 ? "lg:top-40" : ""
-      } custom-shadow`}
+      } objective-card-shadow`}
     >
       <div className="w-full flex items-center justify-between gap-4">
         <h3 className="text-[#212121] text-[25px] font-bold leading-none">

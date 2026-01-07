@@ -27,7 +27,7 @@ const FinalOutcomes = () => {
           learners and recruiters.
         </p>
       </section>
-      <section className="w-full mt-14 grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-20 pb-20">
+      <section className="w-full mt-14 grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-20 pb-20 z-10">
         {mockups?.map((mc, i) => {
           return (
             <Image
@@ -35,7 +35,7 @@ const FinalOutcomes = () => {
               key={i}
               width={371}
               height={757}
-              className={`object-contain relative ${
+              className={`object-contain relative z-10 ${
                 i === 1
                   ? "lg:top-20"
                   : i === 4
@@ -48,6 +48,9 @@ const FinalOutcomes = () => {
           );
         })}
       </section>
+
+      <div className="bg-[#1CE98A] blur-[245px] rounded-full w-[500px] h-[500px] absolute left-[2%] top-[5%] opacity-30 z-0" />
+      <div className="bg-[#1CE98A] blur-[245px] rounded-full w-[500px] h-[500px] absolute right-[-20%] bottom-0 opacity-40 z-0" />
     </section>
   );
 };

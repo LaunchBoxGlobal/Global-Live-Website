@@ -21,10 +21,10 @@ const WebAppDesign = () => {
         </p>
       </section>
 
-      <section className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-10">
+      <section className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-10 z-10">
         {USUBZ_WEB_APP_DESIGN?.map((design, index) => {
           return (
-            <div className="w-full" key={index}>
+            <div className="w-full z-10" key={index}>
               <Image
                 src={`/case-studies/usubz/web-app-design-icon.png`}
                 alt="web-app-design-icon"
@@ -42,15 +42,18 @@ const WebAppDesign = () => {
         })}
       </section>
 
-      <section className="w-full mt-14">
+      <section className="w-full mt-14 z-10">
         <Image
           src={"/case-studies/usubz/usubz-desktop-mockup.png"}
           alt="usubz-desktop-mockup"
           width={1271}
           height={615}
-          className="object-contain"
+          className="object-contain z-10"
         />
       </section>
+
+      <div className="bg-[#1CE98A] blur-[245px] rounded-full w-[500px] h-[500px] absolute left-[2%] top-[5%] opacity-30 z-0" />
+      <div className="bg-[#1CE98A] blur-[245px] rounded-full w-[500px] h-[500px] absolute right-[-20%] bottom-0 opacity-40 z-0" />
     </section>
   );
 };

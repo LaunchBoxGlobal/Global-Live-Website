@@ -16,14 +16,17 @@ const TechStack = () => {
         </p>
       </section>
 
-      <div className="w-full flex justify-end items-center">
+      <div className="w-full flex justify-end items-center z-10">
         <Image
           src={"/case-studies/usubz/usubz-tech-stack-and-tools.png"}
           width={414}
           height={122}
-          alt="usubz-tech-stack-and-tools"
+          alt="usubz-tech-stack-and-tools z-10"
         />
       </div>
+
+      <div className="bg-[#1CE98A] blur-[245px] rounded-full w-[500px] h-[500px] absolute left-[-20%] top-0 opacity-30 z-0" />
+      <div className="bg-[#1CE98A] blur-[245px] rounded-full w-[500px] h-[500px] absolute right-[-20%] bottom-0 opacity-40 z-0" />
     </section>
   );
 };

@@ -118,6 +118,9 @@ const DesignStrategy = () => {
           })}
         </div>
       </section>
+
+      <div className="bg-[#1CE98A] blur-[245px] rounded-full w-[500px] h-[500px] absolute left-[2%] top-[5%] opacity-30 z-0" />
+      <div className="bg-[#1CE98A] blur-[245px] rounded-full w-[500px] h-[500px] absolute right-[-20%] bottom-0 opacity-30 z-0" />
     </section>
   );
 };

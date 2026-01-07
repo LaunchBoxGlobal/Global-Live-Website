@@ -18,7 +18,7 @@ const ObjectiveCard = ({ challenge, index }) => {
         className={`${index > 2 && "lg:rotate-180"}`}
       />
 
-      <div className="bg-white rounded-[29px] p-10 custom-shadow w-full max-w-[360px] min-h-[204px] flex items-center justify-center">
+      <div className="bg-white rounded-[29px] p-10 w-full max-w-[360px] min-h-[204px] flex items-center justify-center objective-card-shadow">
         <p className="text-[#212121] leading-[1.2]">{challenge?.description}</p>
       </div>
     </div>
