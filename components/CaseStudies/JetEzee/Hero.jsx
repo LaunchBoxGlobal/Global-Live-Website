@@ -17,9 +17,21 @@ const Hero = () => {
 
         <h1 className="text-[22px] font-medium z-10">Overview</h1>
         <p className="text-xl text-center lg:w-[90%] z-10">
-          Jetezee is a luxury web-based marketplace designed for buying and
-          selling private jets — from Airbus and Boeing to Gulfstream and
-          Bombardier.
+          JetEzee is a luxury web-based marketplace created to redefine how
+          private jets are bought and sold online, from Airbus and Boeing to
+          Gulfstream and Bombardier. The vision was to transform complex,
+          high-value aviation transactions into a fluent, secure, and visually
+          elevated digital experience. LaunchBox Global led the entire
+          prototyping phase, shaping the platform’s digital experience.
+          LaunchBox Global led the entire prototyping phase, shaping the
+          platform’s UX strategy, user flow design, wireframes, and
+          high-fidelity mockups for both the web App and Admin Dashboard. Each
+          of the elements was designed to deliver clarity and trust, the two
+          vital pillars of digital ecommerce. Through our web app development
+          services and UI/UX design services, we brought the structure, balance,
+          and premium aesthetics into one stable ecosystem. The result was not
+          just the prototype but a new digital benchmark for the aviation resale
+          market, where confidence meets elegance in every interaction.
         </p>
 
         <div className="w-full flex justify-center mt-5 z-10">

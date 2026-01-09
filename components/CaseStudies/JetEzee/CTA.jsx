@@ -8,21 +8,22 @@ const CTA = () => {
       <div className="w-full bg-white rounded-[80px] p-7 lg:py-20 px-20 relative z-10 flex items-center justify-between gap-y-6 flex-wrap">
         <div className="flex flex-col items-start gap-6 w-full lg:w-1/2 z-10">
           <h2 className="text-[35px] font-bold leading-[1]">
-            Have a marketplace idea that demands{" "}
+            Let’s build your next digital{" "}
             <span className="text-[var(--jetezee-primary-color)]">
-              precision and elegance?
+              success together.
             </span>
           </h2>
 
           <p className="text-[22px] font-normal leading-[1.2] mb-3">
-            Let’s prototype your vision into a clickable reality — from concept
-            to high-fidelity interface.
+            Every great platform begins through the simple idea. Let’s turn
+            your’s into the powerful scalable ecommerce solution designed to
+            connect the users, drive the sales and deliver growth.
           </p>
           <Link
             href={"/contact-us"}
-            className="py-3.5 w-full max-w-[429px] bg-[var(--jetezee-primary-color)] text-white rounded-[10px] text-center text-[22px] font-bold"
+            className="py-3.5 w-full max-w-[329px] bg-[var(--jetezee-primary-color)] text-white rounded-[10px] text-center text-[22px] font-bold"
           >
-            Connect with LaunchBox Global today
+            Start Your Project Today
           </Link>
         </div>
 

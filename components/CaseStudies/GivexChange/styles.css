@@ -1,0 +1,17 @@
+:root {
+  --givexchange-primary-color: #4e9d4b;
+}
+
+@keyframes givexchange-slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.givexchange-animate-slide {
+  animation: givexchange-slide 40s linear infinite;
+  width: max-content;
+}

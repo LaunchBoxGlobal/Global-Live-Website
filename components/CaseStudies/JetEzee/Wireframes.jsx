@@ -15,11 +15,25 @@ const Wireframes = () => {
     <section className="w-full pb-10 relative padding-x">
       <section className="w-full flex flex-col items-center relative z-10">
         <h2 className="section-heading text-center z-10">Wireframes</h2>
-        <p className="text-center text-base lg:text-xl mt-7 z-10 lg:w-2/3">
-          We began with low-fidelity wireframes to validate structure and
-          usability for both buyer and admin journeys. Once approved, we
-          developed high-fidelity prototypes that showcased realistic
-          interaction flows and visual hierarchy.
+        <p className="text-center text-base lg:text-xl mt-7 z-10 lg:w-[90%]">
+          We began with the low-fidelity wireframes to validate the structure
+          and usability for both the buyer and the admin journeys. Once it is
+          approved, we will develop the definable prototypes, which showcase the
+          realistic interaction flows and the visual hierarchy. Our design
+          journey began with the low-fidelity wireframes to map the user
+          journeys, test layout logic, and confirm clarity across the buyer,
+          seller, and admin paths. Such wireframes acted as a foundation for the
+          visual skeleton, validating the structure and usability before
+          investing in development. Once approved, they evolved into
+          high-fidelity prototypes that showcased the realistic interaction
+          flows, the polished visual hierarchy, and the premium detailing
+          including high fidelity wireframes created through our expert user
+          experience design services. The Web App wireframes captured the
+          homepage, aircraft listings, comparison views, and inquiry forms,
+          while the Admin Dashboard included vendor management, list approval,
+          and analytics views. Each frame was carefully planned so that both
+          function and form could move together, ensuring that nothing felt
+          accidental; everything felt intentional.
         </p>
       </section>
 

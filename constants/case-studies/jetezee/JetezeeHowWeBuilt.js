@@ -2,7 +2,7 @@ export const JETEZEE_HOW_WE_BUILT = [
   {
     title: "Research",
     description:
-      "We conducted in-depth market and user research within the aviation resale industry to understand challenges and opportunities.",
+      "Conduct market and user research within the aviation resale industry to map competitive patterns and trust the signals.",
     icon: "/case-studies/jetezee/search-icon.png",
     iconWidth: 22,
     iconHeight: 22,
@@ -11,7 +11,7 @@ export const JETEZEE_HOW_WE_BUILT = [
   {
     title: "User Journeys",
     description:
-      "Mapped detailed user flows for buyers, sellers, and admins to identify key actions and pain points.",
+      "Mapping user journeys for buyers, sellers, and admins to reveal core tasks and pain points.",
     icon: "/case-studies/jetezee/user-journey-icon.png",
     iconWidth: 22,
     iconHeight: 22,
@@ -20,7 +20,7 @@ export const JETEZEE_HOW_WE_BUILT = [
   {
     title: "Wireframes",
     description:
-      "Designed low-fidelity wireframes to establish the structure, layout, and basic functionality.",
+      "Designing low-fidelity wireframes to outline information hierarchy and flow.",
     icon: "/case-studies/jetezee/wireframes-icon.png",
     iconWidth: 22,
     iconHeight: 22,
@@ -29,7 +29,7 @@ export const JETEZEE_HOW_WE_BUILT = [
   {
     title: "Prototype",
     description:
-      "Developed high-fidelity, interactive prototypes for the Web App and Admin Dashboard.",
+      "Creating high-fidelity wireframes, interactive prototypes for the Web App and Admin Dashboard to visualise fundamental interactions.",
     icon: "/case-studies/jetezee/prototype-icon.png",
     iconWidth: 20,
     iconHeight: 20,
@@ -38,7 +38,7 @@ export const JETEZEE_HOW_WE_BUILT = [
   {
     title: "Testing",
     description:
-      "Ran usability tests and refined the prototype based on real user feedback.",
+      "Conducting usability testing and refining based on the insights, iterating until the pathways were intuitive, validated, and ready for handoff.",
     icon: "/case-studies/jetezee/testing-icon.png",
     iconWidth: 20,
     iconHeight: 20,

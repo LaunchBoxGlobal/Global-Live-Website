@@ -7,15 +7,17 @@ const HowWeBuilt = () => {
     <section className="w-full pb-10 relative padding-x">
       <section className="w-full flex flex-col items-center relative z-10">
         <h2 className="section-heading text-center z-10">
-          How We Built{" "}
-          <span className="text-[var(--jetezee-primary-color)]">Jetezee</span>
+          Building From Vision to{" "}
+          <span className="text-[var(--jetezee-primary-color)]">
+            Functionality
+          </span>
         </h2>
         <p className="text-center lg:w-[85%] text-base lg:text-xl mt-7 z-10">
-          To build a functional and user-centered prototype for Jetezee, we
-          adopted a Functionality-First Prototyping Workflow. This method helped
-          us focus on practical usability while iterating quickly based on user
-          needs and feedback. Each step guided our team toward creating a
-          seamless experience for all stakeholders.
+          To create a meaningful prototype for JetEzee, we implemented our
+          functionality-first prototyping workflow, a concise, stepwise process
+          that combines market research, user journey mapping, wireframing,
+          interactive prototyping, and interactive validation to align the
+          design with real user needs.
         </p>
       </section>
 

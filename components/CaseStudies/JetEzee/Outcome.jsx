@@ -15,15 +15,20 @@ const Outcome = () => {
     <section className="w-full pb-10 relative padding-x">
       <section className="w-full flex flex-col items-center relative z-10">
         <h2 className="section-heading text-center z-10">Final Outcome</h2>
-        <p className="text-center text-base lg:text-xl mt-7 z-10 lg:w-2/3">
-          The Jetezee prototype successfully translated a complex aviation
-          marketplace into a visually engaging and user-friendly digital
-          product.UX testing showed improved clarity, buyer confidence, and
-          admin efficiency through structured layouts and guided flows. By
-          completing a fully validated Web App and Admin Dashboard prototype,
-          LaunchBox Global enabled the Jetezee team to move into the development
-          phase with confidence, ensuring design-to-development alignment and
-          minimized rework.
+        <p className="text-center text-base lg:text-xl mt-7 z-10 lg:w-[90%]">
+          The JetEzee prototype successfully turned an ambitious concept into a
+          tangible, validated aviation marketplace experience. Through strong UX
+          foundations and design-led clarity, we translated the traditionally
+          complex buying and selling process into a guided, trustworthy journey.
+          Usability testing revealed a significant rise in the buyer
+          understanding, seller accuracy, and administrative speed. Through
+          completing fully aligned prototypes for both the Web App and the Admin
+          Dashboard, LaunchBox Global ensured that JetEzee’s development team
+          could move forward without confusion or rework. The
+          design-to-development handoff was smooth, enabling JetEzee to progress
+          into its build phase with the structure, confidence, and aesthetic
+          precision intact, truly reflecting what exceptional UI/UX design
+          services and web app development can achieve.
         </p>
       </section>
 

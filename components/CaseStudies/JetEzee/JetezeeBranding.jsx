@@ -6,11 +6,13 @@ const JetezeeBranding = () => {
     <section className="w-full pb-10 relative padding-x">
       <section className="w-full flex flex-col items-center relative z-10">
         <h2 className="section-heading text-center z-10">Branding</h2>
-        <p className="text-center text-base lg:text-xl mt-7 z-10 lg:w-2/3">
-          We began with low-fidelity wireframes to validate structure and
-          usability for both buyer and admin journeys. Once approved, we
-          developed high-fidelity prototypes that showcased realistic
-          interaction flows and visual hierarchy.
+        <p className="text-center text-base lg:text-xl mt-7 z-10 lg:w-[80%]">
+          JetEzee’s brand identity was crafted to convey exclusivity and trust,
+          blending the precision of aviation with digital sophistication.
+          Through our UI/UX design services, we used clean typography, spacious
+          layouts, and refined color accents to convey authority and ease. Every
+          interface element reinforced JetEzee’s core message: accessible luxury
+          and confidence, made digital.
         </p>
       </section>
 
