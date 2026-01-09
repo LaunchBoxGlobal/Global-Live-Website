@@ -15,7 +15,7 @@ const Hero = () => {
           alt="givexchange logo"
         />
 
-        <h1 className="text-[80px] leading-none tracking-tight font-extrabold z-10">
+        <h1 className="text-[40px] lg:text-[80px] leading-none tracking-tight font-extrabold z-10">
           Give{" "}
           <span className="text-[var(--givexchange-primary-color)]">X</span>{" "}
           Change
@@ -78,8 +78,16 @@ const Hero = () => {
           className="mx-auto"
         />
 
-        <div className="bg-[var(--givexchange-primary-color)] blur-[845px] rounded-full w-[300px] lg:w-[1000px] h-[300px] absolute top-1/2 -translate-y-1/2 left-[-60%] lg:left-[-50%] z-0" />
-        <div className="bg-[var(--givexchange-primary-color)] blur-[845px] rounded-full w-[300px] lg:w-[1000px] h-[300px] absolute top-1/2 -translate-y-1/2 right-[-60%] lg:right-[-50%] z-0" />
+        <Image
+          src={"/case-studies/givexchange/white-glow.svg"}
+          alt="white-glow"
+          width={1920}
+          height={243}
+          className="w-full absolute bottom-[-7%] lg:bottom-[-18%] z-20 inset-x-0"
+        />
+
+        <div className="bg-[var(--givexchange-primary-color)] blur-[845px] rounded-full w-[300px] lg:w-[500px] h-[300px] absolute top-1/2 -translate-y-1/2 left-[-60%] lg:left-[-50%] z-0 hidden md:block" />
+        <div className="bg-[var(--givexchange-primary-color)] blur-[845px] rounded-full w-[300px] lg:w-[500px] h-[300px] absolute top-1/2 -translate-y-1/2 right-[-60%] lg:right-[-50%] z-0 hidden md:block" />
       </div>
     </section>
   );

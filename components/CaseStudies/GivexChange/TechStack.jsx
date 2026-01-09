@@ -14,6 +14,9 @@ const TechStack = () => {
           efficient data handling, and secure user interactions across mobile,
           web, and admin interfaces.
         </p>
+
+        <div className="bg-[var(--givexchange-primary-color)] blur-[845px] rounded-full w-[300px] lg:w-[800px] h-[500px] absolute top-1/2 -translate-y-1/2 left-[-60%] lg:left-[-50%] z-0" />
+        <div className="bg-[var(--givexchange-primary-color)] blur-[845px] rounded-full w-[300px] lg:w-[800px] h-[500px] absolute top-1/2 -translate-y-1/2 right-[-60%] lg:right-[-50%] z-0" />
       </section>
 
       <section className="w-full relative space-y-20 mt-40 lg:pb-80 px-5 lg:px-0">

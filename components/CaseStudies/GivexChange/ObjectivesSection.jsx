@@ -20,6 +20,8 @@ const ObjectivesSection = () => {
       </section>
 
       <Objectives />
+
+      <div className="bg-[var(--givexchange-primary-color)] blur-[845px] rounded-full w-[300px] h-[300px] lg:w-[500px] lg:h-[500px] absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 z-0" />
     </section>
   );
 };

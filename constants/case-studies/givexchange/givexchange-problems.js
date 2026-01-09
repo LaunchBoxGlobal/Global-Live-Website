@@ -32,3 +32,38 @@ export const GIVEXCHANGE_PROBLEMS = [
       "Encrypted processes and integrated messaging offer safety without compromising convenience.",
   },
 ];
+
+export const GIVEXCHANGE_WEB_PROBLEMS = [
+  {
+    problemTitle: "Complex Navigation",
+    problemDescription:
+      "As features expanded, users struggled to quickly find tools and information, leading to longer task completion times. ",
+    solutionTitle: "Modular Navigation System",
+    solutionDescription:
+      "A clear, role-based navigation structure was introduced, grouping features logically and reducing cognitive load across the platform. ",
+  },
+  {
+    problemTitle: "Performance at Scale",
+    problemDescription:
+      "Handling high traffic and large data volumes caused slower load times and reduced responsiveness.",
+    solutionTitle: "Optimized Data Handling",
+    solutionDescription:
+      "Efficient data fetching, caching strategies, and optimized APIs ensured fast load times even as usage scaled.",
+  },
+  {
+    problemTitle: "Role & Permission Management",
+    problemDescription:
+      "Different user roles required varied access levels, making permission handling complex and error-prone.",
+    solutionTitle: "Granular Access Control",
+    solutionDescription:
+      "A flexible permission system was implemented, allowing admins to manage roles securely while maintaining operational clarity.",
+  },
+  {
+    problemTitle: "Cross-Device Consistency",
+    problemDescription:
+      "Users expected the same experience across desktop and tablet without compromising usability.",
+    solutionTitle: "Responsive & Adaptive Design",
+    solutionDescription:
+      "Layouts were designed to adapt seamlessly across screen sizes, ensuring consistency and efficiency on all devices.",
+  },
+];

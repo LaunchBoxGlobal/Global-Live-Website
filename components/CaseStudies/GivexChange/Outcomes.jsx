@@ -24,6 +24,9 @@ const Outcomes = () => {
       </section>
 
       <OutcomeMockups />
+
+      <div className="bg-[var(--givexchange-primary-color)] blur-[845px] rounded-full w-[300px] h-[300px] lg:w-[800px] lg:h-[500px] absolute top-1/2 -translate-y-1/2 left-[-60%] lg:left-[-10%] z-0" />
+      <div className="bg-[var(--givexchange-primary-color)] blur-[845px] rounded-full w-[300px] h-[300px] lg:w-[800px] lg:h-[500px] absolute top-1/2 -translate-y-1/2 right-[-60%] lg:right-[-30%] z-0" />
     </section>
   );
 };

@@ -1,23 +1,38 @@
 "use client";
 import React, { useState } from "react";
-import { GIVEXCHANGE_PROBLEMS } from "@/constants/case-studies/givexchange/givexchange-problems";
+import {
+  GIVEXCHANGE_PROBLEMS,
+  GIVEXCHANGE_WEB_PROBLEMS,
+} from "@/constants/case-studies/givexchange/givexchange-problems";
 import Image from "next/image";
 
 const ProblemsAndSolutions = () => {
   const [platform, setPlatform] = useState("mobile");
+  const content =
+    platform === "mobile" ? GIVEXCHANGE_PROBLEMS : GIVEXCHANGE_WEB_PROBLEMS;
   return (
     <section className="w-full pb-10 relative padding-x">
       <section className="w-full flex flex-col items-center relative z-10">
         <h2 className="section-heading text-center z-10">
           Problems & Solutions
         </h2>
-        <p className="text-center lg:w-[85%] text-base lg:text-xl mt-7 z-10">
-          The mobile app needed to support smooth navigation, strong
-          performance, and secure interactions as the marketplace grew.
-          Balancing scalability with ease of use was essential, especially with
-          features like payments and messaging integrated directly into the
-          experience.
-        </p>
+        {platform === "mobile" ? (
+          <p className="text-center lg:w-[85%] text-base lg:text-xl mt-7 z-10">
+            The mobile app needed to support smooth navigation, strong
+            performance, and secure interactions as the marketplace grew.
+            Balancing scalability with ease of use was essential, especially
+            with features like payments and messaging integrated directly into
+            the experience.
+          </p>
+        ) : (
+          <p className="text-center lg:w-[85%] text-base lg:text-xl mt-7 z-10">
+            The web app needed to support complex workflows, large data sets,
+            and multi-role access without sacrificing performance or usability.
+            Ensuring consistency across devices while maintaining speed,
+            security, and scalability was essential for long-term platform
+            growth.
+          </p>
+        )}
       </section>
 
       <section className="w-full mt-12">
@@ -48,14 +63,14 @@ const ProblemsAndSolutions = () => {
       </section>
 
       <section className="w-full z-20 space-y-4 mt-20 pb-20">
-        {GIVEXCHANGE_PROBLEMS?.map((p, i) => {
+        {content?.map((p, i) => {
           return (
             <div
               key={i}
               className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-x-5 lg:gap-x-0 gap-y-5"
             >
               <div className="">
-                <div className="w-full max-w-[442px] min-h-[251px] bg-white rounded-[17px] relative z-20 flex flex-col items-start justify-center gap-4 p-10">
+                <div className="w-full max-w-[442px] min-h-[261px] bg-white rounded-[17px] relative z-20 flex flex-col items-start justify-center gap-4 p-10">
                   <div className="w-full flex items-center gap-3">
                     <Image
                       src={"/case-studies/givexchange/problem-card-icon.png"}
@@ -87,7 +102,7 @@ const ProblemsAndSolutions = () => {
                 />
               </div>
               <div className="relative lg:top-20">
-                <div className="w-full max-w-[442px] min-h-[251px] bg-white rounded-[17px] relative z-20 flex flex-col items-start justify-center gap-4 p-10">
+                <div className="w-full max-w-[442px] min-h-[261px] bg-white rounded-[17px] relative z-20 flex flex-col items-start justify-center gap-4 p-10">
                   <div className="w-full flex items-center gap-3">
                     <Image
                       src={"/case-studies/givexchange/solution-icon.png"}
@@ -115,8 +130,8 @@ const ProblemsAndSolutions = () => {
         })}
       </section>
 
-      <div className="bg-[var(--givexchange-primary-color)] blur-[845px] rounded-full w-[300px] lg:w-[1000px] h-[300px] absolute top-1/2 -translate-y-1/2 left-[-60%] lg:left-[-50%] z-0" />
-      <div className="bg-[var(--givexchange-primary-color)] blur-[845px] rounded-full w-[300px] lg:w-[1000px] h-[300px] absolute top-1/2 -translate-y-1/2 right-[-60%] lg:right-[-50%] z-0" />
+      <div className="bg-[var(--givexchange-primary-color)] blur-[845px] rounded-full w-[300px] h-[300px] lg:w-[800px] lg:h-[500px] absolute top-1/2 -translate-y-1/2 left-[-60%] lg:left-[-50%] z-0" />
+      <div className="bg-[var(--givexchange-primary-color)] blur-[845px] rounded-full w-[300px] h-[300px] lg:w-[800px] lg:h-[500px] absolute top-1/2 -translate-y-1/2 right-[-60%] lg:right-[-50%] z-0" />
     </section>
   );
 };

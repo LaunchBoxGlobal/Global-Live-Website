@@ -29,10 +29,10 @@ const JetezeeBranding = () => {
       <section className="w-full flex items-end justify-between gap-5 mt-10">
         <h3 className="font-bold text-[22px]">Color Palette</h3>
         <p className="text-[22px] font-normal leading-[1.2] lg:w-[45%]">
-          We began with low-fidelity wireframes to validate structure and
-          usability for both buyer and admin journeys.Once approved, we
-          developed high-fidelity prototypes that showcased realistic
-          interaction flows and visual hierarchy.
+          The color palette is designed to balance warmth and neutrality,
+          combining soft greys with subtle accent tones. This approach creates a
+          clean, modern visual identity while maintaining clarity, trust, and
+          visual harmony across the platform.
         </p>
       </section>
 

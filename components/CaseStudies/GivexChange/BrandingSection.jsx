@@ -38,8 +38,8 @@ const BrandingSection = () => {
         </p>
       </section>
 
-      <section className="w-full mt-12 grid grid-cols-1 lg:grid-cols-2 gap-10">
-        <div className="">
+      <section className="w-full z-10 mt-12 grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div className="z-10">
           <Image
             src={
               "/case-studies/givexchange/givexchange-logo-with-white-background.png"
@@ -47,51 +47,60 @@ const BrandingSection = () => {
             alt="givexchange-logo-with-white-background"
             width={620}
             height={593}
+            className="z-10"
           />
         </div>
-        <div className="">
+        <div className="z-10">
           <Image
             src={"/case-studies/givexchange/givexchange-sidebar-mockup.png"}
             alt="givexchange-sidebar-mockup"
             width={620}
             height={593}
+            className="z-10"
           />
         </div>
       </section>
 
-      <section className="w-full mt-20">
+      <section className="w-full mt-20 z-10">
         <Image
           src={"/case-studies/givexchange/general-sans-fonts-label.png"}
           alt="general-sans-fonts-label"
           width={1304}
           height={150}
-          className="mx-auto object-contain"
+          className="mx-auto object-contain z-10"
         />
 
-        <div className="w-full mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="w-full mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 z-10">
           {fonts?.map((f, i) => {
             return (
               <div
                 key={i}
-                className={`w-full flex flex-col itmes-start gap-3 ${
+                className={`w-full flex flex-col itmes-start gap-3 z-10 ${
                   i !== 3 && "lg:border-r border-5 pr-5"
                 }`}
               >
-                <h3 className="text-[26px] font-medium">{f?.title}</h3>
-                <p className="text-lg font-normal text-[#212121]">{f?.desc}</p>
+                <h3 className="text-[26px] font-medium z-10">{f?.title}</h3>
+                <p className="text-lg font-normal text-[#212121] z-10">
+                  {f?.desc}
+                </p>
               </div>
             );
           })}
         </div>
 
         <Image
-          src={"/case-studies/givexchange/givexchange-color-pallete.png"}
+          src={"/case-studies/givexchange/givexchange-color-pallete-image.png"}
           alt="givexchange-color-pallete"
           width={1270}
           height={600}
-          className="mx-auto object-contain mt-12"
+          className="mx-auto object-contain mt-12 z-10"
         />
       </section>
+
+      <div className="bg-[var(--givexchange-primary-color)] blur-[845px] rounded-full w-[300px] h-[300px] lg:w-[800px] lg:h-[500px] absolute top-[0%] left-[-60%] lg:left-[-40%] z-0" />
+      <div className="bg-[var(--givexchange-primary-color)] blur-[845px] rounded-full w-[300px] h-[300px] lg:w-[800px] lg:h-[500px] absolute top-[0%] right-[-70%] lg:right-[-50%] z-0" />
+      <div className="bg-[var(--givexchange-primary-color)] blur-[845px] rounded-full w-[300px] h-[300px] lg:w-[800px] lg:h-[500px] absolute bottom-[0%] left-[-60%] lg:left-[-30%] z-0" />
+      <div className="bg-[var(--givexchange-primary-color)] blur-[845px] rounded-full w-[300px] h-[300px] lg:w-[800px] lg:h-[500px] absolute bottom-[0%] right-[-60%] lg:right-[-30%] z-0" />
     </section>
   );
 };
