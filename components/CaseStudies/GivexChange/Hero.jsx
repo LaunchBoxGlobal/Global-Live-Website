@@ -86,8 +86,8 @@ const Hero = () => {
           className="w-full absolute bottom-[-7%] lg:bottom-[-18%] z-20 inset-x-0"
         />
 
-        <div className="bg-[var(--givexchange-primary-color)] blur-[845px] rounded-full w-[300px] lg:w-[500px] h-[300px] absolute top-1/2 -translate-y-1/2 left-[-60%] lg:left-[-50%] z-0 hidden md:block" />
-        <div className="bg-[var(--givexchange-primary-color)] blur-[845px] rounded-full w-[300px] lg:w-[500px] h-[300px] absolute top-1/2 -translate-y-1/2 right-[-60%] lg:right-[-50%] z-0 hidden md:block" />
+        <div className="bg-[var(--givexchange-primary-color)] blur-[845px] rounded-full w-[300px] lg:w-[500px] h-[300px] absolute top-1/2 -translate-y-1/2 left-[-60%] lg:left-[-20%] z-0 hidden md:block" />
+        <div className="bg-[var(--givexchange-primary-color)] blur-[845px] rounded-full w-[300px] lg:w-[500px] h-[300px] absolute top-1/2 -translate-y-1/2 right-[-60%] lg:right-[-20%] z-0 hidden md:block" />
       </div>
     </section>
   );
