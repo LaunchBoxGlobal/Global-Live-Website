@@ -13,12 +13,15 @@ const Workflow = () => {
     <section className="w-full padding-x py-10 lg:py-20 relative overflow-hidden">
       <section className="w-full flex flex-col items-center justify-center gap-6 text-center">
         <h2 className="section-heading w-full">
-           Step-by-Step Process for Your Ecommerce Development <br className="hidden lg:block" /> {" "}
+          Step-by-Step Process for Your Ecommerce Development{" "}
+          <br className="hidden lg:block" />{" "}
           <span className="red-text"> Stores</span>
         </h2>
         <p className="section-paragraph lg:w-[85%]">
-       Our ecommerce software development follows multiple clear, step-by-step processes. From initial planning to design, development, testing, and launch, we ensure your store is built efficiently, reliably, and ready for growth.
-
+          Our ecommerce software development follows multiple clear,
+          step-by-step processes. From initial planning to design, development,
+          testing, and launch, we ensure your store is built efficiently,
+          reliably, and ready for growth.
         </p>
       </section>
 
@@ -69,7 +72,7 @@ const Workflow = () => {
         {activeTab === "agile" && (
           <>
             {ECOMMERCE_AGILE_WORKFLOW?.map((process, index) => (
-              <ProcessCard process={process} key={index} index={index}  />
+              <ProcessCard process={process} key={index} index={index} />
             ))}
           </>
         )}
