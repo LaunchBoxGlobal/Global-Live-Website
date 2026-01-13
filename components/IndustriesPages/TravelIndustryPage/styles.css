@@ -1,0 +1,50 @@
+.animate-cards-sping {
+  animation: animate-sping-cards 4s infinite;
+}
+
+@keyframes animate-sping-cards {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 0.7;
+  }
+  100% {
+    scale: 1;
+  }
+}
+
+.animate-places-card-up-and-down {
+  animation: animate-places-card-up-and-down 4s ease-in-out infinite;
+}
+
+@keyframes animate-places-card-up-and-down {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/*  */
+.animate-send-icon {
+  animation: animate-send-icon 4s ease-in-out 1s infinite;
+}
+
+@keyframes animate-send-icon {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 0.7;
+  }
+  100% {
+    scale: 1;
+  }
+}

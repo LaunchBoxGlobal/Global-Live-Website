@@ -1,6 +1,6 @@
 import React from "react";
 import ContactButton from "@/components/Global/ContactButton";
-import Image from "next/image";
+import HeroAnimation from "./HeroAnimation";
 
 const Hero = () => {
   return (
@@ -19,16 +19,7 @@ const Hero = () => {
           <ContactButton text={"Schedule A Free Strategy Call"} />
         </div>
 
-        <div className="w-full mt-12 pb-16 z-10 relative">
-          <Image
-            src={`/industries/travel/hero-mockup.png`}
-            alt="hero-mockup"
-            width={1263}
-            height={450}
-            className="mx-auto z-20 relative"
-          />
-          <div className="w-[700px] h-[100px] rounded-full bg-red-600 blur-[200px] absolute z-0 left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2" />
-        </div>
+        <HeroAnimation />
       </section>
     </section>
   );
