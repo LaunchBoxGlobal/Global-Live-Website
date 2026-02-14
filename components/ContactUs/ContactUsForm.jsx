@@ -57,7 +57,7 @@ const ContactUsForm = () => {
         .min(100, "Message must be at least 100 characters")
         .max(500, "Message cannot exceed 500 characters")
         .required("Message is required"),
-      agreeToTermsConditions: Yup.boolean().oneOf([true], "*"),
+      agreeToTermsConditions: Yup.boolean().notRequired(),
     }),
     onSubmit: async (values, { resetForm }) => {
       setLoading(true);
@@ -118,81 +118,82 @@ const ContactUsForm = () => {
             )}
           </div>
 
-<div className="flex flex-col items-start gap-1">
-  <label
-    htmlFor="service"
-    className="block text-sm lg:text-lg font-medium text-gray-900"
-  >
-    Pick the service you'd like to start with.
-  </label>
+          <div className="flex flex-col items-start gap-1">
+            <label
+              htmlFor="service"
+              className="block text-sm lg:text-lg font-medium text-gray-900"
+            >
+              Pick the service you'd like to start with.
+            </label>
 
-  <Select
-    id="service"
-    name="service"
-    styles={{
-        container: (provided) => ({
-          ...provided,
-          width: "100%",
-          padding: "2px 0"
-        }),
-      control: (provided, state) => ({
-        ...provided,
-        backgroundColor: "#f9fafb", // bg-gray-50
-        borderColor: state.isFocused ? "#F40E00" : "#d1d5db",
-        boxShadow: state.isFocused ? "0 0 0 1px #F40E00" : "none",
-        borderRadius: "0.5rem", // rounded-lg
-        minHeight: "45px",
-        fontSize: "0.875rem", // text-sm
-        width:"100%",
-        color: "#111827",
-        opacity: 0.9,
-        "&:hover": { borderColor: "#F40E00" },
-      }),
-      menu: (provided) => ({
-        ...provided,
-        zIndex: 20,
-        backgroundColor: "white",
-        borderRadius: "0.5rem",
-        border: "1px solid #e5e7eb",
-      }),
-      option: (provided, state) => ({
-        ...provided,
-        backgroundColor: state.isFocused ? "#F40E00" : "white",
-        color: state.isFocused ? "white" : "#111827",
-        fontSize: "0.875rem",
-        cursor: "pointer",
-      }),
-      singleValue: (provided) => ({
-        ...provided,
-        color: "#111827",
-      }),
-      placeholder: (provided) => ({
-        ...provided,
-        color: "#6b7280",
-      }),
-    }}
-    options={serviceLinks.map((service) => ({
-      value: service,
-      label: service,
-    }))}
-    placeholder="Choose a service"
-    value={
-      serviceLinks
-        .map((s) => ({ value: s, label: s }))
-        .find((option) => option.value === formik.values.service) || null
-    }
-    onChange={(selectedOption) =>
-      formik.setFieldValue("service", selectedOption?.value)
-    }
-    onBlur={() => formik.setFieldTouched("service", true)}
-  />
+            <Select
+              id="service"
+              name="service"
+              styles={{
+                container: (provided) => ({
+                  ...provided,
+                  width: "100%",
+                  padding: "2px 0",
+                }),
+                control: (provided, state) => ({
+                  ...provided,
+                  backgroundColor: "#f9fafb", // bg-gray-50
+                  borderColor: state.isFocused ? "#F40E00" : "#d1d5db",
+                  boxShadow: state.isFocused ? "0 0 0 1px #F40E00" : "none",
+                  borderRadius: "0.5rem", // rounded-lg
+                  minHeight: "45px",
+                  fontSize: "0.875rem", // text-sm
+                  width: "100%",
+                  color: "#111827",
+                  opacity: 0.9,
+                  "&:hover": { borderColor: "#F40E00" },
+                }),
+                menu: (provided) => ({
+                  ...provided,
+                  zIndex: 20,
+                  backgroundColor: "white",
+                  borderRadius: "0.5rem",
+                  border: "1px solid #e5e7eb",
+                }),
+                option: (provided, state) => ({
+                  ...provided,
+                  backgroundColor: state.isFocused ? "#F40E00" : "white",
+                  color: state.isFocused ? "white" : "#111827",
+                  fontSize: "0.875rem",
+                  cursor: "pointer",
+                }),
+                singleValue: (provided) => ({
+                  ...provided,
+                  color: "#111827",
+                }),
+                placeholder: (provided) => ({
+                  ...provided,
+                  color: "#6b7280",
+                }),
+              }}
+              options={serviceLinks.map((service) => ({
+                value: service,
+                label: service,
+              }))}
+              placeholder="Choose a service"
+              value={
+                serviceLinks
+                  .map((s) => ({ value: s, label: s }))
+                  .find((option) => option.value === formik.values.service) ||
+                null
+              }
+              onChange={(selectedOption) =>
+                formik.setFieldValue("service", selectedOption?.value)
+              }
+              onBlur={() => formik.setFieldTouched("service", true)}
+            />
 
-  {formik.touched.service && formik.errors.service && (
-    <div className="text-red-500 text-sm mt-1">
-      {formik.errors.service}
-    </div>
-  )}
-</div>
+            {formik.touched.service && formik.errors.service && (
+              <div className="text-red-500 text-sm mt-1">
+                {formik.errors.service}
+              </div>
+            )}
+          </div>
         </div>
 
         <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -240,65 +241,66 @@ const ContactUsForm = () => {
         </div>
 
         <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-6">
-         <div className="w-full flex flex-col items-start gap-1">
-  <label
-    htmlFor="timezone"
-    className="block text-sm lg:text-lg font-medium text-gray-900"
-  >
-    We’ll sync to your time zone.
-  </label>
+          <div className="w-full flex flex-col items-start gap-1">
+            <label
+              htmlFor="timezone"
+              className="block text-sm lg:text-lg font-medium text-gray-900"
+            >
+              We’ll sync to your time zone.
+            </label>
 
-  <div className="w-full">
-    <TimezoneSelect
-      value={selectedTimezone}
-      onChange={(tz) => {
-        setSelectedTimezone(tz);
-        formik.setFieldValue("timezone", tz.value);
-      }}
-      styles={{
-        container: (provided) => ({
-          ...provided,
-          width: "100%",
-          padding: "2px 0"
-        }),
-        control: (provided, state) => ({
-          ...provided,
-          width: "100%",
-          backgroundColor: "#f9fafb",
-          borderColor: state.isFocused ? "#3C3C3C" : "#d1d5db",
-          boxShadow: state.isFocused ? "0 0 0 1px #3C3C3C" : "none",
-          borderRadius: "0.5rem",
-          padding: "0.25rem 0.5rem",
-          fontSize: "0.875rem", // text-sm
-          color: "#111827", // text-gray-900
-        }),
-        menu: (provided) => ({
-          ...provided,
-          zIndex: 20,
-          backgroundColor: "white",
-          borderRadius: "0.5rem",
-          border: "1px solid #e5e7eb",
-        }),
-        option: (provided, state) => ({
-          ...provided,
-          backgroundColor: state.isFocused ? "#F40E00" : "white",
-          color: state.isFocused ? "white" : "#111827",
-          fontSize: "0.875rem",
-          cursor: "pointer",
-        }),
-        singleValue: (provided) => ({
-          ...provided,
-          color: "#111827",
-        }),
-      }}
-    />
-  </div>
+            <div className="w-full">
+              <TimezoneSelect
+                value={selectedTimezone}
+                onChange={(tz) => {
+                  setSelectedTimezone(tz);
+                  formik.setFieldValue("timezone", tz.value);
+                }}
+                styles={{
+                  container: (provided) => ({
+                    ...provided,
+                    width: "100%",
+                    padding: "2px 0",
+                  }),
+                  control: (provided, state) => ({
+                    ...provided,
+                    width: "100%",
+                    backgroundColor: "#f9fafb",
+                    borderColor: state.isFocused ? "#3C3C3C" : "#d1d5db",
+                    boxShadow: state.isFocused ? "0 0 0 1px #3C3C3C" : "none",
+                    borderRadius: "0.5rem",
+                    padding: "0.25rem 0.5rem",
+                    fontSize: "0.875rem", // text-sm
+                    color: "#111827", // text-gray-900
+                  }),
+                  menu: (provided) => ({
+                    ...provided,
+                    zIndex: 20,
+                    backgroundColor: "white",
+                    borderRadius: "0.5rem",
+                    border: "1px solid #e5e7eb",
+                  }),
+                  option: (provided, state) => ({
+                    ...provided,
+                    backgroundColor: state.isFocused ? "#F40E00" : "white",
+                    color: state.isFocused ? "white" : "#111827",
+                    fontSize: "0.875rem",
+                    cursor: "pointer",
+                  }),
+                  singleValue: (provided) => ({
+                    ...provided,
+                    color: "#111827",
+                  }),
+                }}
+              />
+            </div>
 
-  {formik.touched.timezone && formik.errors.timezone && (
-    <div className="text-red-500 text-sm">{formik.errors.timezone}</div>
-  )}
-</div>
-
+            {formik.touched.timezone && formik.errors.timezone && (
+              <div className="text-red-500 text-sm">
+                {formik.errors.timezone}
+              </div>
+            )}
+          </div>
 
           <div className="w-full flex flex-col items-start gap-1">
             <label

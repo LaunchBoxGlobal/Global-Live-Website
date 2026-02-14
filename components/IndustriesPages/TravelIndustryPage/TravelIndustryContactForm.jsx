@@ -36,8 +36,8 @@ const TravelIndustryContactForm = () => {
         .min(10, "Must be 10 digits")
         .max(10, "Must be 10 digits")
         .required("Please enter your phone number"),
-      // textMessagesCheckbox: Yup.boolean().oneOf([true], "*"),
-      agreeToTermsConditions: Yup.boolean().oneOf([true], "*"),
+      // textMessagesCheckbox: Yup.boolean().notRequired(),
+      agreeToTermsConditions: Yup.boolean().notRequired(),
     }),
     onSubmit: async (values, { resetForm }) => {
       setLoading(true);

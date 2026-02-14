@@ -36,8 +36,8 @@ const ContactForm = ({ title, buttonTitle }) => {
         .min(10, "Must be 10 digits")
         .max(10, "Must be 10 digits")
         .required("Please enter your phone number"),
-      // textMessagesCheckbox: Yup.boolean().oneOf([true], "*"),
-      agreeToTermsConditions: Yup.boolean().oneOf([true], "*"),
+      // textMessagesCheckbox: Yup.boolean().notRequired(),
+      agreeToTermsConditions: Yup.boolean().notRequired(),
     }),
     onSubmit: async (values, { resetForm }) => {
       setLoading(true);
@@ -69,7 +69,7 @@ const ContactForm = ({ title, buttonTitle }) => {
       className="w-full bg-transparent rounded-2xl p-5 lg:p-10 xl:p-16 text-white"
     >
       <div className="w-full">
-         <h2 className="text-3xl font-extrabold leading-snug md:text-3xl">
+        <h2 className="text-3xl font-extrabold leading-snug md:text-3xl">
           Start Your Ecommerce Success
           <br />
           <span className="text-white">Journey With Us Today</span>
@@ -77,10 +77,10 @@ const ContactForm = ({ title, buttonTitle }) => {
         <p className="text-base text-gray-300 mt-4">
           <span className="leading-[1]">
             Every moment you delay launching your online store, you risk losing
-          customers and revenue. Our team specializes in building
-          high-performing ecommerce stores and apps quickly and efficiently.
-          With our expertise, you can start selling faster, capture your
-          audience, and stay ahead of competitors without wasting another day.
+            customers and revenue. Our team specializes in building
+            high-performing ecommerce stores and apps quickly and efficiently.
+            With our expertise, you can start selling faster, capture your
+            audience, and stay ahead of competitors without wasting another day.
           </span>
         </p>
       </div>

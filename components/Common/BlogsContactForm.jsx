@@ -20,7 +20,6 @@ const BlogsContactForm = () => {
       message: "",
       phoneNumber: "",
       emailSubject: "New Contact Form From Blogs Archive Page",
-      // textMessagesCheckbox: false,
       agreeToTermsConditions: false,
     },
     validationSchema: Yup.object({
@@ -39,8 +38,7 @@ const BlogsContactForm = () => {
         .min(100, "Must be 100 characters")
         .max(1000, "Can not be more than 1000 characters.")
         .required("Please enter your message."),
-      // textMessagesCheckbox: Yup.boolean().oneOf([true], "*"),
-      agreeToTermsConditions: Yup.boolean().oneOf([true], "*"),
+      agreeToTermsConditions: Yup.boolean().notRequired(),
     }),
     onSubmit: async (values, { resetForm }) => {
       setLoading(true);
@@ -124,7 +122,7 @@ const BlogsContactForm = () => {
                 const value = e.target.value;
                 formik.setFieldValue(
                   "phoneNumber",
-                  value ? parseInt(value, 10) : "" // convert to number or reset to empty
+                  value ? parseInt(value, 10) : "", // convert to number or reset to empty
                 );
               }}
               onBlur={formik.handleBlur}

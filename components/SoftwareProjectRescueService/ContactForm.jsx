@@ -36,8 +36,8 @@ const ContactForm = ({ buttonTitle }) => {
         .min(10, "Must be 10 digits")
         .max(10, "Must be 10 digits")
         .required("Please enter your phone number"),
-      // textMessagesCheckbox: Yup.boolean().oneOf([true], "*"),
-      agreeToTermsConditions: Yup.boolean().oneOf([true], "*"),
+      // textMessagesCheckbox: Yup.boolean().notRequired(),
+      agreeToTermsConditions: Yup.boolean().notRequired(),
       description: Yup.string()
         .min(100, "Description can not be less than 100 characters")
         .max(600, "Description can not be more than 600 characters")
