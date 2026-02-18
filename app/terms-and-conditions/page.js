@@ -74,8 +74,8 @@ const page = () => {
             <li>Message and data rates may apply.</li>
             <li>
               Reply HELP for support or email{" "}
-              <Link href={`mailto:support@launchboxglobal.com`}>
-                support@launchboxglobal.com.
+              <Link href={`mailto:hello@launchboxglobal.com`}>
+                hello@launchboxglobal.com.
               </Link>
             </li>
             <li>You can opt out at any time by replying STOP.</li>
