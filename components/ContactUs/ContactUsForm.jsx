@@ -340,7 +340,7 @@ const ContactUsForm = () => {
             at the phone number provided. Consent is not a condition of purchase. Msg & data rates may apply. Msg
             frequency varies. For help, reply HELP or email us at
             hello@launchboxglobal.com. You can opt out at any time by replying
-            STOP.{" "}
+            STOP. View our{" "}
             <Link href={`/privacy-policy`} className="underline mx-1">
               Privacy & Policy
             </Link>{" "}
