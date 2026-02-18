@@ -87,7 +87,7 @@ const page = () => {
               shared or sold.
             </li>
             <li>
-              To opt out of SMS communications, reply STOP or email us at 
+              To opt out of SMS communications, reply STOP or email us at {' '}
               <Link href={`mailto:hello@launchboxglobal.com`}>
                 hello@launchboxglobal.com.
               </Link>
