@@ -217,11 +217,11 @@ const PopupForm = () => {
                     htmlFor="agreeToTermsConditions"
                     className="leading-[1.3] text-xs relative -top-0.5"
                   >
-                    By checking this box, I agree to receive SMS from LaunchBox
-                    Global at the phone number provided. Msg & data rates may
+                    By checking this box, I agree to receive marketing and support SMS from LaunchBox
+                    Global at the phone number provided. Consent is not a condition of purchase. Msg & data rates may
                     apply. Msg frequency varies. For help, reply HELP or email
                     us at hello@launchboxglobal.com. You can opt out at any time
-                    by replying STOP.{" "}
+                    by replying STOP. View our {" "}
                     <Link href={`/privacy-policy`} className="underline mx-1">
                       Privacy & Policy
                     </Link>{" "}
