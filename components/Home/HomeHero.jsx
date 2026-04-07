@@ -21,9 +21,8 @@ const words = [
 ];
 
 const HomeHero = () => {
-
   return (
-    <section className="w-full bg-white relative pt-36 flex flex-col items-center justify-start gap-0 h-full md:h-auto lg:h-[100vh] 2xl:h-auto lg:gap-[25px] overflow-hidden">
+    <section className="w-full bg-white relative pt-36 xl:pt-44 flex flex-col items-center justify-start gap-0 h-full md:h-auto lg:h-[100vh] 2xl:h-auto lg:gap-[25px] overflow-hidden">
       <h1 className="font-bold relative z-10 text-[9vw] md:text-[5.5vw] mb-1 text-center tracking-normal lg:leading-[78px] w-[100%]">
         <span className="flex items-center justify-center z-10 gap-2 lg:gap-6">
           Plan{" "}
@@ -64,7 +63,7 @@ const HomeHero = () => {
       </div>
 
       <div className="w-full flex items-center justify-center z-0">
-              <GlobeDemo />
+        <GlobeDemo />
       </div>
 
       <Image
