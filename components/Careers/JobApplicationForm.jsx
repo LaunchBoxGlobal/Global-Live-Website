@@ -1,12 +1,16 @@
 "use client";
 
 import { useState, useRef } from "react";
-import Link from "next/link";
 import { useFormik } from "formik";
-import * as Yup from "yup";
 import Field from "./Field";
 import inputClass from "@/lib/inputClass";
 import ApplicationSuccess from "./ApplicationSuccess";
+import { validationSchema } from "../../validation/jobApplicationFormValidation";
+import JobDetails from "./JobDetails";
+import formatCNIC from "@/lib/formatCNIC";
+import Error from "./Error";
+import FormHeader from "./FormHeader";
+import ApplicationPageHeader from "./ApplicationPageHeader";
 
 export default function JobApplicationForm({ job }) {
   const [serverError, setServerError] = useState("");
@@ -18,48 +22,6 @@ export default function JobApplicationForm({ job }) {
   const dept = Array.isArray(job.department_id) ? job.department_id[1] : null;
   const location = Array.isArray(job.address_id) ? job.address_id[1] : null;
 
-  const FILE_TYPES = [
-    "application/pdf",
-    "application/msword",
-    "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-  ];
-
-  const MAX_FILE_SIZE = 5 * 1024 * 1024;
-
-  const validationSchema = Yup.object({
-    partner_name: Yup.string()
-      .required("Full name is required")
-      .min(3, "Name must contain at least 3 characters.")
-      .max(25, "Name can not exceed 25 characters."),
-
-    email_from: Yup.string()
-      .email("Invalid email")
-      .required("Email is required"),
-
-    partner_phone: Yup.string()
-      .matches(/^(\+92|0)?3\d{9}$/, "Enter a valid number (e.g. +923001234567)")
-      .required("Phone number is required"),
-
-    linkedin_profile: Yup.string()
-      .url("Invalid URL")
-      .matches(
-        /^https?:\/\/(www\.)?linkedin\.com\/.*$/,
-        "Enter valid LinkedIn profile URL",
-      )
-      .required("LinkedIn profile URL is required"),
-
-    resume: Yup.mixed()
-      .required("Resume is required")
-      .test("fileType", "Only PDF or DOC/DOCX allowed", (file) => {
-        if (!file) return false;
-        return FILE_TYPES.includes(file.type);
-      })
-      .test("fileSize", "File too large (max 5MB)", (file) => {
-        if (!file) return false;
-        return file.size <= MAX_FILE_SIZE;
-      }),
-  });
-
   const formik = useFormik({
     initialValues: {
       partner_name: "",
@@ -68,12 +30,12 @@ export default function JobApplicationForm({ job }) {
       linkedin_profile: "",
       resume: null,
       applicant_notes: "",
+      cnic: "",
     },
     validationSchema,
     onSubmit: async (values) => {
       setServerError("");
       setLoading(true);
-
       try {
         const form = new FormData();
 
@@ -111,40 +73,16 @@ export default function JobApplicationForm({ job }) {
 
   return (
     <div className="w-full padding-x pt-36 2xl:pt-52">
-      <div className="w-full mx-auto">
-        <Link
-          href={`/careers/${job.id}`}
-          className="inline-flex items-center gap-1 text-sm text-gray-700 transition-colors duration-200"
-        >
-          ← View Job Description
-        </Link>
-      </div>
+      <ApplicationPageHeader jobId={job?.id} />
 
-      <div className="max-w-screen-xl mx-auto px-6 pt-8 pb-6 text-center">
-        <h1 className="text-3xl md:text-5xl font-bold text-black mt-5">
-          Apply Now
-        </h1>
-        <p className="text-gray-600 text-sm mt-4 max-w-md mx-auto">
-          Complete the form below and we'll get back to you as soon as possible.
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 max-w-screen-xl mx-auto px-6 py-16">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 max-w-screen-xl mx-auto pb-16 pt-8">
         <form
           onSubmit={formik.handleSubmit}
           className="lg:col-span-2 space-y-6"
         >
-          <h2 className="text-2xl font-bold text-black mb-2">Your Details</h2>
-          <p className="text-gray-500 text-sm mb-6">
-            Fields marked with <span className="text-red-500">*</span> are
-            required.
-          </p>
+          <FormHeader />
 
-          {serverError && (
-            <div className="rounded-lg border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-400">
-              {serverError}
-            </div>
-          )}
+          {serverError && <Error serverError={serverError} />}
 
           <Field label="Full Name" required error={formik.errors.partner_name}>
             <input
@@ -181,15 +119,33 @@ export default function JobApplicationForm({ job }) {
               name="partner_phone"
               type="tel"
               placeholder="+92 300 0000000"
-              onChange={formik.handleChange}
+              onChange={(e) => {
+                const digits = e.target.value.replace(/\D/g, "").slice(0, 11);
+                formik.setFieldValue("partner_phone", digits);
+              }}
               value={formik.values.partner_phone}
               className={inputClass(!!formik.errors.partner_phone)}
+            />
+          </Field>
+
+          <Field label="CNIC" required error={formik.errors.cnic}>
+            <input
+              name="cnic"
+              type="text"
+              placeholder="00000-0000000-0"
+              value={formik.values.cnic}
+              onChange={(e) => {
+                const formatted = formatCNIC(e.target.value);
+                formik.setFieldValue("cnic", formatted);
+              }}
+              className={inputClass(!!formik.errors.cnic)}
             />
           </Field>
 
           <Field
             label="LinkedIn Profile URL"
             hint=""
+            required
             error={formik.errors.linkedin_profile}
           >
             <input
@@ -205,6 +161,7 @@ export default function JobApplicationForm({ job }) {
           <Field
             label="Resume / CV"
             error={formik.errors.resume}
+            required
             hint="PDF, DOC or DOCX — max 5 MB."
           >
             <div
@@ -231,7 +188,9 @@ export default function JobApplicationForm({ job }) {
                 {fileName ? (
                   <span className="text-black truncate">{fileName}</span>
                 ) : (
-                  <span className="text-gray-400">Upload your resume</span>
+                  <span className="text-gray-400 text-sm lg:text-base">
+                    Upload your resume
+                  </span>
                 )}
               </div>
 
@@ -253,14 +212,11 @@ export default function JobApplicationForm({ job }) {
             />
           </Field>
 
-          <Field
-            label="Short Introduction"
-            hint="Tell us a bit about yourself and why you're a great fit."
-          >
+          <Field label="Short Introduction" hint="">
             <textarea
               name="applicant_notes"
               rows={5}
-              placeholder="I'm a passionate engineer with 3 years of experience…"
+              placeholder="Tell us a bit about yourself and why you're a great fit..."
               onChange={formik.handleChange}
               value={formik.values.applicant_notes}
               className={inputClass(false) + " resize-none"}
@@ -272,28 +228,11 @@ export default function JobApplicationForm({ job }) {
             disabled={loading}
             className="bg-[#F40E00] px-5 lg:px-7 py-4 font-bold rounded-xl text-sm lg:text-[18px] 2xl:text-[25px] hover:bg-[#000] text-white transition-all duration-300 disabled:opacity-80 disabled:cursor-not-allowed"
           >
-            {loading ? "Submitting…" : "Submit Application →"}
+            {loading ? "Submitting…" : "Submit"}
           </button>
         </form>
 
-        <aside className="space-y-6">
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-            <p className="text-xs uppercase tracking-widest text-gray-500 mb-4">
-              You're applying for
-            </p>
-            <h3 className="text-lg font-semibold text-black mb-4 leading-snug">
-              {job.name}
-            </h3>
-
-            <div className="space-y-3 text-sm">
-              {dept && <p className="text-[0000]">{dept}</p>}
-              {location && <p className="text-gray-600">{location}</p>}
-              {job.no_of_recruitment > 0 && (
-                <p className="text-black">{job.no_of_recruitment} openings</p>
-              )}
-            </div>
-          </div>
-        </aside>
+        {job && <JobDetails dept={dept} location={location} job={job} />}
       </div>
     </div>
   );

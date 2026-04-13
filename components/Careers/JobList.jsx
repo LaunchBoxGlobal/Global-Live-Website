@@ -52,14 +52,13 @@ export default function JobsList({ initialJobs, initialHasMore }) {
   }, [loadMore]);
 
   return (
-    <div className="border-t border-white/10">
-      <ul className="w-full space-y-5 mt-10">
+    <div className="border-t border-white/10 min-h-[80vh]">
+      <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-8 mt-10 lg:mt-16">
         {jobs.map((job) => (
           <JobCard key={job.id} job={job} />
         ))}
-      </ul>
+      </div>
 
-      {/* Sentinel — triggers next page load when scrolled into view */}
       <div ref={sentinelRef} className="h-1" />
 
       {loading && <Spinner />}
@@ -69,7 +68,7 @@ export default function JobsList({ initialJobs, initialHasMore }) {
       )}
 
       {!hasMore && jobs.length > 0 && (
-        <p className="text-center text-gray-600 text-xs py-8 tracking-wider uppercase">
+        <p className="text-center text-gray-600 text-xs py-8 mt-20 tracking-wider uppercase">
           All positions loaded
         </p>
       )}

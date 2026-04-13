@@ -3,11 +3,11 @@ import Link from "next/link";
 // components/Careers/JobDetailsPage.jsx
 export default function JobDetailsPage({ job, id }) {
   return (
-    <div className="w-full pb-20">
+    <div className="w-full pb-20 pt-4">
       {/* Job Title */}
       {/* <h2 className="text-2xl font-semibold">{job?.name}</h2> */}
 
-      <div className="w-full space-y-2">
+      <div className="w-full space-y-1">
         {/* Department */}
         {job?.department_id && (
           <p className="text-sm text-gray-600">
@@ -31,7 +31,9 @@ export default function JobDetailsPage({ job, id }) {
       </div>
       <div className="w-full mt-6">
         {/* Description (HTML from Odoo) */}
-        <h2 className="text-2xl font-semibold">Description:</h2>
+        <h2 className="text-2xl tracking-tight font-semibold">
+          About the job:
+        </h2>
         <div
           className="prose prose-invert max-w-none mt-2"
           dangerouslySetInnerHTML={{
@@ -43,7 +45,7 @@ export default function JobDetailsPage({ job, id }) {
       <div className="w-full mt-10">
         <Link
           href={`/careers/${id}/apply`}
-          className="bg-[#F40E00] text-white px-5 lg:px-7 py-4 font-bold rounded-xl text-sm lg:text-[18px] 2xl:text-[25px] hover:bg-[#000] transition-all duration-300"
+          className="bg-[#F40E00] text-white px-5 lg:px-7 py-4 font-semibold rounded-xl text-sm lg:text-[18px] 2xl:text-[20px] hover:bg-[#000] transition-all duration-300"
         >
           Apply Now
         </Link>
