@@ -69,7 +69,7 @@ export default function JobsList({ initialJobs, initialHasMore }) {
 
       {!hasMore && jobs.length > 0 && (
         <p className="text-center text-gray-600 text-xs py-8 mt-20 tracking-wider uppercase">
-          All positions loaded
+          No more positions to display
         </p>
       )}
     </div>
