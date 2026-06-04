@@ -152,9 +152,7 @@ const SingleBlogPage = ({ blog, author, date, headings }) => {
   return (
     <div className="w-full">
       <div className="w-full blog-page">
-        <div className="w-full blogContent border border-black">
-          {modifiedContent}
-        </div>
+        <div className="w-full blogContent">{modifiedContent}</div>
       </div>
 
       {isPopupOpen && (
