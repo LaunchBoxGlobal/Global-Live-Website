@@ -212,13 +212,36 @@ const Navbar = () => {
         </li>
       </ul>
 
-      <div className="hidden lg:flex items-center justify-center gap-4">
-        <Link
-          href={isCareerPage ? "tel:+923001234567" : "/contact-us"}
-          className="red-bg px-6 h-[48px] 2xl:h-[60px] rounded-[17px] whitespace-nowrap text-white hover:bg-black hover:text-white transition-all duration-300 hidden lg:flex items-center justify-end gap-3 outline-none font-medium text-sm xl:text-[16px] 2xl:text-[20px]"
-        >
-          <span>{isCareerPage ? "+923001234567" : "Contact Sales"}</span>
-        </Link>
+      <div className="hidden lg:flex items-center">
+        {isCareerPage ? (
+          <Link
+            href="tel:+922134522244"
+            className="flex items-center gap-2 text-black hover:text-[#F40E00] transition-colors duration-300 font-medium text-sm xl:text-base 2xl:text-lg"
+          >
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.129a11.042 11.042 0 005.516 5.516l1.129-2.257a1 1 0 011.21-.502l4.493 1.498A1 1 0 0121 15.72V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+              />
+            </svg>
+
+            <span>+92 21 3452 2244</span>
+          </Link>
+        ) : (
+          <Link
+            href="/contact-us"
+            className="red-bg px-6 h-[48px] 2xl:h-[60px] rounded-[17px] whitespace-nowrap text-white hover:bg-black transition-all duration-300 flex items-center justify-center font-medium"
+          >
+            Contact Sales
+          </Link>
+        )}
       </div>
 
       <button

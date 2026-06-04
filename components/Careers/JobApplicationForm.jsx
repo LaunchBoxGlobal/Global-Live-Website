@@ -257,7 +257,7 @@ export default function JobApplicationForm({ job }) {
             label="Resume / CV"
             error={formik.touched.resume ? formik.errors.resume : ""}
             required
-            hint="PDF, DOC or DOCX — max 5 MB."
+            hint="PDF only — max 5 MB."
           >
             <div
               onClick={() => fileRef.current?.click()}
@@ -297,13 +297,37 @@ export default function JobApplicationForm({ job }) {
               ref={fileRef}
               name="resume"
               type="file"
-              accept=".pdf,.doc,.docx"
+              // accept=".pdf,.doc,.docx"
+              accept=".pdf,application/pdf"
               className="hidden"
+              // onChange={(e) => {
+              //   const file = e.target.files?.[0];
+              //   formik.setFieldValue("resume", file);
+              //   formik.setFieldTouched("resume", true);
+              //   setFileName(file?.name ?? "");
+              // }}
               onChange={(e) => {
                 const file = e.target.files?.[0];
+
+                if (!file) {
+                  formik.setFieldValue("resume", null);
+                  return;
+                }
+
+                const ext = file.name.toLowerCase().split(".").pop();
+
+                if (file.type !== "application/pdf" && ext !== "pdf") {
+                  formik.setFieldValue("resume", null);
+                  formik.setFieldError("resume", "Only PDF files are allowed");
+                  setFileName("");
+                  e.target.value = "";
+                  return;
+                }
+
                 formik.setFieldValue("resume", file);
                 formik.setFieldTouched("resume", true);
-                setFileName(file?.name ?? "");
+                formik.setFieldError("resume", undefined);
+                setFileName(file.name);
               }}
             />
           </Field>

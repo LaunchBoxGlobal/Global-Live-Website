@@ -118,14 +118,9 @@ export async function POST(request) {
                 type: "lead",
                 user_id: null,
                 source_id: 19,
-                // Lead title shown in CRM
                 name: `${body?.firstName + " - Website Form" || "Unknown"}`,
-                // Contact details
-                // contact_name: body?.firstName || "",
                 email_from: body?.email || "",
                 phone: body?.phoneNumber || "",
-
-                // Extra data
                 description,
               },
             ],
@@ -143,9 +138,49 @@ export async function POST(request) {
       );
     }
 
+    const leadId = leadData.result;
+
+    const leadUrl = `https://launch-box.odoo.com/odoo/action-659/${leadId}`;
+
+    const chatterResponse = await fetch(`${ODOO_URL}/jsonrpc`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        jsonrpc: "2.0",
+        method: "call",
+        params: {
+          service: "object",
+          method: "execute_kw",
+          args: [
+            "launch-box",
+            2,
+            ODOO_API_KEY,
+            "discuss.channel",
+            "message_post",
+            // [leadId],
+            [17],
+            {
+              body: `New lead from Website\n${body?.firstName}\nURL: ${leadUrl}`,
+              message_type: "comment",
+              subtype_xmlid: "mail.mt_comment",
+            },
+          ],
+        },
+        id: 601,
+      }),
+    });
+
+    const chatterData = await chatterResponse.json();
+
+    if (chatterData.error) {
+      console.error("Failed to post chatter message:", chatterData.error);
+    }
+
     return Response.json({
       success: true,
-      leadId: leadData.result,
+      leadId,
     });
   } catch (error) {
     console.error("Odoo Lead Error:", error);

@@ -18,7 +18,7 @@ const ApplicationPageHeader = ({ jobId }) => {
         <h1 className="text-3xl md:text-5xl font-bold text-[#f40e00] mt-5">
           Apply Now
         </h1>
-        <p className="text-gray-500 text-sm lg:text-lg leading-[1] mt-4 max-w-md">
+        <p className="text-gray-500 text-sm lg:text-lg leading-[1] mt-4">
           Complete the form below and we'll get back to you as soon as possible.
         </p>
       </div>

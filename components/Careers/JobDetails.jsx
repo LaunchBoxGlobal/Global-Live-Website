@@ -35,9 +35,9 @@ const JobDetails = ({ dept, location, job }) => {
   return (
     <aside className="lg:sticky lg:top-32 h-fit">
       <div className="space-y-5">
-        <InfoItem label="Job" value={job?.name} />
+        <InfoItem label="Role" value={job?.name} />
 
-        <InfoItem label="Location" value={location || "Karachi, Pakistan"} />
+        <InfoItem label="Location" value={"Karachi, Pakistan"} />
 
         <InfoItem label="Department" value={dept} />
 
@@ -45,7 +45,7 @@ const JobDetails = ({ dept, location, job }) => {
 
         <InfoItem label="Shift" value={job?.x_studio_shift} />
 
-        <InfoItem label="Work Type" value={job?.x_studio_role_type} />
+        <InfoItem label="Role Type" value={job?.x_studio_role_type} />
 
         <InfoItem label="Education" value={job?.expected_degree?.[1]} />
 
@@ -53,7 +53,7 @@ const JobDetails = ({ dept, location, job }) => {
 
         {(job?.salary_min || job?.salary_max) && (
           <InfoItem
-            label="Salary"
+            label="Salary Range"
             value={`PKR ${job.salary_min?.toLocaleString() || 0} - PKR ${
               job.salary_max?.toLocaleString() || 0
             }`}

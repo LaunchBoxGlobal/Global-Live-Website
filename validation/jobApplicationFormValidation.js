@@ -3,11 +3,7 @@ import { isValidPhoneNumber } from "libphonenumber-js";
 
 const MAX_FILE_SIZE = 5 * 1024 * 1024;
 
-const FILE_TYPES = [
-  "application/pdf",
-  "application/msword",
-  "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-];
+const FILE_TYPES = ["application/pdf"];
 
 export const validationSchema = Yup.object({
   partner_name: Yup.string()
@@ -40,15 +36,12 @@ export const validationSchema = Yup.object({
 
   resume: Yup.mixed()
     .required("Resume is required")
-    .test("fileType", "Only PDF, DOC or DOCX allowed", (file) => {
+    .test("fileType", "Only PDF files are allowed", (file) => {
       if (!file) return false;
 
       const ext = file.name.toLowerCase().slice(file.name.lastIndexOf("."));
 
-      return (
-        FILE_TYPES.includes(file.type) ||
-        [".pdf", ".doc", ".docx"].includes(ext)
-      );
+      return file.type === "application/pdf" || ext === ".pdf";
     })
     .test("fileSize", "File too large (max 5MB)", (file) => {
       if (!file) return false;
