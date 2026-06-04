@@ -72,7 +72,7 @@ export async function POST(request) {
     const body = await request.json();
 
     const ODOO_URL = process.env.ODOO_BASE_URL;
-    const ODOO_PASSWORD = process.env.ODOO_PASSWORD;
+    const ODOO_API_KEY = process.env.ODOO_API_KEY;
 
     const description = `
 Name: ${body?.firstName || ""}
@@ -107,13 +107,13 @@ ${body?.agreeToTermsConditions || ""}
           args: [
             "launch-box", // DB Name
             2, // User ID
-            ODOO_PASSWORD, // Password or API Key
+            ODOO_API_KEY, // Password or API Key
             "crm.lead",
             "create",
             [
               {
                 type: "lead",
-
+                source_id: 19,
                 // Lead title shown in CRM
                 name:
                   body?.emailSubject ||
