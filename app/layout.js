@@ -6,6 +6,7 @@ import GoogleAnalytics from "@/lib/GoogleAnalytics";
 import Script from "next/script";
 import WhatsappButton from "@/components/Common/WhatsappButton";
 import PopupForm from "@/components/Global/PopupForm";
+import Head from "next/head";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -21,7 +22,18 @@ export default function RootLayout({ children }) {
         <GoogleAnalytics />
         {children}
         {/* <Footer /> */}
+
         <Script
+          src="https://launch-box.odoo.com/im_livechat/loader/4"
+          strategy="afterInteractive"
+        />
+
+        <Script
+          src="https://launch-box.odoo.com/im_livechat/assets_embed.js"
+          strategy="afterInteractive"
+        />
+
+        {/* <Script
           id="tawkto"
           strategy="afterInteractive"
           src="https://embed.tawk.to/686b6c9988f6eb190d36058e/1ivhq0e5m"
@@ -29,7 +41,7 @@ export default function RootLayout({ children }) {
           charSet="UTF-8"
           crossOrigin="*"
           className="bottom-10"
-        />
+        /> */}
         {/* <WhatsappButton /> */}
         <PopupForm />
         <HomeFooter />

@@ -4,7 +4,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { TbMenu2 } from "react-icons/tb";
 import Sidebar from "./Sidebar";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { IoIosArrowDown } from "react-icons/io";
 import { motion } from "framer-motion";
 import NavbarDropdown from "./NavbarDropdown";
@@ -27,6 +27,13 @@ const Navbar = () => {
   const [augmentationDropdown, setAugmentationDropdown] = useState(false);
   const [industriesDropdown, setIndustriesDropdown] = useState(false);
   const [resourcesDropdown, setResourcesDropdown] = useState(false);
+
+  const pathname = usePathname();
+
+  const isCareerPage =
+    pathname === "/careers" ||
+    /^\/careers\/[^/]+$/.test(pathname) ||
+    /^\/careers\/[^/]+\/apply$/.test(pathname);
 
   const toggleIndustriesDropdown = () => {
     setIndustriesDropdown((prev) => !prev);
@@ -138,7 +145,7 @@ const Navbar = () => {
             Blogs{" "}
           </Link>
         </li>
-       
+
         <li
           className="z-50 h-full flex items-center"
           onMouseEnter={() => toggleIndustriesDropdown()}
@@ -196,21 +203,21 @@ const Navbar = () => {
         </li>
 
         <li>
-          <button
-            onClick={() => handleNavClick("faqs")}
-            className={`font-normal text-sm xl:text-[17px] 2xl:text-[22px]`}
+          <Link
+            href={`/careers`}
+            className={`font-normal text-sm xl:text-[17px] 2xl:text-[22px] flex items-center justify-start gap-1 group`}
           >
-            FAQs
-          </button>
+            Careers{" "}
+          </Link>
         </li>
       </ul>
 
       <div className="hidden lg:flex items-center justify-center gap-4">
         <Link
-          href={`/contact-us`}
+          href={isCareerPage ? "tel:+923001234567" : "/contact-us"}
           className="red-bg px-6 h-[48px] 2xl:h-[60px] rounded-[17px] whitespace-nowrap text-white hover:bg-black hover:text-white transition-all duration-300 hidden lg:flex items-center justify-end gap-3 outline-none font-medium text-sm xl:text-[16px] 2xl:text-[20px]"
         >
-          <span>Contact Sales</span>
+          <span>{isCareerPage ? "+923001234567" : "Contact Sales"}</span>
         </Link>
       </div>
 

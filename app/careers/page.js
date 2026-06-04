@@ -1,7 +1,5 @@
-// app/careers/page.jsx
-
-import { fetchJobs } from "@/lib/odoo";
-import JobsList from "@/components/Careers/JobList";
+import { fetchJobs, fetchDepartments } from "@/lib/odoo";
+import CareersClient from "@/components/Careers/CareersClient";
 
 export const metadata = {
   title: "Careers | LaunchBox Global",
@@ -13,12 +11,18 @@ const LIMIT = 10;
 export default async function CareersPage() {
   let initialJobs = [];
   let initialHasMore = false;
+  let departments = [];
   let error = null;
 
   try {
-    const jobs = await fetchJobs(0, LIMIT);
+    const [jobs, depts] = await Promise.all([
+      fetchJobs(0, LIMIT),
+      fetchDepartments(),
+    ]);
+
     initialJobs = jobs;
     initialHasMore = jobs.length === LIMIT;
+    departments = depts;
   } catch (err) {
     error = err instanceof Error ? err.message : "Failed to load jobs";
   }
@@ -47,19 +51,12 @@ export default async function CareersPage() {
           </div>
         )}
 
-        {!error && initialJobs.length === 0 && (
-          <div className="text-center py-24">
-            <p className="text-xl font-semibold text-white mb-2">
-              No open positions right now
-            </p>
-            <p className="text-gray-500 text-sm">
-              Check back soon — we're always growing.
-            </p>
-          </div>
-        )}
-
-        {!error && initialJobs.length > 0 && (
-          <JobsList initialJobs={initialJobs} initialHasMore={initialHasMore} />
+        {!error && (
+          <CareersClient
+            initialJobs={initialJobs}
+            initialHasMore={initialHasMore}
+            departments={departments}
+          />
         )}
       </div>
     </div>

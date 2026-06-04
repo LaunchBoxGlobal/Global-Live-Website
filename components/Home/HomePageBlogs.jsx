@@ -13,12 +13,12 @@ const HomePageBlogs = () => {
     try {
       const res = await fetch(
         `https://public-api.wordpress.com/wp/v2/sites/blogs0864.wordpress.com/posts`,
-        { cache: "no-store" } // or "force-cache" if you're okay with caching
+        { cache: "no-store" }, // or "force-cache" if you're okay with caching
       );
 
       if (res.ok) {
         let blogs = await res.json();
-        console.log("blogs >>>>", blogs?.slice(0, 5));
+        // console.log("blogs >>>>", blogs?.slice(0, 5));
         setBlogs(blogs?.slice(0, 5));
       }
     } catch (error) {

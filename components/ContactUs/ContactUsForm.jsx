@@ -7,6 +7,8 @@ import ButtonLoader from "../Global/ButtonLoader";
 import Link from "next/link";
 import TimezoneSelect from "react-timezone-select";
 import Select from "react-select";
+import PhoneNumberField from "../Common/PhoneNumberField";
+import { isValidPhoneNumber } from "libphonenumber-js";
 
 export const serviceLinks = [
   "Mobile App Development",
@@ -36,7 +38,7 @@ const ContactUsForm = () => {
       service: "",
       email: "",
       phoneNumber: "",
-      message: "",
+      description: "",
       timezone: "",
       emailSubject: "New Contact Form Website",
       agreeToTermsConditions: false,
@@ -50,26 +52,40 @@ const ContactUsForm = () => {
         .email("Invalid email address")
         .required("Email address is required"),
       phoneNumber: Yup.string()
-        .min(10, "Phone number must be 10-11 digits")
-        .max(11, "Phone number must be 11 digits")
-        .required("Phone number is required"),
-      message: Yup.string()
-        .min(100, "Message must be at least 100 characters")
-        .max(500, "Message cannot exceed 500 characters")
-        .required("Message is required"),
-      agreeToTermsConditions: Yup.boolean().notRequired(),
+        .required("Phone number is required")
+        .test("is-valid-phone", "Invalid phone number", (value) =>
+          value ? isValidPhoneNumber(value) : false,
+        ),
+      description: Yup.string().max(
+        500,
+        "Description cannot exceed 500 characters",
+      ),
+      agreeToTermsConditions: Yup.boolean().oneOf(
+        [true],
+        "You must accept the terms and conditions",
+      ),
     }),
     onSubmit: async (values, { resetForm }) => {
       setLoading(true);
       try {
-        const res = await axios.post(`/api/submit-form`, values, {
+        const payload = {
+          firstName: values.firstName,
+          email: values.email,
+          phoneNumber: values.phoneNumber,
+          description: `Service: ${values.service} / Time Zone: ${values.timezone} / Message: ${values.description}`,
+          agreeToTermsConditions: values.agreeToTermsConditions,
+        };
+
+        const res = await axios.post(`/api/submit-form`, payload, {
           headers: { "Content-Type": "application/json" },
         });
+
         if (res?.status === 200) {
           resetForm();
           alert("Form submitted successfully!");
         }
       } catch (error) {
+        console.log("FORM SUBMISSION ERROR >> ", error);
         alert("Something went wrong!");
       } finally {
         setLoading(false);
@@ -109,7 +125,7 @@ const ContactUsForm = () => {
               placeholder="Your full name"
               name="firstName"
               {...formik.getFieldProps("firstName")}
-              className="shadow-xs bg-gray-50 border border-gray-300 text-black text-sm rounded-lg focus:ring-[#F40E00] focus:border-[#F40E00] block w-full p-3.5 opacity-60 placeholder:text-gray-600"
+              className="shadow-xs bg-gray-50 border border-gray-300 text-black text-sm rounded-lg focus:outline-[#f40e00] focus:ring-[#F40E00] focus:border-[#F40E00] block w-full p-3.5 opacity-60 placeholder:text-gray-600"
             />
             {formik.touched.firstName && formik.errors.firstName && (
               <div className="text-red-500 text-sm">
@@ -210,34 +226,17 @@ const ContactUsForm = () => {
               name="email"
               placeholder="Your email"
               {...formik.getFieldProps("email")}
-              className="shadow-xs bg-gray-50 border border-gray-300 text-black text-sm rounded-lg focus:ring-[#F40E00] focus:border-[#F40E00] block w-full p-3.5 opacity-60"
+              className="shadow-xs bg-gray-50 border border-gray-300 text-black text-sm rounded-lg focus:outline-[#f40e00] focus:ring-[#F40E00] focus:border-[#F40E00] block w-full p-3.5 opacity-60"
             />
             {formik.touched.email && formik.errors.email && (
               <div className="text-red-500 text-sm">{formik.errors.email}</div>
             )}
           </div>
 
-          <div className="flex flex-col items-start gap-1">
-            <label
-              htmlFor="phoneNumber"
-              className="block text-sm lg:text-lg font-medium text-gray-900"
-            >
-              Where can we reach you directly?
-            </label>
-            <input
-              type="number"
-              id="phoneNumber"
-              name="phoneNumber"
-              placeholder="Your phone number"
-              {...formik.getFieldProps("phoneNumber")}
-              className="shadow-xs bg-gray-50 border border-gray-300 text-black text-sm rounded-lg focus:ring-[#F40E00] focus:border-[#F40E00] block w-full p-3.5 opacity-60"
-            />
-            {formik.touched.phoneNumber && formik.errors.phoneNumber && (
-              <div className="text-red-500 text-sm">
-                {formik.errors.phoneNumber}
-              </div>
-            )}
-          </div>
+          <PhoneNumberField
+            formik={formik}
+            label={"Where can we reach you directly?"}
+          />
         </div>
 
         <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -266,12 +265,16 @@ const ContactUsForm = () => {
                     ...provided,
                     width: "100%",
                     backgroundColor: "#f9fafb",
-                    borderColor: state.isFocused ? "#3C3C3C" : "#d1d5db",
-                    boxShadow: state.isFocused ? "0 0 0 1px #3C3C3C" : "none",
+                    borderColor: state.isFocused ? "#F40E00" : "#d1d5db",
+                    boxShadow: state.isFocused ? "0 0 0 1px #F40E00" : "none",
                     borderRadius: "0.5rem",
                     padding: "0.25rem 0.5rem",
-                    fontSize: "0.875rem", // text-sm
-                    color: "#111827", // text-gray-900
+                    fontSize: "0.875rem",
+                    color: "#111827",
+                    opacity: 1,
+                    "&:hover": {
+                      borderColor: "#F40E00",
+                    },
                   }),
                   menu: (provided) => ({
                     ...provided,
@@ -304,55 +307,67 @@ const ContactUsForm = () => {
 
           <div className="w-full flex flex-col items-start gap-1">
             <label
-              htmlFor="message"
+              htmlFor="description"
               className="block text-sm lg:text-lg font-medium text-gray-900"
             >
-              Tell us about your idea in one line.
+              Tell us about your idea in one line.{" "}
+              <span className="text-xs text-gray-400">{`(Optional)`}</span>
             </label>
             <input
               type="text"
-              id="message"
-              name="message"
+              id="description"
+              name="description"
               placeholder="ex: A subscription app for healthy meal plans"
-              {...formik.getFieldProps("message")}
-              className="shadow-xs bg-gray-50 border border-gray-300 text-black text-sm rounded-lg focus:ring-[#F40E00] focus:border-[#F40E00] block w-full p-3.5 opacity-60 placeholder:text-gray-600"
+              {...formik.getFieldProps("description")}
+              className="shadow-xs bg-gray-50 border border-gray-300 text-black text-sm rounded-lg focus:outline-[#f40e00] focus:ring-[#F40E00] focus:border-[#F40E00] block w-full p-3.5 opacity-60 placeholder:text-gray-600"
             />
-            {formik.touched.message && formik.errors.message && (
+            {formik.touched.description && formik.errors.description && (
               <div className="text-red-500 text-sm">
-                {formik.errors.message}
+                {formik.errors.description}
               </div>
             )}
           </div>
         </div>
 
-        <div className="flex items-start gap-2">
-          <input
-            type="checkbox"
-            name="agreeToTermsConditions"
-            id="agreeToTermsConditions"
-            {...formik.getFieldProps("agreeToTermsConditions")}
-          />
-          <label
-            htmlFor="agreeToTermsConditions"
-            className="leading-[1.3] text-sm relative -top-0.5"
-          >
-            By checking this box, I agree to receive marketing and support SMS from LaunchBox Global
-            at the phone number provided. Consent is not a condition of purchase. Msg & data rates may apply. Msg
-            frequency varies. For help, reply HELP or email us at
-            hello@launchboxglobal.com. You can opt out at any time by replying
-            STOP. View our{" "}
-            <Link href={`/privacy-policy`} className="underline mx-1">
-              Privacy & Policy
-            </Link>{" "}
-            &{" "}
-            <Link href={`/terms-and-conditions`} className="underline mx-1">
-              Terms and Conditions.
-            </Link>{" "}
-            {formik.touched.agreeToTermsConditions &&
-              formik.errors.agreeToTermsConditions && (
-                <span className="text-red-500 text-2xl absolute">*</span>
-              )}
-          </label>
+        <div className="w-full">
+          <div className="flex items-start gap-2">
+            <input
+              // type="checkbox"
+              // name="agreeToTermsConditions"
+              // id="agreeToTermsConditions"
+              // {...formik.getFieldProps("agreeToTermsConditions")}
+              type="checkbox"
+              name="agreeToTermsConditions"
+              id="agreeToTermsConditions"
+              checked={formik.values.agreeToTermsConditions}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+            <label
+              htmlFor="agreeToTermsConditions"
+              className="leading-[1.3] text-sm relative -top-0.5"
+            >
+              By checking this box, I agree to receive marketing and support SMS
+              from LaunchBox Global at the phone number provided. Consent is not
+              a condition of purchase. Msg & data rates may apply. Msg frequency
+              varies. For help, reply HELP or email us at
+              hello@launchboxglobal.com. You can opt out at any time by replying
+              STOP. View our{" "}
+              <Link href={`/privacy-policy`} className="underline mx-1">
+                Privacy & Policy
+              </Link>{" "}
+              &{" "}
+              <Link href={`/terms-and-conditions`} className="underline mx-1">
+                Terms and Conditions.
+              </Link>{" "}
+            </label>
+          </div>
+          {formik.touched.agreeToTermsConditions &&
+            formik.errors.agreeToTermsConditions && (
+              <span className="text-red-500 text-sm pl-5">
+                {formik.errors.agreeToTermsConditions}
+              </span>
+            )}
         </div>
 
         <div className="w-full flex flex-col justify-center items-center mt-3 gap-5">

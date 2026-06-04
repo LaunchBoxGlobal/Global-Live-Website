@@ -43,11 +43,11 @@ const BlogClient = ({
   const [isOpen, setIsOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const matchedCategories = blog?.categories?.map((catId) =>
-    categories?.find((category) => category?.id === catId)
+    categories?.find((category) => category?.id === catId),
   );
-   useEffect(() => {
-      formik.setFieldValue("pageUrl", window.location.href);
-    }, []);
+  useEffect(() => {
+    formik.setFieldValue("pageUrl", window.location.href);
+  }, []);
 
   const formik = useFormik({
     initialValues: {
@@ -70,7 +70,6 @@ const BlogClient = ({
         });
 
         if (res?.status === 200) {
-
           resetForm();
           alert("Form submitted successfully!");
         }
@@ -86,20 +85,19 @@ const BlogClient = ({
     formik.setFieldValue("pageUrl", window.location.href);
   }, []);
 
-useEffect(() => {
-  const hasSeenPopup = sessionStorage.getItem("hasSeenNewsletterPopup");
+  useEffect(() => {
+    const hasSeenPopup = sessionStorage.getItem("hasSeenNewsletterPopup");
 
-  if (!hasSeenPopup) {
-    const timer = setTimeout(() => {
-      setIsOpen(true);
-      console.log("calling newsletter popup after 3s");
-      sessionStorage.setItem("hasSeenNewsletterPopup", "true");
-    }, 3000);
+    if (!hasSeenPopup) {
+      const timer = setTimeout(() => {
+        setIsOpen(true);
+        console.log("calling newsletter popup after 3s");
+        sessionStorage.setItem("hasSeenNewsletterPopup", "true");
+      }, 3000);
 
-    return () => clearTimeout(timer);
-  }
-}, []);
-
+      return () => clearTimeout(timer);
+    }
+  }, []);
 
   return (
     <main className="w-full bg-white  py-36 2xl:pt-52 padding-x">
@@ -110,7 +108,10 @@ useEffect(() => {
             className="bg-white border md:block hidden border-gray-200 shadow-2xl rounded-t-xl w-[300px]  relative"
           >
             {/* Header */}
-            <div onClick={() => setIsOpen(false)}  className="flex cursor-pointer justify-between text-white p-3 rounded-t-lg  bg-[#f40e00] items-center mb-3">
+            <div
+              onClick={() => setIsOpen(false)}
+              className="flex cursor-pointer justify-between text-white p-3 rounded-t-lg  bg-[#f40e00] items-center mb-3"
+            >
               <h3 className="text-sm font-bold  text-white ">
                 SUBSCRIBE TO OUR NEWSLETTER
               </h3>
@@ -132,7 +133,7 @@ useEffect(() => {
                 onBlur={formik.handleBlur}
                 value={formik.values.email}
               />
-                 {formik.touched.email && formik.errors.email && (
+              {formik.touched.email && formik.errors.email && (
                 <span className="text-xs text-red-600">
                   {formik.errors.email}
                 </span>
@@ -175,7 +176,7 @@ useEffect(() => {
                 `flex flex-col items-center justify-center bg-white border border-red-400 
             shadow-[0_0_10px_rgba(255,0,0,0.3)] text-[#F40E00] rounded-full h-16 w-16 
             hover:shadow-[0_0_15px_rgba(255,0,0,0.5)] transition-all`,
-                showShare == true ? "bg-[#F40E00] text-white" : ""
+                showShare == true ? "bg-[#F40E00] text-white" : "",
               )}
             >
               <FaShareAlt className="text-lg" size={18} />
@@ -194,7 +195,7 @@ useEffect(() => {
                 >
                   <a
                     href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-                      typeof window !== "undefined" ? window.location.href : ""
+                      typeof window !== "undefined" ? window.location.href : "",
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -204,7 +205,7 @@ useEffect(() => {
                   </a>
                   <a
                     href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(
-                      typeof window !== "undefined" ? window.location.href : ""
+                      typeof window !== "undefined" ? window.location.href : "",
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -214,7 +215,7 @@ useEffect(() => {
                   </a>
                   <a
                     href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(
-                      typeof window !== "undefined" ? window.location.href : ""
+                      typeof window !== "undefined" ? window.location.href : "",
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -224,7 +225,7 @@ useEffect(() => {
                   </a>
                   <a
                     href={`https://wa.me/?text=${encodeURIComponent(
-                      typeof window !== "undefined" ? window.location.href : ""
+                      typeof window !== "undefined" ? window.location.href : "",
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -279,6 +280,7 @@ useEffect(() => {
               author={author}
               date={blogDate}
             />
+            {/* SUBSCRIBE TO OUR NEWSLETTER COMPONENT */}
             <form
               onSubmit={formik.handleSubmit}
               className="bg-white border my-4 mx-auto md:hidden block border-gray-200 shadow-2xl rounded-xl w-[300px] p-5 relative"

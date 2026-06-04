@@ -55,7 +55,7 @@ export default async function JobPage({ params }) {
 
   return (
     <div className="w-full relative pt-36 2xl:pt-52 padding-x">
-      <h1 className="text-4xl font-bold">{job.name}</h1>
+      {/* <h1 className="text-4xl font-bold">{job.name}</h1> */}
 
       <JobDetailsPage job={job} id={params.id} />
     </div>

@@ -1,25 +1,108 @@
-import React from "react";
+import React, { useMemo } from "react";
 
 const JobDetails = ({ dept, location, job }) => {
-  return (
-    <aside className="space-y-6">
-      <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-        <p className="text-xs uppercase tracking-widest text-gray-500 mb-4">
-          You're applying for
-        </p>
-        <h3 className="text-lg font-semibold text-black mb-4 leading-snug">
-          {job.name}
-        </h3>
+  const parsedJobDetails = useMemo(() => {
+    if (!job?.job_details || typeof window === "undefined") {
+      return {
+        timeToAnswer: null,
+        processSteps: [],
+        offerTime: null,
+      };
+    }
 
-        <div className="space-y-3 text-sm">
-          {dept && <p className="text-[0000]">{dept}</p>}
-          {location && <p className="text-gray-600">{location}</p>}
-          {job.no_of_recruitment > 0 && (
-            <p className="text-black">{job.no_of_recruitment} openings</p>
-          )}
-        </div>
+    try {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(job.job_details, "text/html");
+
+      const values = Array.from(doc.querySelectorAll("h6")).map((el) =>
+        el.textContent?.trim(),
+      );
+
+      return {
+        timeToAnswer: values[0] || null,
+        processSteps: values.slice(1, -1),
+        offerTime: values[values.length - 1] || null,
+      };
+    } catch {
+      return {
+        timeToAnswer: null,
+        processSteps: [],
+        offerTime: null,
+      };
+    }
+  }, [job?.job_details]);
+
+  return (
+    <aside className="lg:sticky lg:top-32 h-fit">
+      <div className="space-y-5">
+        <InfoItem label="Job" value={job?.name} />
+
+        <InfoItem label="Location" value={location || "Karachi, Pakistan"} />
+
+        <InfoItem label="Department" value={dept} />
+
+        <InfoItem label="Experience" value={job?.x_studio_experience_level} />
+
+        <InfoItem label="Shift" value={job?.x_studio_shift} />
+
+        <InfoItem label="Work Type" value={job?.x_studio_role_type} />
+
+        <InfoItem label="Education" value={job?.expected_degree?.[1]} />
+
+        <InfoItem label="Open Positions" value={job?.no_of_recruitment} />
+
+        {(job?.salary_min || job?.salary_max) && (
+          <InfoItem
+            label="Salary"
+            value={`PKR ${job.salary_min?.toLocaleString() || 0} - PKR ${
+              job.salary_max?.toLocaleString() || 0
+            }`}
+          />
+        )}
+
+        <hr className="border-gray-200 my-4" />
+
+        {parsedJobDetails.timeToAnswer && (
+          <InfoItem
+            label="Time to Answer"
+            value={parsedJobDetails.timeToAnswer}
+          />
+        )}
+
+        {parsedJobDetails.processSteps.length > 0 && (
+          <div>
+            <p className="text-sm text-gray-500 mb-2">Process</p>
+
+            <div className="space-y-1">
+              {parsedJobDetails.processSteps.map((step, index) => (
+                <p key={index} className="font-semibold text-black">
+                  {step}
+                </p>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {parsedJobDetails.offerTime && (
+          <InfoItem
+            label="Days to get an Offer"
+            value={parsedJobDetails.offerTime}
+          />
+        )}
       </div>
     </aside>
+  );
+};
+
+const InfoItem = ({ label, value }) => {
+  if (!value) return null;
+
+  return (
+    <div>
+      <p className="text-sm text-gray-500 mb-1">{label}</p>
+
+      <p className="font-semibold text-black">{value}</p>
+    </div>
   );
 };
 

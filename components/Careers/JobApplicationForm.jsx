@@ -11,6 +11,9 @@ import formatCNIC from "@/lib/formatCNIC";
 import Error from "./Error";
 import FormHeader from "./FormHeader";
 import ApplicationPageHeader from "./ApplicationPageHeader";
+import PhoneNumberField from "../Common/PhoneNumberField";
+import { PhoneInput, parseCountry } from "react-international-phone";
+import "react-international-phone/style.css";
 
 export default function JobApplicationForm({ job }) {
   const [serverError, setServerError] = useState("");
@@ -84,21 +87,27 @@ export default function JobApplicationForm({ job }) {
 
           {serverError && <Error serverError={serverError} />}
 
-          <Field label="Full Name" required error={formik.errors.partner_name}>
+          <Field
+            label="Full Name"
+            required
+            error={
+              formik.touched.partner_name ? formik.errors.partner_name : ""
+            }
+          >
             <input
               name="partner_name"
               type="text"
               placeholder="Muhammad Ali"
               onChange={formik.handleChange}
               value={formik.values.partner_name}
-              className={`${inputClass(!!formik.errors.partner_name)} text-black`}
+              className={`${inputClass(!!formik.errors.partner_name)} text-black focus:outline-[#f40e00]`}
             />
           </Field>
 
           <Field
             label="Email Address"
             required
-            error={formik.errors.email_from}
+            error={formik.touched.email_from ? formik.errors.email_from : ""}
           >
             <input
               name="email_from"
@@ -106,29 +115,111 @@ export default function JobApplicationForm({ job }) {
               placeholder="ali@example.com"
               onChange={formik.handleChange}
               value={formik.values.email_from}
-              className={inputClass(!!formik.errors.email_from)}
+              className={`${inputClass(!!formik.errors.email_from)} focus:outline-[#f40e00]`}
             />
           </Field>
 
           <Field
             label="Phone Number"
             required
-            error={formik.errors.partner_phone}
+            error={
+              formik.touched.partner_phone ? formik.errors.partner_phone : ""
+            }
           >
-            <input
-              name="partner_phone"
-              type="tel"
-              placeholder="+92 300 0000000"
-              onChange={(e) => {
-                const digits = e.target.value.replace(/\D/g, "").slice(0, 11);
-                formik.setFieldValue("partner_phone", digits);
-              }}
+            <PhoneInput
+              defaultCountry="pk"
               value={formik.values.partner_phone}
-              className={inputClass(!!formik.errors.partner_phone)}
+              onChange={(phone) => formik.setFieldValue("partner_phone", phone)}
+              onBlur={() => formik.setFieldTouched("partner_phone", true)}
+              placeholder="Your phone number"
+              inputProps={{ id: "partner_phone", name: "partner_phone" }}
+              countrySelectorStyleProps={{
+                buttonStyle: {
+                  backgroundColor: "rgb(249 250 251)",
+                  border: "1px solid rgb(209 213 219)",
+                  borderRight: "none",
+                  borderRadius: "0.5rem 0 0 0.5rem",
+                  padding: "0 10px",
+                  height: "100%",
+                },
+                dropdownStyleProps: {
+                  style: {
+                    zIndex: 9999,
+                  },
+                  // ✅ Fix #2: Show flag + country name in dropdown
+                  renderItem: ({ country }) => {
+                    const { name, iso2, dialCode } = parseCountry(country);
+                    return (
+                      <div
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "8px",
+                          padding: "6px 12px",
+                        }}
+                      >
+                        <img
+                          src={`https://flagcdn.com/24x18/${iso2}.png`}
+                          alt={name}
+                          style={{
+                            width: 24,
+                            height: 18,
+                            objectFit: "cover",
+                            borderRadius: 2,
+                          }}
+                        />
+                        <span style={{ fontSize: "0.875rem", color: "#111" }}>
+                          {name}
+                        </span>
+                        <span
+                          style={{
+                            fontSize: "0.75rem",
+                            color: "#6b7280",
+                            marginLeft: "auto",
+                          }}
+                        >
+                          +{dialCode}
+                        </span>
+                      </div>
+                    );
+                  },
+                },
+              }}
+              inputStyle={{
+                width: "100%",
+                height: "50px",
+                backgroundColor: "rgb(249 250 251)",
+                border: "1px solid rgb(209 213 219)",
+                borderLeft: "none",
+                borderRadius: "0 0.5rem 0.5rem 0",
+                color: "black",
+                fontSize: "0.875rem",
+                padding: "0.975rem",
+                outline: "none",
+                boxShadow: "none",
+                opacity: 1,
+              }}
+              style={{
+                width: "100%",
+                opacity: 1,
+              }}
+              // ✅ Fix #1: Enforce max digits per country
+              disableDialCodeAndPrefix={false}
+              showDisabledDialCodeAndPrefix={true}
             />
+
+            {/* {formik.touched.partner_phone && formik.errors.partner_phone && (
+              <div className="text-red-500 text-sm">
+                {formik.errors.partner_phone}
+              </div>
+            )} */}
           </Field>
 
-          <Field label="CNIC" required error={formik.errors.cnic}>
+          <Field
+            label="CNIC"
+            required
+            error={formik.touched.cnic ? formik.errors.cnic : ""}
+          >
             <input
               name="cnic"
               type="text"
@@ -138,7 +229,7 @@ export default function JobApplicationForm({ job }) {
                 const formatted = formatCNIC(e.target.value);
                 formik.setFieldValue("cnic", formatted);
               }}
-              className={inputClass(!!formik.errors.cnic)}
+              className={`${inputClass(!!formik.errors.cnic)} focus:outline-[#f40e00]`}
             />
           </Field>
 
@@ -146,7 +237,11 @@ export default function JobApplicationForm({ job }) {
             label="LinkedIn Profile URL"
             hint=""
             required
-            error={formik.errors.linkedin_profile}
+            error={
+              formik.touched.linkedin_profile
+                ? formik.errors.linkedin_profile
+                : ""
+            }
           >
             <input
               name="linkedin_profile"
@@ -154,19 +249,19 @@ export default function JobApplicationForm({ job }) {
               placeholder="https://linkedin.com/in/yourprofile"
               onChange={formik.handleChange}
               value={formik.values.linkedin_profile}
-              className={inputClass(!!formik.errors.linkedin_profile)}
+              className={`${inputClass(!!formik.errors.linkedin_profile)} focus:outline-[#f40e00]`}
             />
           </Field>
 
           <Field
             label="Resume / CV"
-            error={formik.errors.resume}
+            error={formik.touched.resume ? formik.errors.resume : ""}
             required
             hint="PDF, DOC or DOCX — max 5 MB."
           >
             <div
               onClick={() => fileRef.current?.click()}
-              className="w-full flex items-center justify-between rounded-lg border border-white/10 bg-gray-50 px-4 py-3 text-sm cursor-pointer hover:border-[#F40E00]/60 focus-within:border-[#F40E00] transition-colors duration-200"
+              className="w-full flex items-center justify-between rounded-lg border border-white/10 bg-gray-50 px-4 py-3 text-sm cursor-pointer focus-within:border-[#F40E00] transition-colors duration-200"
             >
               {/* Left: File name or placeholder */}
               <div className="flex items-center gap-2 overflow-hidden">
@@ -207,6 +302,7 @@ export default function JobApplicationForm({ job }) {
               onChange={(e) => {
                 const file = e.target.files?.[0];
                 formik.setFieldValue("resume", file);
+                formik.setFieldTouched("resume", true);
                 setFileName(file?.name ?? "");
               }}
             />
@@ -219,7 +315,9 @@ export default function JobApplicationForm({ job }) {
               placeholder="Tell us a bit about yourself and why you're a great fit..."
               onChange={formik.handleChange}
               value={formik.values.applicant_notes}
-              className={inputClass(false) + " resize-none"}
+              className={
+                inputClass(false) + " resize-none focus:outline-[#f40e00]"
+              }
             />
           </Field>
 

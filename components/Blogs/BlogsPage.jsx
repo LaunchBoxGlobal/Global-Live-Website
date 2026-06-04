@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 
 import BlogCard from "./BlogCard";
@@ -6,18 +6,13 @@ import BlogsContactForm from "../Common/BlogsContactForm";
 
 const BlogsPage = ({ blogs, categories }) => {
   const [activeCategory, setActiveCategory] = useState("all");
-console.log(blogs.length)
   const filteredBlogs =
     activeCategory === "all"
       ? blogs
-      : blogs?.filter((blog) =>
-          blog.categories?.includes(activeCategory)
-        );
+      : blogs?.filter((blog) => blog.categories?.includes(activeCategory));
 
-        
   return (
     <section className="w-full relative pt-36 2xl:pt-52 padding-x">
-
       <div className="w-full relative pt-10 flex flex-col items-center justify-start gap-5 lg:gap-3 bg-white">
         <h1 className="font-bold text-[8.5vw] md:text-[5.5vw] text-center tracking-normal leading-[1] w-full">
           Our Exclusive <span className="red-text">Blogs</span>
@@ -46,15 +41,13 @@ console.log(blogs.length)
                 : "border-gray-300 hover:bg-gray-100"
             }`}
           >
-            <span dangerouslySetInnerHTML={{__html:cat.name}}></span>
+            <span dangerouslySetInnerHTML={{ __html: cat.name }}></span>
           </button>
         ))}
       </div>
       <div className="w-full my-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-10">
         {filteredBlogs?.length ? (
-          filteredBlogs.map((blog, i) => (
-            <BlogCard key={i} content={blog} />
-          ))
+          filteredBlogs.map((blog, i) => <BlogCard key={i} content={blog} />)
         ) : (
           <div className="col-span-full text-center text-gray-500">
             No blogs found for this category.

@@ -31,7 +31,7 @@ const SingleBlogPage = ({ blog, author, date, headings }) => {
     const minutes = Math.ceil(totalSeconds / 60);
     const seconds = totalSeconds % 60;
     const formattedTime = `${String(minutes).padStart(2, "0")}:${String(
-      seconds
+      seconds,
     ).padStart(2, "0")}`;
     setNumericReadTime(formattedTime);
   }
@@ -76,7 +76,7 @@ const SingleBlogPage = ({ blog, author, date, headings }) => {
               <button
                 onClick={async (e) => {
                   e.preventDefault();
-                  if(email == "") return alert("please enter your email")
+                  if (email == "") return alert("please enter your email");
                   try {
                     const res = await axios.post(
                       `/api/submit-form`,
@@ -88,7 +88,7 @@ const SingleBlogPage = ({ blog, author, date, headings }) => {
                         headers: {
                           "Content-Type": "application/json",
                         },
-                      }
+                      },
                     );
 
                     if (res?.status === 200) {
@@ -152,7 +152,9 @@ const SingleBlogPage = ({ blog, author, date, headings }) => {
   return (
     <div className="w-full">
       <div className="w-full blog-page">
-        <div className="w-full blogContent">{modifiedContent}</div>
+        <div className="w-full blogContent border border-black">
+          {modifiedContent}
+        </div>
       </div>
 
       {isPopupOpen && (
