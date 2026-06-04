@@ -8,7 +8,11 @@ import Link from "next/link";
 import TimezoneSelect from "react-timezone-select";
 import Select from "react-select";
 import PhoneNumberField from "../Common/PhoneNumberField";
-import { isValidPhoneNumber } from "libphonenumber-js";
+import {
+  isValidPhoneNumber,
+  parsePhoneNumberFromString,
+} from "libphonenumber-js";
+import { usePathname } from "next/navigation";
 
 export const serviceLinks = [
   "Mobile App Development",
@@ -31,6 +35,7 @@ export const serviceLinks = [
 const ContactUsForm = () => {
   const [loading, setLoading] = useState(false);
   const [selectedTimezone, setSelectedTimezone] = useState({});
+  const pathname = usePathname();
 
   const formik = useFormik({
     initialValues: {
@@ -68,13 +73,26 @@ const ContactUsForm = () => {
     onSubmit: async (values, { resetForm }) => {
       setLoading(true);
       try {
+        const phoneNumber = parsePhoneNumberFromString(values.phoneNumber);
+
+        const formattedPhoneNumber = phoneNumber
+          ? phoneNumber.formatInternational()
+          : values.phoneNumber;
         const payload = {
           firstName: values.firstName,
+          service: values.service,
           email: values.email,
-          phoneNumber: values.phoneNumber,
+          phoneNumber: formattedPhoneNumber,
           description: `Service: ${values.service} / Time Zone: ${values.timezone} / Message: ${values.description}`,
+          timezone: values.timezone,
+          emailSubject: values.emailSubject,
           agreeToTermsConditions: values.agreeToTermsConditions,
+          pageUrl: pathname,
         };
+
+        // console.log(payload);
+
+        // return;
 
         const res = await axios.post(`/api/submit-form`, payload, {
           headers: { "Content-Type": "application/json" },

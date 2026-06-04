@@ -75,22 +75,25 @@ export async function POST(request) {
     const ODOO_API_KEY = process.env.ODOO_API_KEY;
 
     const description = `
-Name: ${body?.firstName || ""}
-Email: ${body?.email || ""}
-Phone Number: ${body?.phoneNumber || ""}
-Service: ${body?.service || ""}
+<h3>New Website Lead</h3>
 
-Message:
-${body?.message || ""}
+<p><strong>Name:</strong> ${body?.firstName || ""}</p>
+<p><strong>Email:</strong> ${body?.email || ""}</p>
+<p><strong>Phone:</strong> ${body?.phoneNumber || ""}</p>
+<p><strong>Service:</strong> ${body?.service || ""}</p>
 
-Description:
-${body?.description || ""}
+<h4>Message</h4>
+<p>${body?.message || ""}</p>
 
-Submitted From:
-${body?.pageUrl || ""}
+<h4>Description</h4>
+<p>${body?.description || ""}</p>
 
-Agreed To Terms:
-${body?.agreeToTermsConditions || ""}
+<h4>Source</h4>
+<p>${body?.pageUrl || ""}</p>
+
+<p><strong>Agreed To Terms:</strong> ${
+      body?.agreeToTermsConditions ? "Yes" : "No"
+    }</p>
 `;
 
     const leadResponse = await fetch(`${ODOO_URL}/jsonrpc`, {
@@ -107,20 +110,18 @@ ${body?.agreeToTermsConditions || ""}
           args: [
             "launch-box", // DB Name
             2, // User ID
-            ODOO_API_KEY, // Password or API Key
+            ODOO_API_KEY,
             "crm.lead",
             "create",
             [
               {
                 type: "lead",
+                user_id: null,
                 source_id: 19,
                 // Lead title shown in CRM
-                name:
-                  body?.emailSubject ||
-                  `Website Lead - ${body?.firstName || "Unknown"}`,
-
+                name: `${body?.firstName + " - Website Form" || "Unknown"}`,
                 // Contact details
-                contact_name: body?.firstName || "",
+                // contact_name: body?.firstName || "",
                 email_from: body?.email || "",
                 phone: body?.phoneNumber || "",
 
