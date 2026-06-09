@@ -46,6 +46,10 @@ body {
   @apply bg-[#F40E00] text-white px-5 lg:px-10 py-4 lg:py-6 2xl:py-8 font-bold rounded-xl flex items-center justify-center gap-2 text-sm lg:text-[22px] 2xl:text-[25px] hover:bg-[#000] transition-all duration-300;
 }
 
+.white-btn {
+  @apply bg-white custom-shadow text-black hover:bg-[#F40E00] hover:text-white transition-all duration-300 rounded-[14px] w-auto px-5 lg:px-0 lg:w-[205px] h-[64px] flex items-center justify-center gap-2 text-sm md:text-lg font-semibold;
+}
+
 .black-btn {
   @apply bg-[#000] text-white px-5 lg:px-10 py-6 2xl:py-8 font-bold rounded-xl flex items-center justify-center gap-2 text-sm lg:text-[22px] 2xl:text-[25px] hover:bg-[#e0443c] transition-all duration-300;
 }
