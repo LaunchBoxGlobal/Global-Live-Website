@@ -164,13 +164,6 @@ export default function WorkflowAuditForm({
     }
   };
 
-  // const handleFormSubmit = (values) => {
-  //   setSubmissionData(values);
-  //   setIsSubmitted(true);
-  //   // Simulating API persistence of the submitted workflow audit detailed parameters
-  //   console.log("Successfully recorded audit booking details:", values);
-  // };
-
   const handleFormSubmit = async (values, { setSubmitting }) => {
     try {
       setIsLoading(true);
