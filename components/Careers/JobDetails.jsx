@@ -1,4 +1,5 @@
 import React, { useMemo } from "react";
+import GlassdoorCard from "./GlassdoorCard";
 
 const JobDetails = ({ dept, location, job }) => {
   const parsedJobDetails = useMemo(() => {
@@ -34,61 +35,65 @@ const JobDetails = ({ dept, location, job }) => {
 
   return (
     <aside className="lg:sticky lg:top-32 h-fit">
-      <div className="space-y-5">
-        <InfoItem label="Role" value={job?.name} />
+      <div className="flex flex-col items-start">
+        <GlassdoorCard />
 
-        <InfoItem label="Location" value={"Karachi, Pakistan"} />
+        <div className="w-full space-y-5">
+          <InfoItem label="Role" value={job?.name} />
 
-        <InfoItem label="Department" value={dept} />
+          <InfoItem label="Location" value={"Karachi, Pakistan"} />
 
-        <InfoItem label="Experience" value={job?.x_studio_experience_level} />
+          <InfoItem label="Department" value={dept} />
 
-        <InfoItem label="Shift" value={job?.x_studio_shift} />
+          <InfoItem label="Experience" value={job?.x_studio_experience_level} />
 
-        <InfoItem label="Role Type" value={job?.x_studio_role_type} />
+          <InfoItem label="Shift" value={job?.x_studio_shift} />
 
-        <InfoItem label="Education" value={job?.expected_degree?.[1]} />
+          <InfoItem label="Role Type" value={job?.x_studio_role_type} />
 
-        <InfoItem label="Open Positions" value={job?.no_of_recruitment} />
+          <InfoItem label="Education" value={job?.expected_degree?.[1]} />
 
-        {(job?.salary_min || job?.salary_max) && (
-          <InfoItem
-            label="Salary Range"
-            value={`PKR ${job.salary_min?.toLocaleString() || 0} - PKR ${
-              job.salary_max?.toLocaleString() || 0
-            }`}
-          />
-        )}
+          <InfoItem label="Open Positions" value={job?.no_of_recruitment} />
 
-        <hr className="border-gray-200 my-4" />
+          {(job?.salary_min || job?.salary_max) && (
+            <InfoItem
+              label="Salary Range"
+              value={`PKR ${job.salary_min?.toLocaleString() || 0} - PKR ${
+                job.salary_max?.toLocaleString() || 0
+              }`}
+            />
+          )}
 
-        {parsedJobDetails.timeToAnswer && (
-          <InfoItem
-            label="Time to Answer"
-            value={parsedJobDetails.timeToAnswer}
-          />
-        )}
+          <hr className="border-gray-200 my-4" />
 
-        {parsedJobDetails.processSteps.length > 0 && (
-          <div>
-            <p className="text-sm text-gray-500 mb-2">Process</p>
+          {parsedJobDetails.timeToAnswer && (
+            <InfoItem
+              label="Time to Answer"
+              value={parsedJobDetails.timeToAnswer}
+            />
+          )}
 
-            <div className="space-y-1">
-              {parsedJobDetails.processSteps.map((step, index) => (
-                <p key={index} className="font-semibold text-black">
-                  {step}
-                </p>
-              ))}
+          {parsedJobDetails.processSteps.length > 0 && (
+            <div>
+              <p className="text-sm text-gray-500 mb-2">Process</p>
+
+              <div className="space-y-1">
+                {parsedJobDetails.processSteps.map((step, index) => (
+                  <p key={index} className="font-semibold text-black">
+                    {step}
+                  </p>
+                ))}
+              </div>
             </div>
-          </div>
-        )}
+          )}
 
-        {parsedJobDetails.offerTime && (
-          <InfoItem
-            label="Days to get an Offer"
-            value={parsedJobDetails.offerTime}
-          />
-        )}
+          {parsedJobDetails.offerTime && (
+            <InfoItem
+              label="Days to get an Offer"
+              value={parsedJobDetails.offerTime}
+            />
+          )}
+        </div>
       </div>
     </aside>
   );

@@ -1,5 +1,10 @@
 import { fetchJobs, fetchDepartments } from "@/lib/odoo";
 import CareersClient from "@/components/Careers/CareersClient";
+import Image from "next/image";
+import RatingStar from "@/components/Careers/RatingStars";
+import Link from "next/link";
+import GlassdoorWidget from "@/components/Careers/GlassdoorWidget";
+import GlassdoorCard from "@/components/Careers/GlassdoorCard";
 
 export const metadata = {
   title: "Careers | LaunchBox Global",
@@ -28,8 +33,11 @@ export default async function CareersPage() {
   }
 
   return (
-    <div className="w-full relative pt-36 2xl:pt-52 padding-x">
-      {/* Hero */}
+    <div className="w-full relative pt-36 2xl:pt-52 padding-x pb-20">
+      {/* Glassdoor link & rating */}
+      <GlassdoorCard />
+
+      {/* heading */}
       <div className="relative z-10 text-center">
         <h1 className="text-4xl md:text-6xl font-bold mt-5 mb-4">
           Current Openings

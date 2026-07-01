@@ -10,19 +10,21 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import RecruitmentProcess from "./RecruitmentProcess";
+import GlassdoorWidget from "./GlassdoorWidget";
 
 export default function JobDetails({ job, id }) {
   return (
     <div className="min-h-screen">
       <main className="w-full">
         {/* Header */}
-        <div className="flex flex-col lg:flex-row justify-between items-start gap-8 mb-9">
-          <div className="flex-1">
+        <div className="flex flex-col lg:flex-row items-start gap-8 mb-9">
+          {/* job details, description, requirement */}
+          <div className="">
             <h1 className="text-[40px] md:text-[52px] font-extrabold text-[#f40e00] leading-[1.1] tracking-tight mb-6">
               {job.name}
             </h1>
 
-            <div className="w-full max-w-[80%] flex flex-wrap gap-x-8 gap-y-4 text-[15px] font-medium text-gray-800">
+            <div className="w-full lg:max-w-[90%] flex flex-wrap gap-x-8 gap-y-4 text-[15px] font-medium text-gray-800">
               {job.address_id?.[1] && (
                 <div className="flex items-center gap-2">
                   <MapPin
@@ -114,30 +116,21 @@ export default function JobDetails({ job, id }) {
                 </div>
               )}
             </div>
-          </div>
 
-          <Link
-            href={`/careers/${id}/apply`}
-            className="w-full lg:w-auto bg-[#f40e00] text-white px-10 py-3.5 rounded-[18px] font-bold text-lg transition-all shadow-[0_4px_14px_rgba(244,14,0,0.3)] hover:shadow-[0_6px_20px_rgba(244,14,0,0.4)] whitespace-nowrap shrink-0"
-          >
-            Apply Now
-          </Link>
-        </div>
+            {/* Job Introduction */}
+            <section className="my-9 w-full lg:max-w-[90%]">
+              <div
+                className="prose max-w-none [&_p]:text-lg [&_div]:text-lg"
+                dangerouslySetInnerHTML={{
+                  __html: job.description,
+                }}
+              />
+            </section>
 
-        {/* Job Introduction */}
-        <section className="mb-9 w-full max-w-[80%]">
-          <div
-            className="prose max-w-none [&_p]:text-lg [&_div]:text-lg"
-            dangerouslySetInnerHTML={{
-              __html: job.description,
-            }}
-          />
-        </section>
-
-        {/* Job Details */}
-        <section className="mb-9">
-          <div
-            className="max-w-none text-gray-800
+            {/* Job Details */}
+            <section className="mb-9">
+              <div
+                className="max-w-none text-gray-800
       [&_h4]:text-[28px]
       [&_h4]:font-bold
       [&_h4]:text-black
@@ -158,18 +151,32 @@ export default function JobDetails({ job, id }) {
 
       [&_strong]:font-semibold
       [&_strong]:text-black"
-            dangerouslySetInnerHTML={{
-              __html: job.x_studio_job_details,
-            }}
-          />
-        </section>
+                dangerouslySetInnerHTML={{
+                  __html: job.x_studio_job_details,
+                }}
+              />
+            </section>
 
-        {/* Hiring Process */}
-        <RecruitmentProcess job={job} />
+            {/* Hiring Process */}
+            <RecruitmentProcess job={job} />
+          </div>
+
+          {/* top apply button */}
+          <div className="hidden lg:flex flex-col items-center lg:items-end gap-8">
+            <Link
+              href={`/careers/${id}/apply`}
+              className="w-full bg-[#f40e00] text-white px-10 py-3.5 rounded-[18px] font-bold text-lg transition-all shadow-[0_4px_14px_rgba(244,14,0,0.3)] hover:shadow-[0_6px_20px_rgba(244,14,0,0.4)] whitespace-nowrap shrink-0 text-center max-w-[200px]"
+            >
+              Apply Now
+            </Link>
+
+            <GlassdoorWidget />
+          </div>
+        </div>
 
         {/* Footer CTA */}
-        <div className="mt-20 flex flex-col items-center pb-28">
-          <h3 className="text-[32px] font-extrabold text-black mb-8 tracking-tight text-center">
+        <div className="mt-10 lg:mt-20 flex flex-col items-center lg:pb-28">
+          <h3 className="text-[26px] lg:text-[32px] font-extrabold text-black mb-8 tracking-tight text-center">
             Ready to take the next step?
           </h3>
 
@@ -181,6 +188,10 @@ export default function JobDetails({ job, id }) {
           </Link>
         </div>
       </main>
+
+      <div className="w-full pb-20 pt-9 flex justify-center lg:hidden">
+        <GlassdoorWidget />
+      </div>
     </div>
   );
 }

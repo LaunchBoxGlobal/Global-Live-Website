@@ -14,6 +14,10 @@ const nextConfig = {
         hostname: "blogs0864.wordpress.com",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "www.glassdoor.com",
+      },
     ],
   },
   swcMinify: true,
