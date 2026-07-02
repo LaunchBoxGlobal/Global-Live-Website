@@ -196,7 +196,7 @@ const Sidebar = ({ onclose }) => {
                     type="button"
                     onClick={() =>
                       handleNavigate(
-                        `/industries/healthcare-software-development`
+                        `/industries/healthcare-software-development`,
                       )
                     }
                     className={`font-normal text-[15px] 2xl:text-[22px] flex items-center justify-start gap-1 group`}
@@ -205,14 +205,18 @@ const Sidebar = ({ onclose }) => {
                   </button>
                   <button
                     type="button"
-                    onClick={() => handleNavigate(`/industries/real-estate-app-development`)}
+                    onClick={() =>
+                      handleNavigate(`/industries/real-estate-app-development`)
+                    }
                     className={`font-normal text-[15px] 2xl:text-[22px] flex items-center justify-start gap-1 group`}
                   >
                     Real Estate
                   </button>
                   <button
                     type="button"
-                    onClick={() => handleNavigate(`/industries/ecommerce-app-development`)}
+                    onClick={() =>
+                      handleNavigate(`/industries/ecommerce-app-development`)
+                    }
                     className={`font-normal text-[15px] 2xl:text-[22px] flex items-center justify-start gap-1 group`}
                   >
                     Ecommerce App Development
@@ -225,12 +229,21 @@ const Sidebar = ({ onclose }) => {
         <li>
           <button
             type="button"
+            onClick={() => navigator("/careers")}
+            className={`font-normal text-[16px] 2xl:text-[22px] flex items-center justify-start gap-1 group`}
+          >
+            Careers{" "}
+          </button>
+        </li>
+        {/* <li>
+          <button
+            type="button"
             onClick={() => handleScrollToServices("faqs")}
             className={`font-normal text-[16px] 2xl:text-[22px]`}
           >
             FAQs
           </button>
-        </li>
+        </li> */}
       </ul>
     </div>
   );
