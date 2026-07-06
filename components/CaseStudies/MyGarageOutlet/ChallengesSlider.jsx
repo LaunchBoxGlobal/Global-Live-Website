@@ -55,7 +55,7 @@ const ChallengesSlider = ({
             <SwiperSlide
               key={index}
               className="w-full h-[428px] py-12"
-              style={{ width: "100%" }}
+              style={{ width: "100%", background: "white" }}
             >
               <div
                 onMouseEnter={() => setActiveIndex(index)}
@@ -78,6 +78,7 @@ const ChallengesSlider = ({
                     height={60}
                     loading="lazy"
                     alt="problem-red-icon"
+                    style={{ width: "auto", height: "auto" }}
                   />
                 </div>
                 <h3 className="text-[22px] md:text-[26px] lg:text-[35px] font-semibold leading-[1.2]">

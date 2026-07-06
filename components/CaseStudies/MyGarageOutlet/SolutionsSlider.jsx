@@ -58,7 +58,7 @@ const SolutionsSlider = ({
             <SwiperSlide
               key={index}
               className="w-full h-[428px] py-12"
-              style={{ width: "100%" }}
+              style={{ width: "100%", background: "white" }}
             >
               <div
                 onMouseEnter={() => setActiveIndex(index)}
