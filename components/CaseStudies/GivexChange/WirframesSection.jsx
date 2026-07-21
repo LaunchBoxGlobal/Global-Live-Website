@@ -28,24 +28,28 @@ const WirframesSection = () => {
             alt=""
             width={272}
             height={645}
+            className="object-contain"
           />
           <Image
             src="/case-studies/givexchange/givexchange-wireframes-mockup-2.png"
             alt=""
             width={272}
             height={645}
+            className="object-contain"
           />
           <Image
             src="/case-studies/givexchange/givexchange-wireframes-mockup-3.png"
             alt=""
             width={272}
             height={645}
+            className="object-contain"
           />
           <Image
             src="/case-studies/givexchange/givexchange-wireframes-mockup-4.png"
             alt=""
             width={272}
             height={645}
+            className="object-contain"
           />
 
           {/* DUPLICATE SET */}
@@ -54,24 +58,58 @@ const WirframesSection = () => {
             alt=""
             width={272}
             height={645}
+            className="object-contain"
           />
           <Image
             src="/case-studies/givexchange/givexchange-wireframes-mockup-2.png"
             alt=""
             width={272}
             height={645}
+            className="object-contain"
           />
           <Image
             src="/case-studies/givexchange/givexchange-wireframes-mockup-3.png"
             alt=""
             width={272}
             height={645}
+            className="object-contain"
           />
           <Image
             src="/case-studies/givexchange/givexchange-wireframes-mockup-4.png"
             alt=""
             width={272}
             height={645}
+            className="object-contain"
+          />
+
+          {/* DUPLICATE SET */}
+          <Image
+            src="/case-studies/givexchange/givexchange-wireframes-mockup-1.png"
+            alt=""
+            width={272}
+            height={645}
+            className="object-contain"
+          />
+          <Image
+            src="/case-studies/givexchange/givexchange-wireframes-mockup-2.png"
+            alt=""
+            width={272}
+            height={645}
+            className="object-contain"
+          />
+          <Image
+            src="/case-studies/givexchange/givexchange-wireframes-mockup-3.png"
+            alt=""
+            width={272}
+            height={645}
+            className="object-contain"
+          />
+          <Image
+            src="/case-studies/givexchange/givexchange-wireframes-mockup-4.png"
+            alt=""
+            width={272}
+            height={645}
+            className="object-contain"
           />
         </div>
       </section>

@@ -4,7 +4,7 @@ import React from "react";
 const Timeline = () => {
   return (
     <div className="w-full padding-x z-10">
-      <div className="w-full z-10 bg-white flex flex-col lg:flex-row lg:items-center items-start justify-between tracking-tight lg:border lg:hover:border-[var(--givexchange-primary-color)] lg:hover:shadow-[0px_0px_18px_0px_#4e9d4b] transition-all duration-300 rounded-full md:px-6 min-h-[107px] my-20 givexchange-timeline-shadow gap-4">
+      <div className="w-full z-10 bg-white flex flex-col lg:flex-row lg:items-center items-start justify-between tracking-tight lg:border lg:hover:border-[#4E9D4B] lg:hover:shadow-[0px_0px_28px_10px_#4E9D4B40] transition-all duration-300 rounded-full md:px-6 min-h-[107px] my-20 givexchange-timeline-shadow gap-4">
         <div className="flex items-center gap-3 z-10 bg-white">
           <div className="min-w-[66px] h-[66px] bg-[var(--givexchange-primary-color)] rounded-full flex items-center justify-center">
             <Image

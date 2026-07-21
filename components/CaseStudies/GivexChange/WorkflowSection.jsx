@@ -21,63 +21,104 @@ const WorkflowSection = () => {
         </p>
       </section>
 
-      <section className="w-full mt-14 relative">
-        {/* <Image
-          src={"/case-studies/givexchange/border-line.png"}
+      <section className="w-full mt-14 pt-14 relative">
+        {/* Vertical Line */}
+        <Image
+          src="/case-studies/givexchange/workflow-border-lines.png"
           alt="border-line"
-          width={1}
+          width={1000}
           height={629}
-          className="absolute top-0 left-[10%]"
-        /> */}
-        <div className="w-full z-20 flex items-center gap-x-28 gap-y-5 flex-wrap">
+          className="absolute top-0 left-1/2 -translate-x-1/2 z-10 w-full"
+        />
+
+        {/* Mobile & Tablet */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:hidden relative z-20">
           <WorkflowCard
-            title={"Core Functions"}
-            description={
-              "Defined essential features for buyers, sellers, and admins to guide the foundation of the platform."
-            }
-            icon={"/case-studies/givexchange/core-functions-icon.png"}
+            title="Core Functions"
+            description="Defined essential features for buyers, sellers, and admins to guide the foundation of the platform."
+            icon="/case-studies/givexchange/core-functions-icon.png"
             iconHeight={22}
             iconWidth={22}
-            iconAlt={"core functions icon"}
-            num={"01"}
+            iconAlt="core functions icon"
+            num="01"
           />
+
           <WorkflowCard
-            title={"Iterative Sprints"}
-            description={
-              "Developed features in cycles, validating usability and refining interactions as we progressed."
-            }
-            icon={"/case-studies/givexchange/iterative-sprints-icon.png"}
+            title="Iterative Sprints"
+            description="Developed features in cycles, validating usability and refining interactions as we progressed."
+            icon="/case-studies/givexchange/iterative-sprints-icon.png"
             iconHeight={22}
             iconWidth={27}
-            iconAlt={"iterative-sprints-icon"}
-            num={"02"}
+            iconAlt="iterative sprints icon"
+            num="02"
+          />
+
+          <WorkflowCard
+            title="Wireframes & Prototypes"
+            description="Created simple, navigable flows that reduced friction and clarified user decision-making."
+            icon="/case-studies/givexchange/wireframes-and-prototypes-icon.png"
+            iconHeight={22}
+            iconWidth={22}
+            iconAlt="wireframes icon"
+            num="03"
+          />
+
+          <WorkflowCard
+            title="Final Optimization"
+            description="Enhanced responsiveness, performance, and visual consistency to prepare the product for launch."
+            icon="/case-studies/givexchange/final-optimization-icon.png"
+            iconHeight={22}
+            iconWidth={22}
+            iconAlt="final optimization icon"
+            num="04"
           />
         </div>
-        <div className="w-full mt-10 z-20 flex items-center justify-end gap-x-28 gap-y-5 flex-wrap">
-          <WorkflowCard
-            title={"Wireframes & Prototypes"}
-            description={
-              "Created simple, navigable flows that reduced friction and clarified user decision-making."
-            }
-            icon={
-              "/case-studies/givexchange/wireframes-and-prototypes-icon.png"
-            }
-            iconHeight={22}
-            iconWidth={22}
-            iconAlt={"wireframes-and-prototypes-icon"}
-            num={"03"}
-          />
-          <WorkflowCard
-            title={"Final Optimization"}
-            description={
-              "Enhanced responsiveness, performance, and visual consistency to prepare the product for launch."
-            }
-            icon={"/case-studies/givexchange/final-optimization-icon.png"}
-            iconHeight={22}
-            iconWidth={22}
-            iconAlt={"final-optimization-icon"}
-            num={"04"}
-          />
+
+        {/* Desktop */}
+        <div className="hidden lg:block relative z-20">
+          <div className="w-full flex items-center justify-center xl:justify-start gap-x-8 xl:gap-x-28">
+            <WorkflowCard
+              title="Core Functions"
+              description="Defined essential features for buyers, sellers, and admins to guide the foundation of the platform."
+              icon="/case-studies/givexchange/core-functions-icon.png"
+              iconHeight={22}
+              iconWidth={22}
+              iconAlt="core functions icon"
+              num="01"
+            />
+
+            <WorkflowCard
+              title="Iterative Sprints"
+              description="Developed features in cycles, validating usability and refining interactions as we progressed."
+              icon="/case-studies/givexchange/iterative-sprints-icon.png"
+              iconHeight={22}
+              iconWidth={27}
+              iconAlt="iterative sprints icon"
+              num="02"
+            />
+          </div>
+
+          <div className="w-full mt-10 flex items-center justify-center xl:pl-48 gap-x-8 xl:gap-x-28">
+            <WorkflowCard
+              title="Wireframes & Prototypes"
+              description="Created simple, navigable flows that reduced friction and clarified user decision-making."
+              icon="/case-studies/givexchange/wireframes-and-prototypes-icon.png"
+              iconHeight={22}
+              iconWidth={22}
+              iconAlt="wireframes icon"
+              num="03"
+            />
+
+            <WorkflowCard
+              title="Final Optimization"
+              description="Enhanced responsiveness, performance, and visual consistency to prepare the product for launch."
+              icon="/case-studies/givexchange/final-optimization-icon.png"
+              iconHeight={22}
+              iconWidth={22}
+              iconAlt="final optimization icon"
+              num="04"
+            />
+          </div>
         </div>
       </section>
 

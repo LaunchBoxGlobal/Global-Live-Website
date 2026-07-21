@@ -10,16 +10,6 @@ export const GIVEXCHANGE_CHALLENGES = [
     bgColor: "#fff",
   },
   {
-    title: "Preventing user fatigue ",
-    description:
-      "By streamlining browsing across a large, multi-category product catalog.",
-    icon: "/case-studies/givexchange/user-icon.png",
-    iconWidth: 28,
-    iconHeight: 30,
-    iconAlt: "user icon",
-    bgColor: "#212121",
-  },
-  {
     title: "Maintaining consistency across mobile and web",
     description:
       "Ensuring both buyers and sellers experience intuitive interactions.",
@@ -30,15 +20,6 @@ export const GIVEXCHANGE_CHALLENGES = [
     bgColor: "#fff",
   },
   {
-    title: "Integrating secure payments, messaging, and admin tools",
-    description: "While keeping the interface simple and user-friendly.",
-    icon: "/case-studies/givexchange/security-icon.png",
-    iconWidth: 26,
-    iconHeight: 30,
-    iconAlt: "security-icon",
-    bgColor: "#212121",
-  },
-  {
     title: "Building a scalable architecture",
     description:
       "Capable of handling thousands of listings without compromising performance.",
@@ -47,5 +28,25 @@ export const GIVEXCHANGE_CHALLENGES = [
     iconHeight: 30,
     iconAlt: "architecture-icon",
     bgColor: "#fff",
+  },
+
+  {
+    title: "Preventing user fatigue ",
+    description:
+      "By streamlining browsing across a large, multi-category product catalog.",
+    icon: "/case-studies/givexchange/user-icon.png",
+    iconWidth: 28,
+    iconHeight: 30,
+    iconAlt: "user icon",
+    bgColor: "#212121",
+  },
+  {
+    title: "Integrating secure payments, messaging, and admin tools",
+    description: "While keeping the interface simple and user-friendly.",
+    icon: "/case-studies/givexchange/security-icon.png",
+    iconWidth: 26,
+    iconHeight: 30,
+    iconAlt: "security-icon",
+    bgColor: "#212121",
   },
 ];

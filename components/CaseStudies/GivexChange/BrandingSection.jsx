@@ -38,8 +38,8 @@ const BrandingSection = () => {
         </p>
       </section>
 
-      <section className="w-full z-10 mt-12 grid grid-cols-1 lg:grid-cols-2 gap-10">
-        <div className="z-10">
+      <section className="w-full relative z-10 mt-12 grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="z-10 relative">
           <Image
             src={
               "/case-studies/givexchange/givexchange-logo-with-white-background.png"
@@ -47,21 +47,34 @@ const BrandingSection = () => {
             alt="givexchange-logo-with-white-background"
             width={620}
             height={593}
-            className="z-10"
+            className="z-10 relative mx-auto"
           />
         </div>
-        <div className="z-10">
+        <div className="z-10 relative">
           <Image
             src={"/case-studies/givexchange/givexchange-sidebar-mockup.png"}
             alt="givexchange-sidebar-mockup"
             width={620}
             height={593}
-            className="z-10"
+            className="z-10 relative mz-auto"
           />
         </div>
       </section>
 
-      <section className="w-full mt-20 z-10">
+      <section className="w-full flex items-start justify-between gap-5 flex-wrap relative my-28 z-10">
+        <h3 className="font-semibold text-[24px] leading-none">
+          Color & Typography
+        </h3>
+
+        <p className="w-full max-w-[506px]">
+          General Sans was selected for its clean, modern look and strong
+          readability. Its balanced shapes help create a clear visual hierarchy,
+          keeping the interface simple, consistent, and easy to navigate across
+          all screens.
+        </p>
+      </section>
+
+      <section className="w-full relative z-10">
         <Image
           src={"/case-studies/givexchange/general-sans-fonts-label.png"}
           alt="general-sans-fonts-label"
@@ -70,7 +83,7 @@ const BrandingSection = () => {
           className="mx-auto object-contain z-10"
         />
 
-        <div className="w-full mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 z-10">
+        <div className="w-full my-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 relative z-10">
           {fonts?.map((f, i) => {
             return (
               <div
@@ -89,7 +102,7 @@ const BrandingSection = () => {
         </div>
 
         <Image
-          src={"/case-studies/givexchange/givexchange-color-pallete-image.png"}
+          src={"/case-studies/givexchange/givexchange-color-pallete-mockup.png"}
           alt="givexchange-color-pallete"
           width={1270}
           height={600}

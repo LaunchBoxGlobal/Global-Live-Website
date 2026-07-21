@@ -1,6 +1,7 @@
 import { GIVEXCHANGE_TECH_STACK } from "@/constants/case-studies/givexchange/givexchange-tech-stack";
 import Image from "next/image";
 import React from "react";
+import TechStackAndTools from "./TechStackAndTools";
 
 const TechStack = () => {
   return (
@@ -19,7 +20,9 @@ const TechStack = () => {
         <div className="bg-[var(--givexchange-primary-color)] blur-[845px] rounded-full w-[300px] lg:w-[800px] h-[500px] absolute top-1/2 -translate-y-1/2 right-[-60%] lg:right-[-50%] z-0" />
       </section>
 
-      <section className="w-full relative space-y-20 mt-40 lg:pb-80 px-5 lg:px-0">
+      <TechStackAndTools />
+
+      {/* <section className="w-full relative space-y-20 mt-40 lg:pb-80 px-5 lg:px-0">
         <Image
           src="/case-studies/givexchange/tech-stack-circle-lines.png"
           alt="tech-stack-circle-lines"
@@ -34,12 +37,12 @@ const TechStack = () => {
                 index === 0
                   ? "lg:left-[27%]"
                   : index === 1
-                  ? "md:left-[40%] lg:left-[40%]"
-                  : index === 2
-                  ? "md:left-[25%] lg:left-[47%]"
-                  : index === 3
-                  ? "lg:left-[17%]"
-                  : ""
+                    ? "md:left-[40%] lg:left-[40%]"
+                    : index === 2
+                      ? "md:left-[25%] lg:left-[47%]"
+                      : index === 3
+                        ? "lg:left-[17%]"
+                        : ""
               }`}
               key={index}
             >
@@ -82,7 +85,7 @@ const TechStack = () => {
 
         <div className="bg-[var(--givexchange-primary-color)] blur-[745px] rounded-full w-[300px] lg:w-[1000px] h-[300px] absolute top-1/2 -translate-y-1/2 left-[-60%] lg:left-[-50%] z-0" />
         <div className="bg-[var(--givexchange-primary-color)] blur-[745px] rounded-full w-[300px] lg:w-[1000px] h-[300px] absolute top-1/2 -translate-y-1/2 right-[-60%] lg:right-[-40%] z-0" />
-      </section>
+      </section> */}
     </section>
   );
 };

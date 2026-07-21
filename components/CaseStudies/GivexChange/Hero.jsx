@@ -16,13 +16,13 @@ const Hero = () => {
         />
 
         <h1 className="text-[40px] lg:text-[80px] leading-none tracking-tight font-extrabold z-10">
-          Give{" "}
-          <span className="text-[var(--givexchange-primary-color)]">X</span>{" "}
-          Change
+          give
+          <span className="text-[var(--givexchange-primary-color)]">X</span>
+          change
         </h1>
         <h2 className="text-[22px] font-medium tracking-tight">Overview</h2>
         <p className="text-xl text-center lg:w-[90%] z-10">
-          GiveXchange is a closed-community marketplace enabling members to buy
+          giveXchange is a closed-community marketplace enabling members to buy
           and sell products effortlessly across multiple categories. LaunchBox
           Global developed a mobile app, web app, and admin dashboard, ensuring
           a seamless and engaging experience for all users. The project,
@@ -61,32 +61,31 @@ const Hero = () => {
           width={2034}
           height={209}
           alt="givexchange-text-logo"
-          className="absolute inset-x-0 z-10 top-[35%]"
+          className="absolute inset-x-0 z-10 top-[30%] w-full mx-auto h-auto"
         />
         <Image
-          src={`/case-studies/givexchange/givexchange-home-screen-mobile-mockup.png`}
+          src={`/case-studies/givexchange/givexchange-home-screen-mockup.png`}
           alt={`givexchange-home-screen-mobile-mockup`}
-          width={673}
-          height={718}
-          className="mx-auto z-20 relative object-contain -bottom-4 md:-bottom-7"
+          width={1108}
+          height={917}
+          className="mx-auto z-20 relative object-contain w-[85%] h-auto -translate-x-[2%] translate-y-[6%]"
         />
         <Image
           src={"/case-studies/givexchange/givexchange-mockup-stand.png"}
           alt="givexchange-mockup-stand"
           width={539}
           height={200}
-          className="mx-auto"
+          className="mx-auto relative w-[48%] h-auto -translate-y-[10%]"
         />
-
+        {/* glow + white-glow unchanged */}
         <Image
           src={"/case-studies/givexchange/white-glow.svg"}
           alt="white-glow"
           width={1920}
           height={243}
-          className="w-full absolute bottom-[-7%] lg:bottom-[-18%] z-20 inset-x-0"
-        />
-
-        <div className="bg-[var(--givexchange-primary-color)] blur-[845px] rounded-full w-[300px] lg:w-[500px] h-[300px] absolute top-1/2 -translate-y-1/2 left-[-60%] lg:left-[-20%] z-0 hidden md:block" />
+          className="w-full absolute bottom-[-7%] lg:bottom-[-17%] z-20 inset-x-0"
+        />{" "}
+        <div className="bg-[var(--givexchange-primary-color)] blur-[845px] rounded-full w-[300px] lg:w-[500px] h-[300px] absolute top-1/2 -translate-y-1/2 left-[-60%] lg:left-[-20%] z-0 hidden md:block" />{" "}
         <div className="bg-[var(--givexchange-primary-color)] blur-[845px] rounded-full w-[300px] lg:w-[500px] h-[300px] absolute top-1/2 -translate-y-1/2 right-[-60%] lg:right-[-20%] z-0 hidden md:block" />
       </div>
     </section>

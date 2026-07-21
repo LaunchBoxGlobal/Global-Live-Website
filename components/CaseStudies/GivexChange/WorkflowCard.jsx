@@ -11,9 +11,9 @@ const WorkflowCard = ({
   num,
 }) => {
   return (
-    <div className="w-full max-w-[430px] min-h-[210px] rounded-[17px] p-7 relative bg-gradient-to-b from-[#EBEBEB] to-[#F9F9F9] z-10">
+    <div className="w-full lg:max-w-[400px] min-h-[210px] rounded-[17px] p-7 relative bg-gradient-to-b from-[#EBEBEB] to-[#F9F9F9] z-10">
       <div className="w-full flex items-center justify-between z-10">
-        <div className="w-[53px] h-[53px] rounded-full flex items-center justify-center bg-[var(--givexchange-primary-color)] custom-shadow border-[4px] border-white">
+        <div className="w-[53px] h-[53px] rounded-full flex items-center justify-center bg-[var(--givexchange-primary-color)] shadow-xl border-[4px] border-white">
           <Image
             src={icon}
             width={iconWidth}

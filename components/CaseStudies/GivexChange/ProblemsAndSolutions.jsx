@@ -79,7 +79,7 @@ const ProblemsAndSolutions = () => {
                       height={28}
                     />
                     <p className={`text-[#FF544B] text-[20px] font-medium`}>
-                      Problem 1
+                      Problem {i + 1}
                     </p>
                   </div>
 
@@ -93,7 +93,7 @@ const ProblemsAndSolutions = () => {
                   </p>
                 </div>
               </div>
-              <div className="items-end justify-center hidden lg:flex">
+              <div className="items-center pt-[25%] justify-center hidden lg:flex">
                 <Image
                   src={"/case-studies/givexchange/problems-line.png"}
                   alt="problems-line"
@@ -101,7 +101,7 @@ const ProblemsAndSolutions = () => {
                   height={64}
                 />
               </div>
-              <div className="relative lg:top-20">
+              <div className="relative lg:top-14">
                 <div className="w-full max-w-[442px] min-h-[261px] bg-white rounded-[17px] relative z-20 flex flex-col items-start justify-center gap-4 p-10">
                   <div className="w-full flex items-center gap-3">
                     <Image
@@ -111,7 +111,7 @@ const ProblemsAndSolutions = () => {
                       height={28}
                     />
                     <p className={`text-[#57D66B] text-[20px] font-medium`}>
-                      Solution 1
+                      Solution {i + 1}
                     </p>
                   </div>
 
