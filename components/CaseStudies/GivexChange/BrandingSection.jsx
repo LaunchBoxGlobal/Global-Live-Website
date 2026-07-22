@@ -25,7 +25,7 @@ const BrandingSection = () => {
     <section className="w-full pb-10 relative padding-x">
       <section className="w-full flex flex-col items-center relative z-10">
         <h2 className="section-heading text-center z-10">Branding</h2>
-        <p className="text-center lg:w-[85%] text-base lg:text-xl mt-7 z-10">
+        <p className="text-center lg:w-[85%] text-base lg:text-xl mt-7 relative z-10">
           The GiveXchange brand was designed to communicate trust, simplicity,
           and a sense of shared community from the very first interaction. Our
           goal was to build an identity that feels modern and reliable while
@@ -61,7 +61,7 @@ const BrandingSection = () => {
         </div>
       </section>
 
-      <section className="w-full flex items-start justify-between gap-5 flex-wrap relative my-28 z-10">
+      <section className="w-full flex items-start justify-between gap-5 flex-wrap relative my-12 lg:my-28 z-10">
         <h3 className="font-semibold text-[24px] leading-none">
           Color & Typography
         </h3>
@@ -110,7 +110,7 @@ const BrandingSection = () => {
         />
       </section>
 
-      <div className="bg-[var(--givexchange-primary-color)] blur-[845px] rounded-full w-[300px] h-[300px] lg:w-[800px] lg:h-[500px] absolute top-[0%] left-[-60%] lg:left-[-40%] z-0" />
+      <div className="bg-[var(--givexchange-primary-color)] blur-[845px] rounded-full w-[300px] h-[300px] lg:w-[800px] lg:h-[500px] absolute top-[20%] lg:top-[0%] left-[-60%] lg:left-[-40%] z-0" />
       <div className="bg-[var(--givexchange-primary-color)] blur-[845px] rounded-full w-[300px] h-[300px] lg:w-[800px] lg:h-[500px] absolute top-[0%] right-[-70%] lg:right-[-50%] z-0" />
       <div className="bg-[var(--givexchange-primary-color)] blur-[845px] rounded-full w-[300px] h-[300px] lg:w-[800px] lg:h-[500px] absolute bottom-[0%] left-[-60%] lg:left-[-30%] z-0" />
       <div className="bg-[var(--givexchange-primary-color)] blur-[845px] rounded-full w-[300px] h-[300px] lg:w-[800px] lg:h-[500px] absolute bottom-[0%] right-[-60%] lg:right-[-30%] z-0" />

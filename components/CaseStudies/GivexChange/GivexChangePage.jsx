@@ -17,7 +17,7 @@ const GivexChangePage = () => {
   return (
     <main className="w-full overflow-hidden flex flex-col gap-14 lg:gap-20 midlg:gap-36">
       <Hero />
-      <div className="w-full lg:hidden"></div>
+      {/* <div className="w-full border border-black lg:hidden"></div> */}
       <Challenge />
       <div className="w-full padding-x">
         <div className="w-full border" />

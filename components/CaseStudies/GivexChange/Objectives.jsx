@@ -3,7 +3,7 @@ import React from "react";
 
 const Objectives = () => {
   return (
-    <section className="w-full lg:h-[958px] relative mt-24 mx-auto max-w-[1286px] space-y-5 lg:space-y-0 md:grid grid-cols-2 gap-5 lg:grid-cols-none">
+    <section className="w-full lg:h-[958px] relative z-10 mt-24 mx-auto max-w-[1286px] space-y-5 lg:space-y-0 md:grid grid-cols-2 gap-5 lg:grid-cols-none">
       <Image
         src={"/case-studies/givexchange/objectives-outer-circle.png"}
         alt="objectives-outer-circle"

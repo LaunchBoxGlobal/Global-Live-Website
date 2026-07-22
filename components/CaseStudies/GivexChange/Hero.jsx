@@ -55,7 +55,7 @@ const Hero = () => {
 
       <Timeline />
 
-      <div className="w-full mt-20 relative z-10 padding-x">
+      <div className="w-full mt-10 relative z-10 padding-x">
         <Image
           src={"/case-studies/givexchange/givexchange-text-logo.png"}
           width={2034}
@@ -83,7 +83,7 @@ const Hero = () => {
           alt="white-glow"
           width={1920}
           height={243}
-          className="w-full absolute bottom-[-7%] lg:bottom-[-17%] z-20 inset-x-0"
+          className="w-full absolute bottom-[-15%] lg:bottom-[-17%] z-20 inset-x-0"
         />{" "}
         <div className="bg-[var(--givexchange-primary-color)] blur-[845px] rounded-full w-[300px] lg:w-[500px] h-[300px] absolute top-1/2 -translate-y-1/2 left-[-60%] lg:left-[-20%] z-0 hidden md:block" />{" "}
         <div className="bg-[var(--givexchange-primary-color)] blur-[845px] rounded-full w-[300px] lg:w-[500px] h-[300px] absolute top-1/2 -translate-y-1/2 right-[-60%] lg:right-[-20%] z-0 hidden md:block" />

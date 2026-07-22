@@ -1,12 +1,11 @@
 import { GIVEXCHANGE_CHALLENGES } from "@/constants/case-studies/givexchange/GivexChangeChallenges";
 import Image from "next/image";
 import React from "react";
-import ChallengeCard from "./ChallengeCard";
 import FeaturedCard from "./FeaturedCard";
 
 const Challenge = () => {
   return (
-    <section className="w-full py-10 relative padding-x">
+    <section className="w-full pt-5 lg:pt-10 xl:pt-0 relative padding-x">
       <section className="w-full flex flex-col items-center relative z-10">
         <h2 className="section-heading text-center z-10">The Challenge</h2>
         <p className="text-center lg:w-[85%] text-base lg:text-xl mt-7 z-10">
@@ -22,6 +21,7 @@ const Challenge = () => {
       <section className="w-full flex flex-col lg:flex-row items-start justify-between gap-12 mt-20 lg:mt-28 relative">
         <div className="bg-[var(--givexchange-primary-color)] blur-[845px] rounded-full w-[300px] lg:w-[700px] h-[300px] absolute top-[50%] left-[-60%] lg:left-[-50%] z-0" />
         <div className="bg-[var(--givexchange-primary-color)] blur-[845px] rounded-full w-[300px] lg:w-[700px] h-[300px] absolute top-[50%] right-[-60%] lg:right-[-50%] z-0" />
+        <div className="bg-[var(--givexchange-primary-color)] blur-[845px] rounded-full w-[300px] lg:w-[700px] h-[300px] absolute top-[10%] right-[-40%] lg:right-[-50%] z-0 lg:hidden" />
 
         {/* left card grid */}
         <div className="w-full lg:max-w-[55%] grid grid-cols-1 md:grid-cols-2 gap-y-20 gap-x-4 lg:gap-10 relative z-20">
