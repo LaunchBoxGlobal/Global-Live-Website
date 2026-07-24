@@ -13,7 +13,7 @@ const WhatChanges = () => {
           </p>
           <h2 className="systems-section-heading">
             What Your Startup Looks <br className="hidden lg:block" /> Like
-            After <span className="text-[#ea2b2b]">Launch</span>
+            After <span className="red-text">Launch</span>
           </h2>
           <p className="text-gray-400 font-light leading-[1.2] text-lg md:text-xl xl:text-[24px] md:max-w-[75%] mt-5">
             When you have the right team executing at the right speed,

@@ -33,8 +33,7 @@ const WhatChanges = () => {
           What Changes
         </p>
         <h2 className="text-4xl sm:text-6xl md:text-5xl lg:text-6xl xl:text-[72px] font-bold text-[#111111] tracking-tight lg:leading-[1]">
-          What Your Business Looks Like{" "}
-          <span className="text-[#ea2b2b]">After</span>
+          What Your Business Looks Like <span className="red-text">After</span>
         </h2>
 
         <p className="text-gray-400 font-light leading-[1.2] text-lg md:text-xl xl:text-2xl md:max-w-[75%] mx-auto mt-5">

@@ -12,7 +12,7 @@ const WhatWeDo = () => {
         </p>
         <h2 className="systems-section-heading">
           Your External Product <br className="hidden lg:block" /> Team From
-          First Call to <span className="text-[#ea2b2b]">Launch</span>
+          First Call to <span className="red-text">Launch</span>
         </h2>
         <p className="text-gray-400 font-light leading-[1.2] text-lg md:text-xl xl:text-[24px] md:max-w-[75%] mt-5">
           We plug in as your full product team and take your idea, Figma, or

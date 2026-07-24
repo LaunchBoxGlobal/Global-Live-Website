@@ -61,7 +61,7 @@ export default function FAQ() {
           className="text-4xl sm:text-6xl md:text-5xl lg:text-6xl xl:text-[72px] font-bold text-[#111111] tracking-tight lg:leading-[1]"
         >
           Things People Usually Ask <br className="hidden lg:block" /> Before{" "}
-          <span className="text-[#ea2b2b]">Getting</span> Started.
+          <span className="red-text">Getting</span> Started.
         </h2>
       </div>
 
@@ -81,7 +81,7 @@ export default function FAQ() {
                 <h3 className="text-[#111] font-semibold text-[17px] md:text-[18px] lg:text-[24px] leading-snug tracking-tight pr-6 select-none">
                   {faq.question}
                 </h3>
-                <div className="shrink-0 text-[#fb1d10] ml-4">
+                <div className="shrink-0 red-text ml-4">
                   {isOpen ? (
                     <ChevronUp
                       className="w-[18px] h-[18px] md:w-5 md:h-5"

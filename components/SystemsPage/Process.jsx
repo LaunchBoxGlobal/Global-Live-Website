@@ -13,7 +13,7 @@ const Process = () => {
         </p>
         <h2 className="systems-section-heading">
           From Discovery Call to Launched <br className="hidden lg:block" />{" "}
-          Product Here is How It <span className="text-[#ea2b2b]">Works</span>
+          Product Here is How It <span className="red-text">Works</span>
         </h2>
         <p className="text-gray-400 font-light leading-[1.2] text-lg md:text-xl xl:text-[24px] md:max-w-[75%] mt-5">
           A clear four-step process with no surprises and full visibility

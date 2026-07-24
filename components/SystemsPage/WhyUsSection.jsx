@@ -13,7 +13,7 @@ export default function WhyUsSection() {
         </p>
         <h2 className="systems-section-heading">
           A Lot of Agencies Build MVPs <br className="hidden lg:block" />
-          Here's What Makes Us <span className="text-[#ea2b2b]">Different</span>
+          Here's What Makes Us <span className="red-text">Different</span>
         </h2>
         <p className="text-gray-400 font-light leading-[1.2] text-lg md:text-xl xl:text-[24px] md:max-w-[95%] mt-5">
           We have worked with enough funded founders to know what they actually

@@ -13,7 +13,7 @@ export default function WhatWeDo({ openModal }) {
         <h2 className="text-4xl sm:text-6xl md:text-5xl lg:text-6xl xl:text-[72px] font-bold text-[#111111] tracking-tight lg:leading-[1]">
           We Build the Software That <br className="hidden lg:block" /> Runs
           Your Business.
-          <span className="text-[#ea2b2b]">Your Way.</span>
+          <span className="red-text">Your Way.</span>
         </h2>
 
         <p className="text-gray-400 font-light leading-[1.2] text-lg md:text-xl xl:text-2xl max-w-[85%] mx-auto mt-5">
@@ -84,7 +84,7 @@ export default function WhatWeDo({ openModal }) {
         {/* card 3 */}
         <div className="flex flex-col items-start gap-3 px-5 lg:px-10 pt-6 lg:pt-10 pb-16 bg-[#FFF7ED] border-2 border-[#FFEDD4] rounded-[22px] relative overflow-hidden hover:-translate-y-3 transition-all duration-300">
           <div
-            className={`w-[52px] h-[52px] rounded-[15px] bg-[#F40E00] flex items-center justify-center`}
+            className={`w-[52px] h-[52px] rounded-[15px] red-bg flex items-center justify-center`}
           >
             <Image
               src={"/workflow-audit/circular-lines-white.png"}

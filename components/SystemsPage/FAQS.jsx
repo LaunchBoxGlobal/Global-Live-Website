@@ -20,7 +20,7 @@ export default function FAQS() {
         </p>
         <h2 id="faqs" className="systems-section-heading relative z-10">
           A Few More Things Founders Usually{" "}
-          <span className="text-[#ea2b2b]">Ask</span>
+          <span className="red-text">Ask</span>
         </h2>
       </div>
 

@@ -54,7 +54,7 @@ const Process = ({ openModal }) => {
         </p>
         <h2 className="text-4xl sm:text-6xl md:text-5xl lg:text-6xl xl:text-[72px] font-bold text-[#111111] tracking-tight lg:leading-[1]">
           From First Call to Fully Launched. Here's How It{" "}
-          <span className="text-[#ea2b2b]">Works</span>
+          <span className="red-text">Works</span>
         </h2>
 
         <p className="text-gray-400 font-light leading-[1.2] text-lg md:text-xl xl:text-2xl mt-5">

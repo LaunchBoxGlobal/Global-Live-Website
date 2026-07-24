@@ -13,7 +13,7 @@ export default function TrustedByOperators() {
           <h2 className="text-4xl sm:text-6xl md:text-5xl lg:text-6xl xl:text-[72px] font-bold text-[#111111] tracking-tighter lg:leading-[1]">
             Five Years. Hundreds Of Operators.
             <br className="hidden lg:block" />
-            One Platform <span className="text-[#ea2b2b]">Philosophy.</span>
+            One Platform <span className="red-text">Philosophy.</span>
           </h2>
         </div>
 
@@ -21,7 +21,7 @@ export default function TrustedByOperators() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-20 md:gap-6 lg:gap-10 pb-12 md:pb-24 px-2 sm:px-4 lg:px-6 pt-6">
           {/* Card 1 */}
           <div className="relative bg-white border border-[#EAEAEA] custom-shadow rounded-[2rem] -rotate-3 hover:rotate-0 transition-all duration-700 p-8 xl:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex flex-col justify-between md:translate-y-0">
-            <div className="absolute -top-3 -left-3 bg-[#ea2b2b] rounded-2xl shadow-[0_8px_20px_rgba(234,43,43,0.3)] w-[41px] h-[41px] -rotate-1 flex items-center justify-center">
+            <div className="absolute -top-3 -left-3 red-bg rounded-2xl shadow-[0_8px_20px_rgba(234,43,43,0.3)] w-[41px] h-[41px] -rotate-1 flex items-center justify-center">
               <Image
                 src={"/workflow-audit/projects-delivered-icon.png"}
                 alt="projects-delivered-icon"
@@ -46,13 +46,13 @@ export default function TrustedByOperators() {
                 01 / 03
               </span>
               <div className="absolute left-14 right-2 top-1/2 -translate-y-1/2 h-[1px] bg-gradient-to-r from-gray-100 to-transparent"></div>
-              <div className="w-2 h-2 rounded-full bg-[#ea2b2b] flex-shrink-0 z-10"></div>
+              <div className="w-2 h-2 rounded-full red-bg flex-shrink-0 z-10"></div>
             </div>
           </div>
 
           {/* Card 2 */}
           <div className="relative bg-white border border-[#EAEAEA] custom-shadow rounded-[2rem] rotate-1 hover:rotate-0 transition-all duration-700 p-8 xl:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex flex-col justify-between md:translate-y-12">
-            <div className="absolute -top-3 -left-3 bg-[#ea2b2b] rounded-2xl shadow-[0_8px_20px_rgba(234,43,43,0.3)] w-[41px] h-[41px] flex items-center justify-center">
+            <div className="absolute -top-3 -left-3 red-bg rounded-2xl shadow-[0_8px_20px_rgba(234,43,43,0.3)] w-[41px] h-[41px] flex items-center justify-center">
               <Image
                 src={"/workflow-audit/team-members-icon.png"}
                 alt="team-members-icon"
@@ -76,13 +76,13 @@ export default function TrustedByOperators() {
                 02 / 03
               </span>
               <div className="absolute left-14 right-2 top-1/2 -translate-y-1/2 h-[1px] bg-gradient-to-r from-gray-100 to-transparent"></div>
-              <div className="w-2 h-2 rounded-full bg-[#ea2b2b] flex-shrink-0 z-10"></div>
+              <div className="w-2 h-2 rounded-full red-bg flex-shrink-0 z-10"></div>
             </div>
           </div>
 
           {/* Card 3 */}
           <div className="relative bg-white border border-[#EAEAEA] custom-shadow rounded-[2rem] -rotate-2 hover:rotate-0 transition-all duration-700 p-8 xl:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex flex-col justify-between md:translate-y-6">
-            <div className="absolute -top-3 -left-3 bg-[#ea2b2b] rounded-2xl shadow-[0_8px_20px_rgba(234,43,43,0.3)] w-[41px] h-[41px] -rotate-2 flex items-center justify-center">
+            <div className="absolute -top-3 -left-3 red-bg rounded-2xl shadow-[0_8px_20px_rgba(234,43,43,0.3)] w-[41px] h-[41px] -rotate-2 flex items-center justify-center">
               <Image
                 src={"/workflow-audit/calendar-icon.png"}
                 alt="calendar-icon"
@@ -106,7 +106,7 @@ export default function TrustedByOperators() {
                 03 / 03
               </span>
               <div className="absolute left-14 right-2 top-1/2 -translate-y-1/2 h-[1px] bg-gradient-to-r from-gray-100 to-transparent"></div>
-              <div className="w-2 h-2 rounded-full bg-[#ea2b2b] flex-shrink-0 z-10"></div>
+              <div className="w-2 h-2 rounded-full red-bg flex-shrink-0 z-10"></div>
             </div>
           </div>
         </div>
@@ -154,7 +154,7 @@ export default function TrustedByOperators() {
 function IndustryTag({ icon: Icon, label }) {
   return (
     <div className="flex items-center gap-2 px-4 py-2.5 bg-transparent border border-[#EAEAEA] rounded-full">
-      {/* <Icon className="w-4 h-4 text-[#ea2b2b]" strokeWidth={2.5} /> */}
+      {/* <Icon className="w-4 h-4 red-text" strokeWidth={2.5} /> */}
       <Image
         src={Icon}
         width={16}

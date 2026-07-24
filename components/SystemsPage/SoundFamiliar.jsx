@@ -12,8 +12,7 @@ const SoundFamiliar = () => {
         </p>
         <h2 className="systems-section-heading">
           You Have The Vision, The Funding, <br className="hidden lg:block" />{" "}
-          And The Pressure. Just Not The{" "}
-          <span className="text-[#ea2b2b]">Team</span>
+          And The Pressure. Just Not The <span className="red-text">Team</span>
         </h2>
         <p className="text-gray-400 font-light leading-[1.2] text-lg md:text-xl xl:text-[24px] md:max-w-[95%] mt-5">
           Most non-technical founders hit the same wall after closing their
