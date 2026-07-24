@@ -55,7 +55,7 @@ const SystemsPage = () => {
   return (
     <>
       <main className={`bg-transparent relative overflow-hidden`}>
-        <Navbar openModal={toggleDiscoveryCallForm} />
+        {/* <Navbar openModal={toggleDiscoveryCallForm} /> */}
         <Hero toggleDiscoveryCallForm={toggleDiscoveryCallForm} />
         <Stats />
         <SoundFamiliar />
