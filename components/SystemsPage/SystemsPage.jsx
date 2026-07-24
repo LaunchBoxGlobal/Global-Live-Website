@@ -12,7 +12,6 @@ import WhatChanges from "./WhatChanges";
 import WhatWeDo from "./WhatWeDo";
 import WhoWeWorkWith from "./WhoWeWorkWith";
 import WhyUsSection from "./WhyUsSection";
-import Navbar from "../global/Navbar";
 import ContactModal from "./contact-modal/ContactModal";
 import { usePathname } from "next/navigation";
 
