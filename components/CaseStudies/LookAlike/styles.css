@@ -1,0 +1,11 @@
+.lookalike-gradient {
+  background: linear-gradient(46.52deg, #5e51c9 16.04%, #408ee8 118.07%);
+}
+
+.lookalike-gradient-text {
+  background: linear-gradient(46.52deg, #5e51c9 -15.16%, #408ee8 119.82%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}

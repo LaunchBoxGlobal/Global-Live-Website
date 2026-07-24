@@ -1,0 +1,39 @@
+.lbg-shadow {
+  background-color: white !important;
+  box-shadow: #f40e0040 0px 0px 30px 0px;
+  /* transition: all 0.3s; */
+}
+
+.projectRecoveryIcon {
+  box-shadow: #f40e0040 0px 0px 30px 0px;
+}
+
+/*  */
+@keyframes spin-tire {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.spin-tire {
+  animation: spin-tire 15s linear infinite;
+  transform-origin: center;
+}
+
+.red-outlined-btn {
+  @apply bg-red-50 hover:bg-[#F40E00] border-[3px] border-[#F40E00] text-[#F40E00] rounded-[14px] w-auto px-3 lg:px-0 lg:w-[249px] h-[48px] lg:h-[64px] flex items-center justify-center gap-2 text-sm md:text-lg font-semibold hover:text-white transition-all duration-300;
+}
+.section {
+  @apply bg-transparent py-14 lg:py-24 relative;
+}
+
+.systems-section-heading {
+  @apply text-3xl md:text-4xl lg:text-5xl midlg:text-6xl xl:text-[72px] font-bold text-[#111111] tracking-tight leading-[1];
+}
+
+.number {
+  @apply inline-block bg-gradient-to-b from-[#c7c6c6] to-[#ffffff] bg-clip-text text-transparent group-hover:from-[#f9bdbd] group-hover:to-[#fc5050] transition-all duration-300;
+}

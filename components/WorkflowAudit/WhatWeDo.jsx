@@ -87,7 +87,7 @@ export default function WhatWeDo({ openModal }) {
             className={`w-[52px] h-[52px] rounded-[15px] bg-[#F40E00] flex items-center justify-center`}
           >
             <Image
-              src={"/circular-lines-white.png"}
+              src={"/workflow-audit/circular-lines-white.png"}
               alt="circular-lines-white"
               width={26}
               height={26}
@@ -101,7 +101,7 @@ export default function WhatWeDo({ openModal }) {
           </p>
 
           <Image
-            src={"/circular-lines.png"}
+            src={"/workflow-audit/circular-lines.png"}
             alt="circular-lines"
             width={91}
             height={91}

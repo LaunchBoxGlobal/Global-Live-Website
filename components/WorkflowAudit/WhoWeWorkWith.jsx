@@ -12,7 +12,7 @@ const services = [
   },
   {
     title: "Cleaning Companies",
-    icon: "/cleaning-companies.png",
+    icon: "/workflow-audit/cleaning-companies.png",
     width: 22,
     height: 22,
     alt: "cleaning companies icon",
@@ -40,7 +40,7 @@ const services = [
   },
   {
     title: "Appliance Repair Companies",
-    icon: "/appliance-repair-icon.png",
+    icon: "/workflow-audit/appliance-repair-icon.png",
     width: 22,
     height: 22,
     alt: "appliance-repair-icon",
@@ -54,7 +54,7 @@ const services = [
   },
   {
     title: "Field Service Teams",
-    icon: "/field-service-teams-service.png",
+    icon: "/workflow-audit/field-service-teams-service.png",
     width: 22,
     height: 22,
     alt: "field-service-teams-service",
@@ -75,14 +75,14 @@ const services = [
   },
   {
     title: "Equipment Rental Companies",
-    icon: "/equipment-rental-companies-icon.png",
+    icon: "/workflow-audit/equipment-rental-companies-icon.png",
     width: 22,
     height: 22,
     alt: "equipment-rental-companies-icon",
   },
   {
     title: "Security Service Companies",
-    icon: "/equipment-rental-companies-icon.png",
+    icon: "/workflow-audit/equipment-rental-companies-icon.png",
     width: 22,
     height: 22,
     alt: "Security Service Companies",
@@ -96,7 +96,7 @@ const services = [
   },
   {
     title: "Event Service Companies",
-    icon: "/event-services.png",
+    icon: "/workflow-audit/event-services.png",
     width: 22,
     height: 22,
     alt: "event-services",
