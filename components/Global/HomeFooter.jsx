@@ -15,6 +15,8 @@ import FooterScrollingText from "./FooterScrollingText";
 import FooterBadges from "./FooterBadges";
 
 const HomeFooter = () => {
+  const date = new Date();
+  const year = date.getFullYear();
   return (
     <footer className="w-full pt-12 pb-6 lg:pt-20 bg-black text-white overflow-hidden">
       <FooterScrollingText />
@@ -158,7 +160,7 @@ const HomeFooter = () => {
           className="w-full absolute z-0 inset-x-0 top-14 lg:top-10 midlg:top-1.5"
         />
         <p className="text-sm md:text-base font-semibold opacity-70 z-10 relative top-5">
-          © 2025 LaunchBox Global. All Rights Reserved.
+          © {year || 2026} LaunchBox Global. All Rights Reserved.
         </p>
 
         <div className="flex items-center justify-end gap-3 z-10 relative top-3">
