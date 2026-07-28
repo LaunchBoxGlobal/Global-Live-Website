@@ -37,7 +37,7 @@ export function Workflow() {
     <section className="w-full padding-x relative flex justify-center">
       <div className="w-full">
         {/* Header */}
-        <div className="mb-24">
+        <div className="mb-14">
           <h2 className="section-heading text-start z-10">Workflow</h2>
         </div>
 
@@ -56,19 +56,19 @@ export function Workflow() {
               )}
 
               {/* Icon */}
-              <div className="w-[60px] h-[60px] rounded-full bg-[#5667FF] flex items-center justify-center text-white shadow-[0_0_40px_rgba(86,103,255,0.4)] mb-10 shrink-0 relative z-10 transition-transform duration-300 group-hover:scale-110">
+              <div className="w-[60px] h-[60px] rounded-full lookalike-gradient flex items-center justify-center text-white shadow-[0_0_40px_rgba(86,103,255,0.4)] mb-6 shrink-0 relative z-10 transition-transform duration-300 group-hover:scale-110">
                 <item.icon className="w-5 h-5 stroke-[2.5px]" />
               </div>
 
               {/* Content */}
               <div className="pr-4 md:pr-8 relative z-10">
-                <div className="text-[12px] font-bold text-[#8a9cf9] tracking-[0.2em] uppercase mb-4">
+                <div className="text-[14px] font-extrabold text-[#9B8FE8] tracking-[0.2em] uppercase mb-2">
                   Step {item.step}
                 </div>
-                <h3 className="text-[19px] font-bold text-gray-900 mb-4">
+                <h3 className="text-[20px] font-semibold text-gray-900 mb-2">
                   {item.title}
                 </h3>
-                <p className="text-[14.5px] text-gray-500 leading-[1.8] font-medium">
+                <p className="text-[16px] text-#626263 leading-[1.35] font-normal">
                   {item.description}
                 </p>
               </div>

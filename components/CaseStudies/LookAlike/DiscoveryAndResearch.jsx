@@ -3,10 +3,10 @@ import { Users, Eye, Activity, Box, Star } from "lucide-react";
 import Image from "next/image";
 
 // Reusable component for the four left/middle cards
-const FeatureCard = ({ icon: Icon, title, description }) => (
+const FeatureCard = ({ icon: Icon, title, description, alt }) => (
   <div className="bg-white rounded-[16px] p-5 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-[#5E51C91F] h-full flex flex-col">
     <div className="w-[40px] h-[40px] rounded-[14px] lookalike-gradient flex items-center justify-center text-[#fff] mb-4">
-      <Icon className="w-5 h-5" />
+      <Image src={Icon} width={16} height={16} alt={alt} className="w-5 h-5" />
     </div>
     <h3 className="text-lg font-bold text-gray-900 mb-2">{title}</h3>
     <p className="text-sm text-[#4A5565] leading-[1.35] font-normal">
@@ -32,12 +32,14 @@ export function DiscoveryResearch() {
           {/* Column 1 */}
           <div className="flex flex-col gap-6">
             <FeatureCard
-              icon={Users}
+              icon={"/case-studies/lookalike/users-icon.png"}
+              alt={"User research icon"}
               title="User Research"
               description="We spoke with users to understand what makes them stay on a friendship app — and what makes them leave. Trust in the verification step came up as a major factor early on."
             />
             <FeatureCard
-              icon={Activity}
+              icon={"/case-studies/lookalike/feature-prioritization-icon.png"}
+              alt={"Feature prioritisation icon"}
               title="Feature Prioritisation"
               description="We defined must-haves first: profile creation, browsing, like/skip, match percentage, and chat. Subscription access was built in from the start as a core business requirement."
             />
@@ -46,12 +48,14 @@ export function DiscoveryResearch() {
           {/* Column 2 */}
           <div className="flex flex-col gap-6 relative z-10">
             <FeatureCard
-              icon={Eye}
+              icon={"/case-studies/lookalike/tech-exploration-icon.png"}
+              alt={"Competitor review icon"}
               title="Competitor Review"
               description="We studied other matching and social discovery apps to see what worked, and where facial-based matching could set LookaLike apart from typical swipe apps."
             />
             <FeatureCard
-              icon={Box}
+              icon={"/case-studies/lookalike/comptitor-review-icon.png"}
+              alt={"Tech exploration icon"}
               title="Tech Exploration"
               description="We evaluated facial recognition and verification technologies for accuracy and privacy, and selected messaging infrastructure that could scale as the user base grows."
             />

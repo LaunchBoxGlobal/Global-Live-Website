@@ -5,23 +5,29 @@ import Hero from "./Hero";
 import Challenges from "./Challenges";
 import { DiscoveryResearch } from "./DiscoveryAndResearch";
 import { Workflow } from "./Workflow";
+import Wireframes from "./Wireframes";
+import Branding from "./Branding";
+import TechStack from "./TechStack";
+import Objectives from "./Objectives";
 
 const LookAlikeCaseStudy = () => {
   return (
-    <main className="w-full overflow-hidden flex flex-col gap-14 lg:gap-20 midlg:gap-48">
+    <main className="w-full overflow-hidden flex flex-col gap-14 lg:gap-20 midlg:gap-40">
       <Hero />
-      {/* <div className="w-full border border-black lg:hidden"></div> */}
+
       <Challenges />
+
+      <Objectives />
 
       <DiscoveryResearch />
 
       <Workflow />
 
-      {/* <WorkflowSection /> */}
+      <Wireframes />
 
-      {/* <WirframesSection /> */}
+      <Branding />
 
-      {/* <BrandingSection /> */}
+      <TechStack />
 
       {/* <ProblemsAndSolutions /> */}
       <div className="w-full padding-x pb-10">
