@@ -1,12 +1,14 @@
-import Image from "next/image";
 import React from "react";
+import OutcomesAnimation from "./OutcomeAnimation";
 
-const Wireframes = () => {
+const FinalOutcomes = () => {
   return (
-    <section className="w-full padding-x relative">
+    <section className="w-full padding-x relative mb-10">
       {/* Header */}
-      <div className="mb-14 relative z-10 text-center">
-        <h2 className="section-heading z-10 mb-5">Wireframes</h2>
+      <div className="mb-14 relative z-10 text-start">
+        <h2 className="section-heading z-10 mb-5">
+          Final <span className="lookalike-gradient-text">Outcomes</span>
+        </h2>
         <p className="text-base md:text-lg lg:text-[20px] xl:text-[22px] leading-[1.35] mx-auto text-[#212121]">
           The final product gives users a friendship platform built around trust
           from the first interaction: verification that feels quick rather than
@@ -16,17 +18,11 @@ const Wireframes = () => {
           throughout, restricting features automatically on expiry while keeping
           the experience seamless for active users.
         </p>
-
-        <Image
-          src={"/case-studies/lookalike/lookalikematch-wireframes.png"}
-          alt="lookalikematch-wireframes"
-          width={1271}
-          height={771}
-          className="object-contain w-full relative z-10 mx-auto mt-12"
-        />
       </div>
+
+      <OutcomesAnimation />
     </section>
   );
 };
 
-export default Wireframes;
+export default FinalOutcomes;

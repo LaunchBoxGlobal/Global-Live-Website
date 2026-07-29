@@ -6,7 +6,7 @@ import Link from "next/link";
 const Hero = () => {
   return (
     <section className="w-full relative">
-      <section className="w-full bg-white relative pt-36 2xl:pt-52 flex flex-col items-center justify-start gap-5 padding-x">
+      <section className="w-full relative z-10 pt-36 2xl:pt-52 flex flex-col items-center justify-start gap-5 padding-x">
         <Image
           src={"/case-studies/lookalike/lookalikematch-logo.svg"}
           width={155}
@@ -15,7 +15,7 @@ const Hero = () => {
           alt="LookAlike Match logo"
         />
 
-        <h1 className="text-[40px] lg:text-[80px] leading-none tracking-tight font-extrabold z-10">
+        <h1 className="text-[40px] lg:text-[80px] leading-none tracking-tight font-extrabold relative z-10 my-10">
           LookAlike Match
         </h1>
         <h2 className="text-[22px] font-medium tracking-tight">Overview</h2>

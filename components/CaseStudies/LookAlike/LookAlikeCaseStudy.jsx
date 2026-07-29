@@ -9,10 +9,13 @@ import Wireframes from "./Wireframes";
 import Branding from "./Branding";
 import TechStack from "./TechStack";
 import Objectives from "./Objectives";
+import ProblemsAndSolutions from "./ProblemsAndSolutions";
+import CTA from "./CTA";
+import FinalOutcomes from "./FinalOutcomes";
 
 const LookAlikeCaseStudy = () => {
   return (
-    <main className="w-full overflow-hidden flex flex-col gap-14 lg:gap-20 midlg:gap-40">
+    <main className="w-full overflow-hidden flex flex-col gap-20 lg:gap-32 midlg:gap-40">
       <Hero />
 
       <Challenges />
@@ -27,17 +30,14 @@ const LookAlikeCaseStudy = () => {
 
       <Branding />
 
+      <ProblemsAndSolutions />
+
       <TechStack />
 
-      {/* <ProblemsAndSolutions /> */}
-      <div className="w-full padding-x pb-10">
-        <div className="w-full border" />
-      </div>
-      {/* <div className="w-full" /> */}
-      {/* <TechStack /> */}
+      <FinalOutcomes />
 
-      {/* <Outcomes />
-      <CTA /> */}
+      <CTA />
+
       <OtherCaseStudies />
     </main>
   );

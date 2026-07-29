@@ -26,7 +26,7 @@ const BusinessProblems = ({ openModal }) => {
   const selectedCount = selected.length;
   const score = Math.round((selectedCount / totalProblems) * 100);
 
-  const isQualified = score >= 70;
+  const isQualified = score >= 22;
 
   const getHelperText = () => {
     if (selectedCount === 0) {
@@ -121,7 +121,7 @@ const BusinessProblems = ({ openModal }) => {
             ) : (
               <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-5">
                 <div className="flex items-start lg:items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-green-500 text-white flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-full red-bg text-white flex items-center justify-center shrink-0">
                     ✓
                   </div>
 
@@ -134,13 +134,6 @@ const BusinessProblems = ({ openModal }) => {
                       You're likely losing time and money to disconnected
                       systems.
                     </p>
-
-                    {/* <div className="w-full max-w-[300px] h-2 bg-green-100 rounded-full mt-3 overflow-hidden">
-                      <div
-                        className="h-full bg-green-500"
-                        style={{ width: `${score}%` }}
-                      />
-                    </div> */}
                   </div>
                 </div>
 

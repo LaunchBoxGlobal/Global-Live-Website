@@ -34,7 +34,7 @@ const steps = [
 
 export function Workflow() {
   return (
-    <section className="w-full padding-x relative flex justify-center">
+    <section className="w-full padding-x relative">
       <div className="w-full">
         {/* Header */}
         <div className="mb-14">
@@ -52,7 +52,7 @@ export function Workflow() {
 
               {/* Connector Line (Mobile) */}
               {index !== steps.length - 1 && (
-                <div className="md:hidden absolute top-[60px] left-[29px] bottom-[-48px] w-[2px] bg-[#c3cce8] z-0" />
+                <div className="hidden absolute top-[60px] left-[29px] bottom-[-48px] w-[2px] bg-[#c3cce8] z-0" />
               )}
 
               {/* Icon */}

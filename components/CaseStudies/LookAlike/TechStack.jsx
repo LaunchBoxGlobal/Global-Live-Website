@@ -3,10 +3,10 @@ import React from "react";
 
 const TechStack = () => {
   return (
-    <section className="w-full padding-x relative flex justify-center">
+    <section className="w-full padding-x relative pt-24">
       {/* Header */}
       <div className="mb-14 relative z-10 text-center">
-        <h2 className="section-heading z-10 mb-5">
+        <h2 className="section-heading z-10">
           Tech Stack & <span className="lookalike-gradient-text">Tools</span>
         </h2>
 
