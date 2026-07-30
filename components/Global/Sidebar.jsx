@@ -6,24 +6,36 @@ import React, { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoClose } from "react-icons/io5";
 
+const business_solutions_links = [
+  {
+    title: "Funded Startup",
+    pageUrl: "/funded-startup",
+  },
+  {
+    title: "Field Service Business",
+    pageUrl: "/field-service-business",
+  },
+];
+
 const Sidebar = ({ onclose }) => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useRouter();
   const [locationsDropdown, setLocationsDropdown] = useState(false);
   const [industriesDropdown, setIndustriesDropdown] = useState();
+  const [businessSolutionsDropdown, setBusinessSolutionsDropdown] =
+    useState(false);
+
+  const toggleBusinessSolutionDropdown = () => {
+    setBusinessSolutionsDropdown((prev) => !prev);
+  };
 
   const toggleIndustriesDropdown = () => {
     setIndustriesDropdown((prev) => !prev);
+    setIsOpen(false);
   };
 
   const toggleLocationsDropdown = () => {
     setLocationsDropdown((prev) => !prev);
-  };
-
-  const handleNavigateToLocationPage = (url) => {
-    navigate.push(url);
-    toggleLocationsDropdown();
-    onclose();
   };
 
   const toggleDropdown = () => {
@@ -32,20 +44,17 @@ const Sidebar = ({ onclose }) => {
 
   const handleNavigate = (url) => {
     navigate.push(url);
-    toggleDropdown();
+    // toggleDropdown();
+    setIsOpen(false);
+    setLocationsDropdown(false);
+    setIndustriesDropdown(false);
+    setBusinessSolutionsDropdown(false);
     onclose();
   };
 
   const navigator = (path) => {
+    onclose();
     navigate.push(path);
-    onclose();
-  };
-
-  const handleScrollToServices = (id) => {
-    console.log("clicked");
-    const section = document.getElementById(id);
-    section?.scrollIntoView({ behavior: "smooth" });
-    onclose();
   };
 
   return (
@@ -83,6 +92,7 @@ const Sidebar = ({ onclose }) => {
             Home{" "}
           </button>
         </li>
+        {/* services */}
         <li className="w-full relative">
           <button
             type={`button`}
@@ -107,7 +117,6 @@ const Sidebar = ({ onclose }) => {
                       <button
                         type="button"
                         onClick={() => handleNavigate(l?.url)}
-                        // href={`/services/mobile-app-development-services`}
                         className={`font-normal text-[15px] 2xl:text-[22px] flex items-center justify-start gap-1 group`}
                       >
                         {l?.title}
@@ -119,6 +128,7 @@ const Sidebar = ({ onclose }) => {
             </div>
           )}
         </li>
+        {/* location */}
         <li className="w-full relative">
           <button
             type={`button`}
@@ -143,7 +153,6 @@ const Sidebar = ({ onclose }) => {
                       <button
                         type="button"
                         onClick={() => handleNavigate(l?.pageUrl)}
-                        // href={`/services/mobile-app-development-services`}
                         className={`font-normal text-[15px] 2xl:text-[22px] flex items-center justify-start text-start gap-1 group`}
                       >
                         {l?.title}
@@ -155,6 +164,44 @@ const Sidebar = ({ onclose }) => {
             </div>
           )}
         </li>
+
+        {/* business solutions */}
+        <li className="w-full relative">
+          <button
+            type={`button`}
+            onClick={toggleBusinessSolutionDropdown}
+            className={`font-normal w-full text-[16px] 2xl:text-[22px] flex items-center justify-between gap-1 group ${
+              businessSolutionsDropdown && "red-text"
+            }`}
+          >
+            Business Solutions{" "}
+            <IoIosArrowDown
+              className={`transition-all duration-300 text-lg mt-0.5 ${
+                businessSolutionsDropdown ? "rotate-180" : "rotate-0"
+              }`}
+            />
+          </button>
+          {businessSolutionsDropdown && (
+            <div className="bg-white px-2 from-blue-50 mt-4 z-50">
+              <ul className="space-y-1 flex flex-col items-start">
+                {business_solutions_links?.map((l, i) => {
+                  return (
+                    <li className="" key={i}>
+                      <button
+                        type="button"
+                        onClick={() => handleNavigate(l?.pageUrl)}
+                        className={`font-normal text-[15px] 2xl:text-[22px] flex items-center justify-start text-start gap-1 group`}
+                      >
+                        {l?.title}
+                      </button>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          )}
+        </li>
+
         <li>
           <button
             type="button"

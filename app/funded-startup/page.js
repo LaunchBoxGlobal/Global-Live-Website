@@ -2,8 +2,8 @@ import SystemsPage from "@/components/SystemsPage/SystemsPage";
 import React from "react";
 
 export const metadata = {
-  title: "LaunchBox Global",
-  description: "",
+  title: "Funded Startup | LaunchBox Global",
+  description: "Funded Startup | LaunchBox Global",
 };
 
 const page = () => {

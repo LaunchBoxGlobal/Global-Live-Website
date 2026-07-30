@@ -143,8 +143,19 @@ const Technology = ({ closeDropdown, selectedTab }) => {
       pageUrl: "/development-technologies/ionic-app-development",
     },
   ];
+
+  const new_pages = [
+    {
+      title: "Funded Startup",
+      pageUrl: "/funded-startup",
+    },
+    {
+      title: "Field Service Business",
+      pageUrl: "/field-service-business",
+    },
+  ];
   return (
-    <div className="w-full flex items-start justify-between">
+    <div className="w-full flex flex-col items-start justify-between">
       <div
         className={`${
           selectedTab === "Technology"
@@ -168,12 +179,30 @@ const Technology = ({ closeDropdown, selectedTab }) => {
           })}
         </ul>
       </div>
-      {/* <div className="border-r border-l px-4 w-[33%]">
-        <Industry selectedTab={selectedTab} />
+
+      <div
+        className={`${
+          selectedTab === "Technology"
+            ? "bg-[#E6E6E673] border"
+            : "bg-white border border-white"
+        } rounded-[7px] mr-4 w-full`}
+      >
+        <p className="text-lg font-medium mt-8">Business Solutions</p>
+        <ul className="space-y-1 mt-3 flex flex-col items-start">
+          {new_pages?.map((p, i) => {
+            return (
+              <Link
+                href={`${p?.pageUrl}`}
+                key={i}
+                onClick={closeDropdown}
+                className="text-lg underline text-gray-600 hover:text-black"
+              >
+                {p?.title}
+              </Link>
+            );
+          })}
+        </ul>
       </div>
-      <div className="w-[33%] px-4">
-        <Location selectedTab={selectedTab} />
-      </div> */}
     </div>
   );
 };
@@ -240,7 +269,7 @@ const Location = ({ selectedTab, closeDropdown }) => {
       title: "Software Development Company in Florida",
       pageUrl: "/software-development-company-in-florida",
     },
-   
+
     {
       title: "Software Development Company in New Jersey",
       pageUrl: "/software-development-company-in-new-jersey",
@@ -261,7 +290,7 @@ const Location = ({ selectedTab, closeDropdown }) => {
       title: "Mobile App Development Company in Texas",
       pageUrl: "/mobile-app-development-company-in-texas",
     },
-     {
+    {
       title: "Software Development Company in Austin",
       pageUrl: "/software-development-company-in-austin",
     },
