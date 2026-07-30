@@ -68,7 +68,7 @@ export function Workflow() {
                 <h3 className="text-[20px] font-semibold text-gray-900 mb-2">
                   {item.title}
                 </h3>
-                <p className="text-[16px] text-#626263 leading-[1.35] font-normal">
+                <p className="text-[16px] text-[#4A5565] leading-[1.35] font-normal">
                   {item.description}
                 </p>
               </div>

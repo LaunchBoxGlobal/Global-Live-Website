@@ -5,7 +5,7 @@ const TechStack = () => {
   return (
     <section className="w-full padding-x relative pt-24">
       {/* Header */}
-      <div className="mb-14 relative z-10 text-center">
+      <div className="w-full relative z-10 text-center">
         <h2 className="section-heading z-10">
           Tech Stack & <span className="lookalike-gradient-text">Tools</span>
         </h2>
