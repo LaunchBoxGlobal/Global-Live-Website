@@ -19,7 +19,7 @@ const Hero = () => {
           LookAlike Match
         </h1>
         <h2 className="text-[22px] font-medium tracking-tight">Overview</h2>
-        <p className="text-xl text-center lg:w-[90%] z-10">
+        <p className="text-xl text-center lg:w-[90%] z-10 text-[#4A5565]">
           LookaLike is a friendship-based social app that helps people discover
           and connect with others based on genuine compatibility. Users create a
           profile, browse others on the home screen, and simply like or skip to
