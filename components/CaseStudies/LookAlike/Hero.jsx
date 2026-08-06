@@ -15,7 +15,7 @@ const Hero = () => {
           alt="LookAlike Match logo"
         />
 
-        <h1 className="text-[40px] lg:text-[80px] leading-none tracking-tight font-extrabold relative z-10 my-10">
+        <h1 className="text-[40px] lg:text-[80px] leading-none tracking-tight font-extrabold relative z-10 mt-7 mb-4">
           LookAlike Match
         </h1>
         <h2 className="text-[22px] font-medium tracking-tight">Overview</h2>
@@ -33,7 +33,11 @@ const Hero = () => {
         </p>
 
         <div className="w-full flex justify-center mt-5 z-10">
-          <Link href={`/`} target="_blank" className="z-10">
+          <Link
+            href={`https://apps.apple.com/us/app/lookalike-match/id6766226894`}
+            target="_blank"
+            className="z-10"
+          >
             <Image
               src={"/case-studies/usubz/download-app-store-image.svg"}
               alt="download-app-store-image"
@@ -43,7 +47,11 @@ const Hero = () => {
             />
           </Link>
 
-          <Link href={`/`} target="_blank" className="z-10">
+          <Link
+            href={`https://play.google.com/store/apps/details?id=com.launchbox.lal`}
+            target="_blank"
+            className="z-10"
+          >
             <Image
               src={"/case-studies/usubz/google-play-image.svg"}
               alt="google-play-image"

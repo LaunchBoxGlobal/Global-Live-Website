@@ -39,8 +39,8 @@ const OutcomesAnimation = () => {
   ]);
 
   return (
-    <div className="w-full mt-10 midlg:mt-12">
-      <div className="w-full relative h-[65vh] md:h-[85vh] lookalike-gradient overflow-hidden rounded-[40px]">
+    <div className="w-full mt-10 midlg:mt-12 max-w-[1271px] mx-auto">
+      <div className="w-full relative h-[771px] max-h-[771px] lookalike-gradient overflow-hidden rounded-[40px]">
         <Image
           src={"/case-studies/lines_Grid-2.png"}
           alt="lines_Grid"
