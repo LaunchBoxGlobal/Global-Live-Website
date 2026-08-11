@@ -56,7 +56,7 @@ const HealthcareProcess = ({
       </div>
 
       {/* Line + Cards */}
-      <div className="w-full relative py-20 lg:pb-40">
+      <div className="w-full max-w-7xl mx-auto relative py-20 lg:pb-40">
         <AnimatedLine />
 
         {activeTab === "agile" &&

@@ -10,7 +10,7 @@ const Hero = () => {
     triggerOnce: false,
   });
   return (
-    <section className="w-full relative overflow-hidden bg-white min-h-[100vh]">
+    <section className="w-full relative overflow-hidden bg-white">
       <section className="w-full relative pt-36 2xl:pt-52 padding-x flex flex-col items-center justify-start gap-5 lg:gap-3 overflow-hidden z-10">
         <h1 className="font-extrabold text-[8.5vw] md:text-[5.5vw] lg:text-[70px] xl:text-[70px] text-center tracking-normal leading-[1] w-full z-10 f">
           Wyoming Digital Marketing That Drives{" "}
@@ -96,10 +96,10 @@ const Hero = () => {
               height={573}
               priority
               quality={85}
-              sizes="(max-width: 768px) 100vw, 
-         (max-width: 1100px) 80vw, 
-         1052px"
-              className="mx-auto h-auto object-contain z-10 relative lg:w-[85%] midlg:w-[85%] xl:w-[88%]"
+              sizes="(max-width: 768px) 100vw,
+               (max-width: 1100px) 80vw,
+               1052px"
+              className="mx-auto h-auto object-contain z-10 relative lg:w-[85%] midlg:w-[85%] xl:w-[85%]"
             />
           </motion.div>
         </section>

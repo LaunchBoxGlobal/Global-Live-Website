@@ -20,7 +20,7 @@ const Workflow = () => {
         </p>
       </section>
 
-      <div className="w-full relative py-20 lg:pb-60">
+      <div className="w-full max-w-7xl mx-auto relative py-20 lg:pb-60">
         <AnimatedLine />
 
         {DIGITAL_MARKETING_SERVICE_PROCESS?.map((process, index) => (

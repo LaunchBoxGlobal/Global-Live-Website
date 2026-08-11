@@ -1,10 +1,10 @@
-"use client"
+"use client";
 import Image from "next/image";
 import React from "react";
 
 const HeroAnimation = () => {
   return (
-    <div className="w-full h-auto lg:h-[600px] relative flex justify-center items-end mt-14 overflow-y-hidden">
+    <div className="w-full max-w-7xl mx-auto h-auto lg:h-[600px] relative flex justify-center items-end mt-14 overflow-y-hidden">
       {/* chair-card */}
       <Image
         src={`/locations/mobile-app-developer-in-austin/chair-card.png`}
@@ -27,7 +27,7 @@ const HeroAnimation = () => {
         width={370}
         height={564}
         alt="mobile screen mockup"
-        className="mx-auto z-20 w-[30%] "
+        className="mx-auto z-20 w-[30%] object-contain max-h-[550px]"
       />
 
       {/* modern-yellow-chair-card */}

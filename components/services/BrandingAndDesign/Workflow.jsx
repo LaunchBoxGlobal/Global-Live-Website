@@ -20,7 +20,7 @@ const Workflow = () => {
         </p>
       </section>
 
-      <div className="w-full relative  py-20">
+      <div className="w-full relative max-w-7xl mx-auto py-20">
         <AnimatedLine />
 
         {/* Cards */}

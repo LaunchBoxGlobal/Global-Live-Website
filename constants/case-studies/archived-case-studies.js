@@ -19,11 +19,11 @@ export const ARCHIVED_CASE_STUDIES = [
     title: "My Garage Outlet",
     url: "/case-studies/my-garage-outlet",
   },
-  {
-    image: "/case-studies/fit110/fit110-case-study-mockup.webp",
-    title: "Fit 110",
-    url: "/case-studies/fit110",
-  },
+  // {
+  //   image: "/case-studies/fit110/fit110-case-study-mockup.webp",
+  //   title: "Fit 110",
+  //   url: "/case-studies/fit110",
+  // },
   {
     image: "/case-studies/sittner-trucking/jb-sittner-trucking-banner-01.png",
     title: "JB Sittner Trucking",

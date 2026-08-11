@@ -8,7 +8,7 @@ import { OFFSHORE_PROCESS } from "@/constants/off-shore-development/offshore-pro
 
 const OffShoreProcess = () => {
   return (
-    <div className="w-full relative py-20 lg:pb-60 midlg:pb-40">
+    <div className="w-full max-w-7xl mx-auto relative py-20 lg:pb-60 midlg:pb-40">
       <AnimatedLine />
 
       {/* Cards */}

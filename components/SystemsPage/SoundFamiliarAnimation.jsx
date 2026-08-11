@@ -5,7 +5,7 @@ import SoundFamiliarCard from "./SoundFamiliarCard";
 
 const SoundFamiliarAnimation = () => {
   return (
-    <section className="w-full min-h-screen relative padding-x flex flex-col items-center gap-6 lg:gap-16 py-12 lg:py-20 lg:justify-center">
+    <section className="w-full max-w-[1900px] mx-auto min-h-screen relative padding-x flex flex-col items-center gap-6 lg:gap-16 py-12 lg:py-20 lg:justify-center">
       <div className="w-[100vw] h-[100vw] rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 bg-red-400/20 blur-3xl pointer-events-none opacity-30" />
 
       {/* 01 */}
@@ -15,7 +15,7 @@ const SoundFamiliarAnimation = () => {
       />
 
       {/* 02 - 03 */}
-      <div className="w-full flex flex-col items-center gap-4 lg:gap-0 lg:flex-row lg:absolute lg:z-30 lg:justify-between lg:items-center lg:top-[21.5%] lg:px-[16%]">
+      <div className="w-full flex flex-col items-center gap-4 lg:gap-0 lg:flex-row lg:absolute lg:z-30 lg:justify-between lg:items-center lg:top-[21.5%] 2xl:top-[30%] lg:px-[16%]">
         <SoundFamiliarCard
           num={"02"}
           text="You raised pre-seed or seed funding but have no engineering team yet."
@@ -39,7 +39,7 @@ const SoundFamiliarAnimation = () => {
       </div>
 
       {/* 06 - 07 */}
-      <div className="w-full flex flex-col items-center gap-4 lg:gap-0 lg:flex-row lg:absolute lg:z-30 lg:justify-between lg:items-center lg:bottom-[17%] lg:px-[16%]">
+      <div className="w-full flex flex-col items-center gap-4 lg:gap-0 lg:flex-row lg:absolute lg:z-30 lg:justify-between lg:items-center lg:bottom-[17%] 2xl:bottom-[27%] lg:px-[16%]">
         <SoundFamiliarCard
           num={"06"}
           text="You raised pre-seed or seed funding but have no engineering team yet."

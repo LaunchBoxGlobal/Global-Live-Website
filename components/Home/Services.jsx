@@ -439,7 +439,7 @@ const Services = ({ heading, redText, description, descriptionWidth }) => {
           </button>
 
           {/* Service 5 */}
-          <button
+          {/* <button
             type="button"
             className={`w-full px-4 pb-0 pt-4 lg:pt-10 lg:px-7 rounded-xl flex flex-col items-start justify-between gap-x-4 group lg:hover:bg-black ${
               openFaq === 4 ? "bg-[#000] lg:pb-[60px]" : "bg-white lg:pb-[50px]"
@@ -520,7 +520,7 @@ const Services = ({ heading, redText, description, descriptionWidth }) => {
                 </motion.div>
               </div>
             </div>
-          </button>
+          </button> */}
 
           {/* Service 6 */}
           <button
@@ -536,7 +536,7 @@ const Services = ({ heading, redText, description, descriptionWidth }) => {
                   openFaq === 5 && "text-white"
                 }`}
               >
-                (07)
+                (06)
               </span>
               <img
                 src="/home-branding-and-design-service-mockup.webp"

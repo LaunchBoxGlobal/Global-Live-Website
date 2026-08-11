@@ -19,7 +19,7 @@ const OnDemandProcess = () => {
           professionals quickly, without compromising on quality or fit.
         </p>
       </section>
-      <div className="w-full relative mt-10 pt-20 pb-24">
+      <div className="w-full max-w-7xl mx-auto relative mt-10 pt-20 pb-24">
         <AnimatedLine />
 
         {/* Cards */}

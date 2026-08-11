@@ -19,7 +19,7 @@ const AgileWorkflow = ({ workflow }) => {
         width={119}
         height={221}
         loading="lazy"
-        className="object-contain absolute lg:bottom-[-2.8%] midlg:bottom-[-3.9%] xl:bottom-[-2.8%] right-[27%] w-[219px] h-[221px] hidden lg:block"
+        className="object-contain absolute lg:bottom-[-2.8%] midlg:bottom-[-3.9%] xl:bottom-[-2.5%] right-[27%] w-[219px] h-[221px] hidden lg:block"
       />
       {workflow?.map((plan, index) => {
         const isLeft = index % 2 === 0;
@@ -29,10 +29,10 @@ const AgileWorkflow = ({ workflow }) => {
               index === 4
                 ? "xl:-top-20"
                 : index === 5
-                ? "xl:-top-24"
-                : index === 6
-                ? "xl:-top-28"
-                : ""
+                  ? "xl:-top-24"
+                  : index === 6
+                    ? "xl:-top-28"
+                    : ""
             } ${
               isLeft
                 ? `border-l-[17px] border-[#00aeff] lg:mr-auto`
