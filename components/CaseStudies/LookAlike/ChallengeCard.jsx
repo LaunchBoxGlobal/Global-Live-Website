@@ -13,8 +13,10 @@ const ChallengeCard = ({ ch, idx }) => {
           src={ch.num}
           width={ch.numWidth}
           height={120}
+          sizes="(min-width: 1024px) 120px, 100px"
           className="object-contain w-[100px] lg:min-w-[120px]"
-          alt={`list number`}
+          alt={`Challenge ${idx + 1}`}
+          loading="lazy"
         />
       </div>
 
@@ -25,8 +27,10 @@ const ChallengeCard = ({ ch, idx }) => {
             src={ch.icon}
             width={ch.iconWidth}
             height={ch.iconHeight}
+            sizes="60px"
             className="object-contain group-hover:brightness-0 group-hover:invert transition-all duration-300"
-            alt={`list number`}
+            alt={`${ch.title} icon`}
+            loading="lazy"
           />
         </div>
         <h3 className="text-lg md:text-[20px] lg:text-[24px] font-bold leading-[1.25] w-full max-w-[305px]">

@@ -8,13 +8,14 @@ export default function CtaAnimation() {
     <div className="w-full flex items-center justify-center min-h-[400px] md:min-h-[650px] relative lg:absolute right-0 max-w-[600px] -bottom-10 mx-auto">
       {/* Center Mockup */}
       <Image
-        src="/case-studies/lookalike/lookalikematch-home-screen-mockup.png"
-        alt="Center Mockup"
+        src="/case-studies/lookalike/lookalikematch-home-screen-mockup.webp"
+        alt="LookalikeMatch home screen"
         width={333}
         height={405}
+        sizes="(min-width: 1024px) 333px, (min-width: 768px) 320px, 220px"
         className="relative z-20 object-contain mx-auto w-[220px] md:w-[320px] lg:w-[333px] h-auto"
+        priority
       />
-
       {/* LEFT SIDE */}
       <motion.div
         className="absolute z-30 -left-5 bottom-[10%]"
@@ -46,10 +47,12 @@ export default function CtaAnimation() {
         </motion.div>
 
         <Image
-          src="/case-studies/lookalike/left-mockup.png"
-          alt="Left Mockup"
+          src="/case-studies/lookalike/left-mockup.webp"
+          alt="LookalikeMatch profile screen"
           width={280}
           height={350}
+          sizes="(min-width: 1280px) 260px, (min-width: 1024px) 210px, (min-width: 768px) 220px, 140px"
+          loading="lazy"
           className="object-contain w-[140px] md:w-[220px] lg:w-[210px] h-auto z-30 relative left-20 midlg:w-[260px] midlg:left-0"
         />
       </motion.div>
@@ -86,19 +89,23 @@ export default function CtaAnimation() {
           }}
         >
           <Image
-            src="/case-studies/lookalike/celeberation-cone.png"
-            alt="celeberation-cone"
+            src="/case-studies/lookalike/celeberation-cone.webp"
+            alt=""
             width={102}
             height={102}
+            sizes="(min-width: 1024px) 102px, (min-width: 768px) 75px, 50px"
+            loading="lazy"
             className="object-contain w-[50px] md:w-[75px] lg:w-[102px] h-auto"
           />
         </motion.div>
 
         <Image
-          src="/case-studies/lookalike/right-mobile-mockup.png"
-          alt="Right Mockup"
+          src="/case-studies/lookalike/right-mobile-mockup.webp"
+          alt="LookalikeMatch mobile screen"
           width={240}
           height={400}
+          sizes="(min-width: 1024px) 200px, (min-width: 768px) 190px, 130px"
+          loading="lazy"
           className="object-contain w-[130px] md:w-[190px] lg:w-[200px] h-auto rotate-[2deg]"
         />
       </motion.div>

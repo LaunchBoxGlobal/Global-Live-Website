@@ -21,10 +21,13 @@ const Branding = () => {
             <div className="mb-8 flex flex-col items-center justify-center pt-2 flex-1">
               {/* Empty placeholder box with blue background as requested */}
               <Image
-                src={"/case-studies/lookalike/lookalikematch-logo.svg"}
+                src="/case-studies/lookalike/lookalikematch-logo.svg"
+                alt="LookalikeMatch logo"
                 width={200}
                 height={130}
-                alt="lookalikematch logo"
+                sizes="200px"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <p className="text-lg text-[#6A7282] leading-[1.35] font-normal">
@@ -164,10 +167,13 @@ const Branding = () => {
                 </button>
                 <button className="bg-[#EEF0FF] text-[#5E51C9] w-[38px] h-[38px] rounded-[14px] flex items-center justify-center hover:bg-[#e1e4fa] transition-colors">
                   <Image
-                    src={"/case-studies/lookalike/chat-icon.png"}
-                    alt="chat icon"
+                    src="/case-studies/lookalike/chat-icon.webp"
+                    alt="Chat icon"
                     width={16}
                     height={16}
+                    sizes="16px"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </button>
               </div>

@@ -11,11 +11,14 @@ const Objectives = () => {
         </h2>
 
         <Image
-          src={"/case-studies/lookalike/objectives.svg"}
-          alt="objectives"
+          src="/case-studies/lookalike/objectives.webp"
+          alt="LookAlike Match project objectives"
           width={1604}
           height={1581}
-          className="object-contain mx-auto"
+          sizes="(min-width: 1280px) 1200px, (min-width: 768px) 90vw, 100vw"
+          loading="lazy"
+          quality={90}
+          className="object-contain mx-auto w-full max-w-[1200px] h-auto"
         />
       </div>
     </section>

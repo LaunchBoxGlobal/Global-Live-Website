@@ -11,17 +11,24 @@ const TechStack = () => {
         </h2>
 
         <Image
-          src={"/case-studies/lookalike/lookalike-tech-stack-and-tools.png"}
-          alt="lookalike-tech-stack-and-tools"
+          src="/case-studies/lookalike/lookalike-tech-stack-and-tools.png"
+          alt="LookAlike Match technology stack and development tools"
           width={1680}
           height={180}
+          sizes="(min-width: 1280px) 1680px, 100vw"
+          loading="lazy"
+          quality={80}
           className="object-contain w-full relative z-10 mx-auto mt-12"
         />
+
         <Image
-          src={"/case-studies/lookalike/lookalike-tech-stack-tools.png"}
-          alt="lookalike-tech-stack-tools"
+          src="/case-studies/lookalike/lookalike-tech-stack-tools.png"
+          alt="LookAlike Match technology stack tools"
           width={1680}
           height={228}
+          sizes="(min-width: 1280px) 1680px, 100vw"
+          loading="lazy"
+          quality={80}
           className="object-contain w-full relative z-10 mx-auto mt-12"
         />
       </div>

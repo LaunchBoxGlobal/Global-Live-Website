@@ -53,19 +53,24 @@ const CTA = ({ handleToggleWaitlistModal }) => {
         <CtaAnimation />
 
         <Image
-          src={"/case-studies/lookalike/cta-bubble-top-right.png"}
-          alt="cta-bubble-top-right"
+          src="/case-studies/lookalike/cta-bubble-top-right.webp"
+          alt=""
           width={257}
           height={257}
-          className="absolute -top-20 -right-20 z-0"
+          sizes="257px"
+          loading="lazy"
+          className="absolute -top-20 -right-20 z-0 pointer-events-none select-none"
         />
 
+        {/* Decorative background bubble */}
         <Image
-          src={"/case-studies/lookalike/cta-bottom-left-bubble.png"}
-          alt="cta-bottom-left-bubble"
+          src="/case-studies/lookalike/cta-bottom-left-bubble.webp"
+          alt=""
           width={257}
           height={257}
-          className="absolute -bottom-10 -left-10 z-0"
+          sizes="257px"
+          loading="lazy"
+          className="absolute -bottom-10 -left-10 z-0 pointer-events-none select-none"
         />
       </section>
     </section>

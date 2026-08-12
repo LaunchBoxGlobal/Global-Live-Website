@@ -1,4 +1,5 @@
 "use client";
+
 import { motion, useMotionValue, useAnimationFrame } from "framer-motion";
 import Image from "next/image";
 import React, { useState } from "react";
@@ -6,14 +7,16 @@ import React, { useState } from "react";
 const OutcomesMarqueeColumn = ({ images, reverse = false, speed = 1 }) => {
   const y = useMotionValue(0);
   const [isPaused, setIsPaused] = useState(false);
+
   const resetY = -1280;
 
   useAnimationFrame(() => {
-    if (!isPaused) {
-      const currentY = y.get();
-      const nextY = reverse ? currentY + speed : currentY - speed;
-      y.set(nextY <= resetY ? 0 : nextY >= 0 ? resetY : nextY);
-    }
+    if (isPaused) return;
+
+    const currentY = y.get();
+    const nextY = reverse ? currentY + speed : currentY - speed;
+
+    y.set(nextY <= resetY ? 0 : nextY >= 0 ? resetY : nextY);
   });
 
   return (
@@ -25,12 +28,14 @@ const OutcomesMarqueeColumn = ({ images, reverse = false, speed = 1 }) => {
     >
       {[...images, ...images].map((platform, index) => (
         <Image
-          key={index}
+          key={`${platform}-${index}`}
           src={platform}
           width={311}
           height={675}
-          alt={platform}
-          className="w-full md:h-[300px] midlg:h-[400px] rounded-[20px]"
+          sizes="(min-width: 1280px) 197px, 151px"
+          alt=""
+          loading="lazy"
+          className="w-full h-auto md:h-[300px] midlg:h-[400px] rounded-[20px] object-cover"
         />
       ))}
     </motion.div>

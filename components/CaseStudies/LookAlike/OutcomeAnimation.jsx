@@ -42,7 +42,7 @@ const OutcomesAnimation = () => {
     <div className="w-full mt-10 midlg:mt-12 max-w-[1271px] mx-auto">
       <div className="w-full relative h-[771px] max-h-[771px] lookalike-gradient overflow-hidden rounded-[40px]">
         <Image
-          src={"/case-studies/lines_Grid-2.png"}
+          src={"/case-studies/lines_Grid-2.webp"}
           alt="lines_Grid"
           width={1271}
           height={771}

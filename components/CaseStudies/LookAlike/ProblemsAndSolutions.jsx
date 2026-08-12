@@ -29,10 +29,12 @@ const ProblemsAndSolutions = () => {
         <div className="">
           <div className="w-[56px] h-[56px] rounded-[16px] flex items-center justify-center shadow-xl shadow-black/20 lookalike-gradient">
             <Image
-              src={"/case-studies/lookalike/face-icon.png"}
-              alt="face icon"
+              src="/case-studies/lookalike/face-icon.webp"
+              alt=""
               width={22}
               height={22}
+              sizes="22px"
+              loading="lazy"
             />
           </div>
 
@@ -56,10 +58,12 @@ const ProblemsAndSolutions = () => {
           <div className="w-full bg-white custom-shadow border border-[#5E51C924] rounded-[26px] p-6 mt-7">
             <div className="flex items-center gap-2">
               <Image
-                src={"/case-studies/lookalike/right-arrow.png"}
-                alt="right-arrow"
+                src="/case-studies/lookalike/right-arrow.webp"
+                alt=""
                 width={15}
                 height={15}
+                sizes="15px"
+                loading="lazy"
                 className="object-contain"
               />
               <span className="text-[#5E51C9] text-sm font-bold">Solution</span>
@@ -88,10 +92,12 @@ const ProblemsAndSolutions = () => {
         <div className="order-2 lg:order-1">
           <div className="w-[56px] h-[56px] rounded-[16px] flex items-center justify-center shadow-xl shadow-black/20 lookalike-gradient">
             <Image
-              src={"/case-studies/lookalike/cursor.png"}
-              alt="cursor"
+              src="/case-studies/lookalike/cursor.webp"
+              alt=""
               width={22}
               height={22}
+              sizes="22px"
+              loading="lazy"
             />
           </div>
 
@@ -113,10 +119,12 @@ const ProblemsAndSolutions = () => {
           <div className="w-full bg-white custom-shadow border border-[#5E51C924] rounded-[26px] p-6 mt-7">
             <div className="flex items-center gap-2">
               <Image
-                src={"/case-studies/lookalike/right-arrow.png"}
-                alt="right-arrow"
+                src="/case-studies/lookalike/right-arrow.webp"
+                alt=""
                 width={15}
                 height={15}
+                sizes="15px"
+                loading="lazy"
                 className="object-contain"
               />
               <span className="text-[#5E51C9] text-sm font-bold">Solution</span>
@@ -140,35 +148,39 @@ const ProblemsAndSolutions = () => {
             className="w-full max-w-[570px] relative min-h-[300px] rounde-[32px]"
             style={{
               backgroundImage:
-                "url('/case-studies/lookalike/problems-box-background.svg')",
+                "url('/case-studies/lookalike/problems-box-background.webp')",
               backgroundPosition: "center",
               backgroundSize: "cover",
               borderRadius: "32px",
             }}
           >
             <Image
-              src={
-                "/case-studies/lookalike/lookalikematch-home-screen-mockup.png"
-              }
-              alt="lookalike match home screen mockup"
+              src="/case-studies/lookalike/lookalikematch-home-screen-mockup.webp"
+              alt="LookAlike Match home screen"
               width={339}
               height={451}
+              sizes="(min-width: 1024px) 339px, 330px"
+              loading="lazy"
               className="object-contain absolute bottom-10 left-1/2 -translate-x-1/2 w-[330px] lg:w-auto"
             />
             {/* left image */}
             <Image
-              src={"/case-studies/lookalike/profile-card-01.png"}
-              alt="Emma profile card"
+              src="/case-studies/lookalike/profile-card-01.webp"
+              alt="LookAlike Match user profile card"
               width={235}
               height={261}
+              sizes="(min-width: 768px) 235px, 130px"
+              loading="lazy"
               className="object-contain absolute -top-20 -left-1 w-[130px] md:w-auto"
             />
-            {/* right image */}
+
             <Image
-              src={"/case-studies/lookalike/profile-card-02.png"}
-              alt="Emma profile card"
+              src="/case-studies/lookalike/profile-card-02.webp"
+              alt="LookAlike Match user profile card"
               width={235}
               height={261}
+              sizes="(min-width: 768px) 235px, 130px"
+              loading="lazy"
               className="object-contain absolute -top-[50%] -right-1 w-[130px] md:w-auto"
             />
           </div>
@@ -182,27 +194,29 @@ const ProblemsAndSolutions = () => {
             className="w-full max-w-[570px] relative min-h-[300px] rounde-[32px]"
             style={{
               backgroundImage:
-                "url('/case-studies/lookalike/problems-box-background.svg')",
+                "url('/case-studies/lookalike/problems-box-background.webp')",
               backgroundPosition: "center",
               backgroundSize: "cover",
               borderRadius: "32px",
             }}
           >
             <Image
-              src={
-                "/case-studies/lookalike/interaction-history-management-mockup.png"
-              }
-              alt="lookalike match  mockup"
+              src="/case-studies/lookalike/interaction-history-management-mockup.webp"
+              alt="LookAlike Match interaction history screen"
               width={229}
               height={451}
+              sizes="229px"
+              loading="lazy"
               className="object-contain absolute bottom-10 left-1/2 -translate-x-1/2"
             />
-            {/* left image */}
+
             <Image
-              src={"/case-studies/lookalike/user-profile-card.png"}
-              alt="Emma profile card"
+              src="/case-studies/lookalike/px-conversions/user-profile-card.webp"
+              alt="LookAlike Match user profile card"
               width={335}
               height={261}
+              sizes="335px"
+              loading="lazy"
               className="object-contain absolute left-1/2 -translate-x-1/2 z-10 top-10"
             />
           </div>
@@ -212,10 +226,12 @@ const ProblemsAndSolutions = () => {
         <div className="">
           <div className="w-[56px] h-[56px] rounded-[16px] flex items-center justify-center shadow-xl shadow-black/20 lookalike-gradient">
             <Image
-              src={"/case-studies/lookalike/clock-icon.png"}
-              alt="clock icon"
+              src="/case-studies/lookalike/clock-icon.webp"
+              alt=""
               width={22}
               height={22}
+              sizes="22px"
+              loading="lazy"
             />
           </div>
 
@@ -237,10 +253,12 @@ const ProblemsAndSolutions = () => {
           <div className="w-full bg-white custom-shadow border border-[#5E51C924] rounded-[26px] p-6 mt-7">
             <div className="flex items-center gap-2">
               <Image
-                src={"/case-studies/lookalike/right-arrow.png"}
-                alt="right-arrow"
+                src="/case-studies/lookalike/right-arrow.webp"
+                alt=""
                 width={15}
                 height={15}
+                sizes="15px"
+                loading="lazy"
                 className="object-contain"
               />
               <span className="text-[#5E51C9] text-sm font-bold">Solution</span>
@@ -265,10 +283,12 @@ const ProblemsAndSolutions = () => {
         <div className="order-2 lg:order-1">
           <div className="w-[56px] h-[56px] rounded-[16px] flex items-center justify-center shadow-xl shadow-black/20 lookalike-gradient">
             <Image
-              src={"/case-studies/lookalike/wallet-icon.png"}
-              alt="wallet icon"
+              src="/case-studies/lookalike/wallet-icon.png"
+              alt=""
               width={22}
               height={22}
+              sizes="22px"
+              loading="lazy"
             />
           </div>
 
@@ -290,10 +310,12 @@ const ProblemsAndSolutions = () => {
           <div className="w-full bg-white custom-shadow border border-[#5E51C924] rounded-[26px] p-6 mt-7">
             <div className="flex items-center gap-2">
               <Image
-                src={"/case-studies/lookalike/right-arrow.png"}
-                alt="right-arrow"
+                src="/case-studies/lookalike/right-arrow.webp"
+                alt=""
                 width={15}
                 height={15}
+                sizes="15px"
+                loading="lazy"
                 className="object-contain"
               />
               <span className="text-[#5E51C9] text-sm font-bold">Solution</span>
@@ -317,33 +339,39 @@ const ProblemsAndSolutions = () => {
             className="w-full max-w-[570px] relative min-h-[300px] rounde-[32px]"
             style={{
               backgroundImage:
-                "url('/case-studies/lookalike/problems-box-background.svg')",
+                "url('/case-studies/lookalike/problems-box-background.webp')",
               backgroundPosition: "center",
               backgroundSize: "cover",
               borderRadius: "32px",
             }}
           >
             <Image
-              src={"/case-studies/lookalike/subscription-screen.png"}
-              alt="lookalike match subscription screen"
+              src="/case-studies/lookalike/px-conversions/subscription-screen.webp"
+              alt="LookAlike Match subscription screen"
               width={309}
               height={451}
+              sizes="(min-width: 1024px) 309px, 240px"
+              loading="lazy"
               className="object-contain absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 z-10 w-[240px] lg:w-auto"
             />
-            {/* left image */}
+
             <Image
-              src={"/case-studies/lookalike/app-store-subscription-mockup.png"}
-              alt="Emma profile card"
+              src="/case-studies/lookalike/app-store-subscription-mockup.webp"
+              alt="LookAlike Match App Store subscription screen"
               width={235}
               height={261}
+              sizes="235px"
+              loading="lazy"
               className="object-contain absolute -top-[35%] -left-1"
             />
-            {/* right image */}
+
             <Image
-              src={"/case-studies/lookalike/subscription-modal.png"}
-              alt="subscription-modal"
+              src="/case-studies/lookalike/px-conversions/subscription-modal.webp"
+              alt="LookAlike Match subscription modal"
               width={225}
               height={261}
+              sizes="225px"
+              loading="lazy"
               className="object-contain absolute top-2 -right-1"
             />
           </div>

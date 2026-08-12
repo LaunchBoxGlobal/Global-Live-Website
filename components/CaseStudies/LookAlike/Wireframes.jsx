@@ -18,10 +18,11 @@ const Wireframes = () => {
         </p>
 
         <Image
-          src={"/case-studies/lookalike/lookalikematch-wireframes.png"}
+          src={"/case-studies/lookalike/lookalikematch-wireframes.webp"}
           alt="lookalikematch-wireframes"
           width={1271}
           height={771}
+          loading="lazy"
           className="object-contain w-full relative z-10 mx-auto mt-12"
         />
       </div>
