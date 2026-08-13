@@ -19,10 +19,10 @@ export const sidebarlinks = [
     title: "Software Project Rescue Service",
     url: "/software-project-rescue-service",
   },
-  {
-    title: "Digital Marketing",
-    url: "/services/digital-marketing",
-  },
+  // {
+  //   title: "Digital Marketing",
+  //   url: "/services/digital-marketing",
+  // },
   {
     title: "Branding and Design",
     url: "/services/branding-and-design",
@@ -94,10 +94,10 @@ export const locationLinks = [
     title: "Mobile App Development Company in Texas",
     pageUrl: "/mobile-app-development-company-in-texas",
   },
-      {
-      title: "Software Development Company in Austin",
-      pageUrl: "/software-development-company-in-austin",
-    },
+  {
+    title: "Software Development Company in Austin",
+    pageUrl: "/software-development-company-in-austin",
+  },
   {
     title: "Mobile App Development in Austin",
     pageUrl: "/mobile-app-development-in-austin",
