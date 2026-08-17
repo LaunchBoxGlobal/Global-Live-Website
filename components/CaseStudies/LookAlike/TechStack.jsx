@@ -22,14 +22,14 @@ const TechStack = () => {
         />
 
         <Image
-          src="/case-studies/lookalike/lookalike-tech-stack-tools.png"
+          src="/case-studies/lookalike/tech-stack-and-tools.png"
           alt="LookAlike Match technology stack tools"
           width={1680}
           height={228}
           sizes="(min-width: 1280px) 1680px, 100vw"
           loading="lazy"
           quality={80}
-          className="object-contain w-full relative z-10 mx-auto mt-12"
+          className="object-contain w-full relative z-10 mx-auto mt-9"
         />
       </div>
     </section>
