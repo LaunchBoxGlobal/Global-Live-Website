@@ -25,17 +25,17 @@ export default function RootLayout({ children }) {
 
         <Script
           src="https://launch-box.odoo.com/im_livechat/loader/4"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
 
         <Script
           src="https://launch-box.odoo.com/im_livechat/assets_embed.js"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
 
         {/* <Script
           id="tawkto"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           src="https://embed.tawk.to/686b6c9988f6eb190d36058e/1ivhq0e5m"
           async
           charSet="UTF-8"
