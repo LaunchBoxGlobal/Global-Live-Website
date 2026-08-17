@@ -30,18 +30,18 @@ const HomeHero = () => {
             src={"/home-hero-heading-icon.webp"}
             width={80}
             height={80}
-            alt={"arrow icon"}
+            alt=""
+            aria-hidden="true"
             className="w-[20px] lg:w-[50px]"
-            priority
           />{" "}
           Build{" "}
           <img
             src={"/home-hero-heading-icon.webp"}
             width={80}
             height={80}
-            alt={"arrow icon"}
+            alt=""
+            aria-hidden="true"
             className="w-[20px] lg:w-[50px]"
-            priority
           />{" "}
           Succeed
         </span>
@@ -62,7 +62,7 @@ const HomeHero = () => {
         <ContactButton text={"Get a Free Consultation"} />
       </div>
 
-      <div className="w-full flex items-center justify-center z-0">
+      <div className="w-full flex-1 flex items-end justify-center z-0">
         <GlobeDemo />
       </div>
 

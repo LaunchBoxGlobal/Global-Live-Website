@@ -30,14 +30,13 @@ const HomeFaqs = () => {
           >
             <button
               onClick={() => toggleFaq(index)}
-              name={faq?.question}
+              aria-expanded={openFaq === index}
+              aria-label={`${openFaq === index ? "Collapse" : "Expand"} FAQ: ${faq?.question}`}
               className="w-full text-start flex items-center justify-between outline-none"
             >
-              <h3 className="font-medium text-[17px] md:text-2xl lg:text-[35px] 2xl:text-[40px] w-[90%]">
-                <span className="w-full leading-7 lg:leading-10">
-                  {faq?.question}
-                </span>
-              </h3>
+              <span role="heading" aria-level="3" className="font-medium text-[17px] md:text-2xl lg:text-[35px] 2xl:text-[40px] w-[90%] leading-7 lg:leading-10">
+                {faq?.question}
+              </span>
 
               <Image
                 src={"/faq-arrow-icon.webp"}

@@ -54,16 +54,19 @@ const HomePageBlogs = () => {
         <div className="col-span-1 flex flex-col gap-4">
           {blogs?.slice(0, 2).map((blog, index) => (
             <div
-              className="relative"
+              className="relative aspect-video overflow-hidden"
               key={index}
               onMouseEnter={() => setIsCursorHovering((prev) => !prev)}
               onMouseLeave={() => setIsCursorHovering((prev) => !prev)}
             >
-              <Link href={`/blog/${blog?.slug}`}>
+              <Link href={`/blog/${blog?.slug}`} aria-label={blog?.title?.rendered?.replace(/<[^>]+>/g, "") || "Read blog post"}>
                 <img
                   src={blog?.jetpack_featured_media_url}
-                  alt=""
-                  className="rounded-[7px]"
+                  alt={blog?.title?.rendered?.replace(/<[^>]+>/g, "") || "Blog post image"}
+                  width={400}
+                  height={225}
+                  loading="lazy"
+                  className="rounded-[7px] w-full h-full object-cover"
                 />
               </Link>
             </div>
@@ -75,15 +78,18 @@ const HomePageBlogs = () => {
         <div className="col-span-1 md:col-span-2 flex flex-col items-center justify-center h-full">
           {blogs?.slice(2, 3).map((blog, index) => (
             <div
-              className="relative w-full h-full"
+              className="relative w-full aspect-video overflow-hidden"
               key={index}
               onMouseEnter={() => setIsCursorHovering((prev) => !prev)}
               onMouseLeave={() => setIsCursorHovering((prev) => !prev)}
             >
-              <Link href={`/blog/${blog?.slug}`}>
+              <Link href={`/blog/${blog?.slug}`} aria-label={blog?.title?.rendered?.replace(/<[^>]+>/g, "") || "Read blog post"}>
                 <img
                   src={blog?.jetpack_featured_media_url}
-                  alt=""
+                  alt={blog?.title?.rendered?.replace(/<[^>]+>/g, "") || "Blog post image"}
+                  width={800}
+                  height={450}
+                  loading="lazy"
                   className="h-full object-cover w-full rounded-[7px]"
                 />
               </Link>
@@ -96,16 +102,19 @@ const HomePageBlogs = () => {
         <div className="col-span-1 flex flex-col gap-4">
           {blogs?.slice(3, 5).map((blog, index) => (
             <div
-              className="relative"
+              className="relative aspect-video overflow-hidden"
               key={index}
               onMouseEnter={() => setIsCursorHovering((prev) => !prev)}
               onMouseLeave={() => setIsCursorHovering((prev) => !prev)}
             >
-              <Link href={`/blog/${blog?.slug}`}>
+              <Link href={`/blog/${blog?.slug}`} aria-label={blog?.title?.rendered?.replace(/<[^>]+>/g, "") || "Read blog post"}>
                 <img
                   src={blog?.jetpack_featured_media_url}
-                  alt=""
-                  className="rounded-[7px]"
+                  alt={blog?.title?.rendered?.replace(/<[^>]+>/g, "") || "Blog post image"}
+                  width={400}
+                  height={225}
+                  loading="lazy"
+                  className="rounded-[7px] w-full h-full object-cover"
                 />
               </Link>
             </div>
@@ -119,7 +128,7 @@ const HomePageBlogs = () => {
           href={`/blog`}
           className="red-bg text-white px-8 py-4 rounded-xl font-bold text-xl"
         >
-          See More
+          See More Blog Posts
         </Link>
       </section>
     </section>

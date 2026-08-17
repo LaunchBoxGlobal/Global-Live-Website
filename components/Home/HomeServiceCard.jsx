@@ -12,6 +12,8 @@ const HomeServiceCard = ({ service, index, openFaq, toggleFaq }) => {
   return (
     <button
       type="button"
+      aria-label={`${openFaq === index ? "Collapse" : "Expand"} ${service?.title}`}
+      aria-expanded={openFaq === index}
       className={`w-full px-4 pb-0 pt-4 lg:pt-10 lg:px-7 rounded-xl flex flex-col items-start justify-between gap-x-4 group lg:hover:bg-black ${
         openFaq === index ? "bg-[#000] lg:pb-[60px]" : "bg-white lg:pb-[50px]"
       } transition-all duration-300 h-auto relative overflow-visible mb-0 outline-none`}
@@ -23,7 +25,7 @@ const HomeServiceCard = ({ service, index, openFaq, toggleFaq }) => {
       <div className={`w-full flex items-start justify-between`}>
         <div className="flex items-start pt-1.5">
           <span
-            className={`text-[12px] lg:text-[20px] font-medium text-gray-400 lg:group-hover:text-white transition-all duration-300 ${
+            className={`text-[12px] lg:text-[20px] font-medium text-gray-500 lg:group-hover:text-white transition-all duration-300 ${
               openFaq === index && "text-white"
             }`}
           >{`(${index + 1 === 10 ? index + 1 : `0${index + 1}`})`}</span>
@@ -54,7 +56,7 @@ const HomeServiceCard = ({ service, index, openFaq, toggleFaq }) => {
           <div className="w-full flex items-center lg:items-start justify-between mb-0 gap-5 py-0">
             <h3
               className={`text-[20px] text-start md:text-[3vw] leading-7 lg:leading-10 xl:leading-[50px] tracking-tight font-light ${
-                openFaq === index ? "text-white" : "text-gray-400"
+                openFaq === index ? "text-white" : "text-gray-500"
               } font-normal transition-all duration-300`}
             >
               {service?.title}
@@ -83,9 +85,10 @@ const HomeServiceCard = ({ service, index, openFaq, toggleFaq }) => {
               {service?.pageUrl === "/" ? null : (
                 <Link
                   href={service?.pageUrl}
+                  aria-label={`Learn more about ${service?.title}`}
                   className="text-white block border px-4 py-2 rounded-2xl text-sm mt-3 hover:bg-white hover:text-black transition-all duration-300"
                 >
-                  View More
+                  Learn More
                 </Link>
               )}
             </div>

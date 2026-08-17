@@ -14,14 +14,14 @@ import dynamic from "next/dynamic";
 import HomePageBlogs from "./HomePageBlogs";
 import TechStackSlider from "./TechStackSlider";
 const Platforms = dynamic(() => import("../Common/Platforms"), {
-  loading: () => <></>,
+  loading: () => <div style={{ height: "56px" }} />,
 });
 const Services = dynamic(() => import("./Services"), {
-  loading: () => <></>,
+  loading: () => <div style={{ minHeight: "600px" }} />,
 });
 const HomeHero = dynamic(() => import("./HomeHero"), {
   ssr: false,
-  loading: () => <></>,
+  loading: () => <section className="w-full" style={{ minHeight: "100vh" }} />,
 });
 const HomeComparison = dynamic(() => import("./HomeComparison"), {
   loading: () => <></>,

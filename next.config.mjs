@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
+    formats: ["image/avif", "image/webp"],
     domains: [
       "cdn.dribbble.com",
       "assets.aceternity.com",
@@ -25,7 +26,28 @@ const nextConfig = {
     removeConsole: process.env.NODE_ENV === "production",
   },
   experimental: {
-    esmExternals: true, // prefer native ESM
+    esmExternals: true,
+    optimizePackageImports: [
+      "framer-motion",
+      "react-icons",
+      "swiper",
+      "@react-three/fiber",
+      "@react-three/drei",
+    ],
+  },
+  async headers() {
+    return [
+      {
+        source: "/:all*(svg|jpg|jpeg|png|webp|avif|gif|ico|woff|woff2|ttf|eot)",
+        locale: false,
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+    ];
   },
 
   async redirects() {

@@ -103,7 +103,6 @@ const AnimatedLine = () => {
           sizes="(max-width: 640px) 70px,
            (max-width: 768px) 90px,
            110px"
-          priority={false}
           className="object-contain absolute z-20 left-1/2 -translate-x-1/2"
         />
         <span className="animate-ping absolute inline-flex h-[130px] w-[130px] rounded-full bg-[#E1E1E1] opacity-75"></span>

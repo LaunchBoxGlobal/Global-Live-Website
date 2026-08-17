@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
@@ -126,27 +127,24 @@ const Platforms = () => {
       >
         {[...platforms, ...platforms].map((platform, index) => {
           return (
-            <>
+            <React.Fragment key={`${platform?.title}-${index}`}>
               <div
-                key={index}
                 className="flex w-[400px] mr-4 items-center justify-start gap-2"
               >
                 <Image
-                  key={index}
                   src={platform?.icon}
                   width={platform?.width}
                   height={platform?.height}
                   alt={platform?.title}
-                  className={`w-[${platform?.width}] h-[${
-                    platform?.height - 4
-                  }] object-contain`}
+                  className="object-contain"
+                  style={{ width: platform?.width, height: platform?.height - 4 }}
                 />
                 <strong className="uppercase font-bold text-[#545454] text-xs lg:text-[20px] opacity-60 whitespace-nowrap">
                   {platform?.title}
                 </strong>
               </div>
-              <div className="h-[16px] border-[1.5px] border-[#545454]" />
-            </>
+              <div className="h-[16px] border-[1.5px] border-[#545454]" aria-hidden="true" />
+            </React.Fragment>
           );
         })}
       </motion.div>

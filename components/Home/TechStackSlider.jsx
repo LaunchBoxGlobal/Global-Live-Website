@@ -72,9 +72,8 @@ const TechStackSlider = () => {
                       src={platform?.image}
                       width={77}
                       height={77}
-                      alt={platform?.title}
+                      alt={platform?.title || platform?.image?.split("/").pop().replace(/[-_](icon|logo|tech-stack)[^.]*/, "").replace(/[-_]/g, " ").replace(/\.[^.]+$/, "") || "Technology"}
                       loading="lazy"
-                      priority={false}
                       className="w-auto h-full object-contain max-w-[75px] max-h-[75px]"
                     />
                   </Link>
@@ -84,9 +83,8 @@ const TechStackSlider = () => {
                     src={platform?.image}
                     width={77}
                     height={77}
-                    alt={platform?.title}
+                    alt={platform?.title || platform?.image?.split("/").pop().replace(/[-_](icon|logo|tech-stack)[^.]*/, "").replace(/[-_]/g, " ").replace(/\.[^.]+$/, "") || "Technology"}
                     loading="lazy"
-                    priority={false}
                     className="w-auto h-full object-contain max-w-[75px] max-h-[75px]"
                   />
                 )
@@ -107,9 +105,8 @@ const TechStackSlider = () => {
                       src={platform?.image}
                       width={77}
                       height={77}
-                      alt={platform?.title}
+                      alt={platform?.title || platform?.image?.split("/").pop().replace(/[-_](icon|logo|tech-stack)[^.]*/, "").replace(/[-_]/g, " ").replace(/\.[^.]+$/, "") || "Technology"}
                       loading="lazy"
-                      priority={false}
                       className="w-auto h-full object-contain max-w-[75px] max-h-[75px]"
                     />
                   </Link>
@@ -119,9 +116,8 @@ const TechStackSlider = () => {
                     src={platform?.image}
                     width={77}
                     height={77}
-                    alt={platform?.title}
+                    alt={platform?.title || platform?.image?.split("/").pop().replace(/[-_](icon|logo|tech-stack)[^.]*/, "").replace(/[-_]/g, " ").replace(/\.[^.]+$/, "") || "Technology"}
                     loading="lazy"
-                    priority={false}
                     className="w-auto h-full object-contain max-w-[75px] max-h-[75px]"
                   />
                 )

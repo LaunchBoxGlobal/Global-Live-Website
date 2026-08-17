@@ -98,17 +98,19 @@ function SwiperButtons() {
     <section className="w-full flex items-center justify-center gap-3 lg:gap-1 absolute bottom-0 left-0 z-40">
       <button
         type="button"
+        aria-label="Previous industry"
         onClick={() => swiper.slidePrev()}
         className="w-[40px] h-[40px] lg:w-[59px] lg:h-[59px] bg-black flex items-center justify-center rounded-full"
       >
-        <MdOutlineKeyboardArrowLeft className="text-white text-3xl" />
+        <MdOutlineKeyboardArrowLeft className="text-white text-3xl" aria-hidden="true" />
       </button>
       <button
         type="button"
+        aria-label="Next industry"
         onClick={() => swiper.slideNext()}
         className="w-[40px] h-[40px] lg:w-[59px] lg:h-[59px] bg-[#F40E00] flex items-center justify-center rounded-full"
       >
-        <MdOutlineKeyboardArrowRight className="text-white text-3xl" />
+        <MdOutlineKeyboardArrowRight className="text-white text-3xl" aria-hidden="true" />
       </button>
     </section>
   );

@@ -77,6 +77,7 @@ const Navbar = () => {
           width={180}
           height={45}
           alt="launchbox global logo"
+          priority
           className="block"
         />
 

@@ -34,11 +34,13 @@ const Services = ({ heading, redText, description, descriptionWidth }) => {
             className={`w-full px-4 pb-0 pt-4 lg:pt-10 lg:px-7 rounded-xl flex flex-col items-start justify-between gap-x-4 group lg:hover:bg-black ${
               openFaq === 0 ? "bg-[#000] lg:pb-[60px]" : "bg-white lg:pb-[50px]"
             } transition-all duration-300 h-auto relative overflow-visible mb-0 outline-none`}
+            aria-expanded={openFaq === 0}
+            aria-label={`${openFaq === 0 ? "Collapse" : "Expand"} Mobile App Development service`}
             onClick={() => toggleFaq(0)}
           >
             <div className="w-full flex items-start justify-between">
               <span
-                className={`text-[12px] lg:text-[20px] font-medium text-gray-400 lg:group-hover:text-white transition-all duration-300 ${
+                className={`text-[12px] lg:text-[20px] font-medium text-gray-500 lg:group-hover:text-white transition-all duration-300 ${
                   openFaq === 0 && "text-white"
                 }`}
               >
@@ -50,7 +52,6 @@ const Services = ({ heading, redText, description, descriptionWidth }) => {
                 height={325}
                 alt="Software development agency creating mobile apps with expert coding and innovative tech solutions"
                 loading="lazy"
-                priority={false}
                 sizes="(max-width: 768px) 120px, (max-width: 1024px) 150px, (max-width: 1440px) 180px, 200px"
                 className={`2xl:left-[9%] -top-[40%] object-contain hidden lg:block absolute lg:left-[12%] xl:left-[10%] z-10 ${
                   openFaq === 0
@@ -60,13 +61,13 @@ const Services = ({ heading, redText, description, descriptionWidth }) => {
               />
               <div className="flex flex-col items-center w-[85%] lg:w-[60%] xl:w-[67%] 2xl:w-[67%]">
                 <div className="w-full flex items-center lg:items-start justify-between mb-0 gap-5 py-0">
-                  <h3
-                    className={`text-[20px] text-start md:text-[3vw] leading-7 lg:leading-10 xl:leading-[50px] tracking-tight font-light ${
-                      openFaq === 0 ? "text-white" : "text-gray-400"
+                  <span role="heading" aria-level="3"
+                    className={`block text-[20px] text-start md:text-[3vw] leading-7 lg:leading-10 xl:leading-[50px] tracking-tight font-light ${
+                      openFaq === 0 ? "text-white" : "text-gray-500"
                     } font-normal transition-all duration-300`}
                   >
                     Mobile App Development
-                  </h3>
+                  </span>
                   <IoMdArrowDown
                     className={`w-[15px] block lg:mt-1 lg:w-[31px] h-[15px] lg:h-[31px] ${
                       openFaq === 0
@@ -98,9 +99,10 @@ const Services = ({ heading, redText, description, descriptionWidth }) => {
                     </p>
                     <Link
                       href="/services/mobile-app-development"
+                      aria-label="Learn more about Mobile App Development"
                       className="text-white block border px-4 py-2 rounded-2xl text-sm mt-3 hover:bg-white hover:text-black transition-all duration-300"
                     >
-                      View More
+                      Learn More<span className="sr-only"> about Mobile App Development</span>
                     </Link>
                   </div>
                 </motion.div>
@@ -114,11 +116,13 @@ const Services = ({ heading, redText, description, descriptionWidth }) => {
             className={`w-full px-4 pb-0 pt-4 lg:pt-10 lg:px-7 rounded-xl flex flex-col items-start justify-between gap-x-4 group lg:hover:bg-black ${
               openFaq === 1 ? "bg-[#000] lg:pb-[60px]" : "bg-white lg:pb-[50px]"
             } transition-all duration-300 h-auto relative overflow-visible mb-0 outline-none`}
+            aria-expanded={openFaq === 1}
+            aria-label={`${openFaq === 1 ? "Collapse" : "Expand"} Web App Development service`}
             onClick={() => toggleFaq(1)}
           >
             <div className="w-full flex items-start justify-between">
               <span
-                className={`text-[12px] lg:text-[20px] font-medium text-gray-400 lg:group-hover:text-white transition-all duration-300 ${
+                className={`text-[12px] lg:text-[20px] font-medium text-gray-500 lg:group-hover:text-white transition-all duration-300 ${
                   openFaq === 1 && "text-white"
                 }`}
               >
@@ -134,7 +138,6 @@ const Services = ({ heading, redText, description, descriptionWidth }) => {
                (max-width: 1024px) 200px,
                (max-width: 1440px) 240px,
                280px"
-                priority={false}
                 className={`2xl:left-[9%] -top-[40%] object-contain hidden lg:block absolute lg:left-[12%] xl:left-[7%] z-10 ${
                   openFaq === 1
                     ? "lg:top-[10%] top-[10%] rotate-0 visible"
@@ -143,13 +146,13 @@ const Services = ({ heading, redText, description, descriptionWidth }) => {
               />
               <div className="flex flex-col items-center w-[85%] lg:w-[60%] xl:w-[67%] 2xl:w-[67%]">
                 <div className="w-full flex items-center lg:items-start justify-between mb-0 gap-5 py-0">
-                  <h3
-                    className={`text-[20px] text-start md:text-[3vw] leading-7 lg:leading-10 xl:leading-[50px] tracking-tight font-light ${
-                      openFaq === 1 ? "text-white" : "text-gray-400"
+                  <span role="heading" aria-level="3"
+                    className={`block text-[20px] text-start md:text-[3vw] leading-7 lg:leading-10 xl:leading-[50px] tracking-tight font-light ${
+                      openFaq === 1 ? "text-white" : "text-gray-500"
                     } font-normal transition-all duration-300`}
                   >
                     Web App Development
-                  </h3>
+                  </span>
                   <IoMdArrowDown
                     className={`w-[15px] block lg:mt-1 lg:w-[31px] h-[15px] lg:h-[31px] ${
                       openFaq === 1
@@ -181,9 +184,10 @@ const Services = ({ heading, redText, description, descriptionWidth }) => {
                     </p>
                     <Link
                       href="/services/web-app-development"
+                      aria-label="Learn more about Web App Development"
                       className="text-white block border px-4 py-2 rounded-2xl text-sm mt-3 hover:bg-white hover:text-black transition-all duration-300"
                     >
-                      View More
+                      Learn More<span className="sr-only"> about Web App Development</span>
                     </Link>
                   </div>
                 </motion.div>
@@ -197,11 +201,13 @@ const Services = ({ heading, redText, description, descriptionWidth }) => {
             className={`w-full px-4 pb-0 pt-4 lg:pt-10 lg:px-7 rounded-xl flex flex-col items-start justify-between gap-x-4 group lg:hover:bg-black ${
               openFaq === 2 ? "bg-[#000] lg:pb-[60px]" : "bg-white lg:pb-[50px]"
             } transition-all duration-300 h-auto relative overflow-visible mb-0 outline-none`}
+            aria-expanded={openFaq === 2}
+            aria-label={`${openFaq === 2 ? "Collapse" : "Expand"} Software Development service`}
             onClick={() => toggleFaq(2)}
           >
             <div className="w-full flex items-start justify-between">
               <span
-                className={`text-[12px] lg:text-[20px] font-medium text-gray-400 lg:group-hover:text-white transition-all duration-300 ${
+                className={`text-[12px] lg:text-[20px] font-medium text-gray-500 lg:group-hover:text-white transition-all duration-300 ${
                   openFaq === 2 && "text-white"
                 }`}
               >
@@ -217,7 +223,6 @@ const Services = ({ heading, redText, description, descriptionWidth }) => {
                (max-width: 1440px) 240px,
                280px"
                 loading="lazy"
-                priority={false}
                 className={`2xl:left-[9%] -top-[40%] object-contain hidden lg:block absolute lg:left-[12%] xl:left-[7%] z-10 ${
                   openFaq === 2
                     ? "lg:top-[10%] top-[10%] rotate-0 visible"
@@ -226,13 +231,13 @@ const Services = ({ heading, redText, description, descriptionWidth }) => {
               />
               <div className="flex flex-col items-center w-[85%] lg:w-[60%] xl:w-[67%] 2xl:w-[67%]">
                 <div className="w-full flex items-center lg:items-start justify-between mb-0 gap-5 py-0">
-                  <h3
-                    className={`text-[20px] text-start md:text-[3vw] leading-7 lg:leading-10 xl:leading-[50px] tracking-tight font-light ${
-                      openFaq === 2 ? "text-white" : "text-gray-400"
+                  <span role="heading" aria-level="3"
+                    className={`block text-[20px] text-start md:text-[3vw] leading-7 lg:leading-10 xl:leading-[50px] tracking-tight font-light ${
+                      openFaq === 2 ? "text-white" : "text-gray-500"
                     } font-normal transition-all duration-300`}
                   >
                     Software Development
-                  </h3>
+                  </span>
                   <IoMdArrowDown
                     className={`w-[15px] block lg:mt-1 lg:w-[31px] h-[15px] lg:h-[31px] ${
                       openFaq === 2
@@ -266,9 +271,10 @@ const Services = ({ heading, redText, description, descriptionWidth }) => {
                     </p>
                     <Link
                       href="/services/custom-software-development"
+                      aria-label="Learn more about Custom Software Development"
                       className="text-white block border px-4 py-2 rounded-2xl text-sm mt-3 hover:bg-white hover:text-black transition-all duration-300"
                     >
-                      View More
+                      Learn More<span className="sr-only"> about Custom Software Development</span>
                     </Link>
                   </div>
                 </motion.div>
@@ -282,11 +288,13 @@ const Services = ({ heading, redText, description, descriptionWidth }) => {
             className={`w-full px-4 pb-0 pt-4 lg:pt-10 lg:px-7 rounded-xl flex flex-col items-start justify-between gap-x-4 group lg:hover:bg-black ${
               openFaq === 3 ? "bg-[#000] lg:pb-[60px]" : "bg-white lg:pb-[50px]"
             } transition-all duration-300 h-auto relative overflow-visible mb-0 outline-none`}
+            aria-expanded={openFaq === 3}
+            aria-label={`${openFaq === 3 ? "Collapse" : "Expand"} E-Commerce Development service`}
             onClick={() => toggleFaq(3)}
           >
             <div className="w-full flex items-start justify-between">
               <span
-                className={`text-[12px] lg:text-[20px] font-medium text-gray-400 lg:group-hover:text-white transition-all duration-300 ${
+                className={`text-[12px] lg:text-[20px] font-medium text-gray-500 lg:group-hover:text-white transition-all duration-300 ${
                   openFaq === 3 && "text-white"
                 }`}
               >
@@ -301,7 +309,6 @@ const Services = ({ heading, redText, description, descriptionWidth }) => {
                (max-width: 1024px) 200px,
                (max-width: 1440px) 220px,
                250px"
-                priority={false}
                 loading="lazy"
                 className={`2xl:left-[9%] -top-[40%] object-contain hidden lg:block absolute lg:left-[12%] xl:left-[7%] z-10 ${
                   openFaq === 3
@@ -311,13 +318,13 @@ const Services = ({ heading, redText, description, descriptionWidth }) => {
               />
               <div className="flex flex-col items-center w-[85%] lg:w-[60%] xl:w-[67%] 2xl:w-[67%]">
                 <div className="w-full flex items-center lg:items-start justify-between mb-0 gap-5 py-0">
-                  <h3
-                    className={`text-[20px] text-start md:text-[3vw] leading-7 lg:leading-10 xl:leading-[50px] tracking-tight font-light ${
-                      openFaq === 3 ? "text-white" : "text-gray-400"
+                  <span role="heading" aria-level="3"
+                    className={`block text-[20px] text-start md:text-[3vw] leading-7 lg:leading-10 xl:leading-[50px] tracking-tight font-light ${
+                      openFaq === 3 ? "text-white" : "text-gray-500"
                     } font-normal transition-all duration-300`}
                   >
                     E-Commerce Development
-                  </h3>
+                  </span>
                   <IoMdArrowDown
                     className={`w-[15px] block lg:mt-1 lg:w-[31px] h-[15px] lg:h-[31px] ${
                       openFaq === 3
@@ -349,9 +356,10 @@ const Services = ({ heading, redText, description, descriptionWidth }) => {
                     </p>
                     <Link
                       href="/services/ecommerce-development"
+                      aria-label="Learn more about Ecommerce Development"
                       className="text-white block border px-4 py-2 rounded-2xl text-sm mt-3 hover:bg-white hover:text-black transition-all duration-300"
                     >
-                      View More
+                      Learn More<span className="sr-only"> about Ecommerce Development</span>
                     </Link>
                   </div>
                 </motion.div>
@@ -365,11 +373,13 @@ const Services = ({ heading, redText, description, descriptionWidth }) => {
             className={`w-full px-4 pb-0 pt-4 lg:pt-10 lg:px-7 rounded-xl flex flex-col items-start justify-between gap-x-4 group lg:hover:bg-black ${
               openFaq === 6 ? "bg-[#000] lg:pb-[60px]" : "bg-white lg:pb-[50px]"
             } transition-all duration-300 h-auto relative overflow-visible mb-0 outline-none`}
+            aria-expanded={openFaq === 6}
+            aria-label={`${openFaq === 6 ? "Collapse" : "Expand"} Software Project Rescue service`}
             onClick={() => toggleFaq(6)}
           >
             <div className="w-full flex items-start justify-between">
               <span
-                className={`text-[12px] lg:text-[20px] font-medium text-gray-400 lg:group-hover:text-white transition-all duration-300 ${
+                className={`text-[12px] lg:text-[20px] font-medium text-gray-500 lg:group-hover:text-white transition-all duration-300 ${
                   openFaq === 6 && "text-white"
                 }`}
               >
@@ -385,7 +395,6 @@ const Services = ({ heading, redText, description, descriptionWidth }) => {
                (max-width: 1440px) 368px,
                300px"
                 loading="lazy"
-                priority={false}
                 className={`2xl:left-[9%] -top-[40%] object-contain hidden lg:block absolute lg:left-[2%] midlg:left-[4%] xl:left-[3%] z-10 ${
                   openFaq === 6
                     ? "lg:top-[10%] top-[10%] rotate-0 visible"
@@ -394,13 +403,13 @@ const Services = ({ heading, redText, description, descriptionWidth }) => {
               />
               <div className="flex flex-col items-center w-[85%] lg:w-[60%] xl:w-[67%] 2xl:w-[67%]">
                 <div className="w-full flex items-center lg:items-start justify-between mb-0 gap-5 py-0">
-                  <h3
-                    className={`text-[20px] text-start md:text-[3vw] leading-7 lg:leading-10 xl:leading-[50px] tracking-tight font-light ${
-                      openFaq === 6 ? "text-white" : "text-gray-400"
+                  <span role="heading" aria-level="3"
+                    className={`block text-[20px] text-start md:text-[3vw] leading-7 lg:leading-10 xl:leading-[50px] tracking-tight font-light ${
+                      openFaq === 6 ? "text-white" : "text-gray-500"
                     } font-normal transition-all duration-300`}
                   >
                     Software Project Rescue
-                  </h3>
+                  </span>
                   <IoMdArrowDown
                     className={`w-[15px] block lg:mt-1 lg:w-[31px] h-[15px] lg:h-[31px] ${
                       openFaq === 6
@@ -428,9 +437,10 @@ const Services = ({ heading, redText, description, descriptionWidth }) => {
                     </p>
                     <Link
                       href="/software-project-rescue-service"
+                      aria-label="Learn more about Software Project Rescue"
                       className="text-white block border px-4 py-2 rounded-2xl text-sm mt-3 hover:bg-white hover:text-black transition-all duration-300"
                     >
-                      View More
+                      Learn More<span className="sr-only"> about Software Project Rescue</span>
                     </Link>
                   </div>
                 </motion.div>
@@ -444,11 +454,13 @@ const Services = ({ heading, redText, description, descriptionWidth }) => {
             className={`w-full px-4 pb-0 pt-4 lg:pt-10 lg:px-7 rounded-xl flex flex-col items-start justify-between gap-x-4 group lg:hover:bg-black ${
               openFaq === 4 ? "bg-[#000] lg:pb-[60px]" : "bg-white lg:pb-[50px]"
             } transition-all duration-300 h-auto relative overflow-visible mb-0 outline-none`}
+            aria-expanded={openFaq === 4}
+            aria-label={`${openFaq === 4 ? "Collapse" : "Expand"} Digital Marketing service`}
             onClick={() => toggleFaq(4)}
           >
             <div className="w-full flex items-start justify-between">
               <span
-                className={`text-[12px] lg:text-[20px] font-medium text-gray-400 lg:group-hover:text-white transition-all duration-300 ${
+                className={`text-[12px] lg:text-[20px] font-medium text-gray-500 lg:group-hover:text-white transition-all duration-300 ${
                   openFaq === 4 && "text-white"
                 }`}
               >
@@ -464,7 +476,6 @@ const Services = ({ heading, redText, description, descriptionWidth }) => {
                (max-width: 1440px) 260px,
                280px"
                 loading="lazy"
-                priority={false}
                 className={`2xl:left-[9%] -top-[40%] object-contain hidden lg:block absolute lg:left-[12%] xl:left-[7%] z-10 ${
                   openFaq === 4
                     ? "lg:top-[10%] top-[10%] rotate-0 visible"
@@ -473,13 +484,13 @@ const Services = ({ heading, redText, description, descriptionWidth }) => {
               />
               <div className="flex flex-col items-center w-[85%] lg:w-[60%] xl:w-[67%] 2xl:w-[67%]">
                 <div className="w-full flex items-center lg:items-start justify-between mb-0 gap-5 py-0">
-                  <h3
-                    className={`text-[20px] text-start md:text-[3vw] leading-7 lg:leading-10 xl:leading-[50px] tracking-tight font-light ${
-                      openFaq === 4 ? "text-white" : "text-gray-400"
+                  <span role="heading" aria-level="3"
+                    className={`block text-[20px] text-start md:text-[3vw] leading-7 lg:leading-10 xl:leading-[50px] tracking-tight font-light ${
+                      openFaq === 4 ? "text-white" : "text-gray-500"
                     } font-normal transition-all duration-300`}
                   >
                     Digital Marketing
-                  </h3>
+                  </span>
                   <IoMdArrowDown
                     className={`w-[15px] block lg:mt-1 lg:w-[31px] h-[15px] lg:h-[31px] ${
                       openFaq === 4
@@ -512,9 +523,10 @@ const Services = ({ heading, redText, description, descriptionWidth }) => {
                     </p>
                     <Link
                       href="/services/digital-marketing"
+                      aria-label="Learn more about Digital Marketing"
                       className="text-white block border px-4 py-2 rounded-2xl text-sm mt-3 hover:bg-white hover:text-black transition-all duration-300"
                     >
-                      View More
+                      Learn More<span className="sr-only"> about Digital Marketing</span>
                     </Link>
                   </div>
                 </motion.div>
@@ -528,11 +540,13 @@ const Services = ({ heading, redText, description, descriptionWidth }) => {
             className={`w-full px-4 pb-0 pt-4 lg:pt-10 lg:px-7 rounded-xl flex flex-col items-start justify-between gap-x-4 group lg:hover:bg-black ${
               openFaq === 5 ? "bg-[#000] lg:pb-[60px]" : "bg-white lg:pb-[50px]"
             } transition-all duration-300 h-auto relative overflow-visible mb-0 outline-none`}
+            aria-expanded={openFaq === 5}
+            aria-label={`${openFaq === 5 ? "Collapse" : "Expand"} Branding & Design service`}
             onClick={() => toggleFaq(5)}
           >
             <div className="w-full flex items-start justify-between">
               <span
-                className={`text-[12px] lg:text-[20px] font-medium text-gray-400 lg:group-hover:text-white transition-all duration-300 ${
+                className={`text-[12px] lg:text-[20px] font-medium text-gray-500 lg:group-hover:text-white transition-all duration-300 ${
                   openFaq === 5 && "text-white"
                 }`}
               >
@@ -548,7 +562,6 @@ const Services = ({ heading, redText, description, descriptionWidth }) => {
                (max-width: 1440px) 260px,
                300px"
                 loading="lazy"
-                priority={false}
                 className={`2xl:left-[9%] -top-[40%] object-contain hidden lg:block absolute lg:left-[12%] xl:left-[7%] z-10 ${
                   openFaq === 5
                     ? "lg:top-[10%] top-[10%] rotate-0 visible"
@@ -557,13 +570,13 @@ const Services = ({ heading, redText, description, descriptionWidth }) => {
               />
               <div className="flex flex-col items-center w-[85%] lg:w-[60%] xl:w-[67%] 2xl:w-[67%]">
                 <div className="w-full flex items-center lg:items-start justify-between mb-0 gap-5 py-0">
-                  <h3
-                    className={`text-[20px] text-start md:text-[3vw] leading-7 lg:leading-10 xl:leading-[50px] tracking-tight font-light ${
-                      openFaq === 5 ? "text-white" : "text-gray-400"
+                  <span role="heading" aria-level="3"
+                    className={`block text-[20px] text-start md:text-[3vw] leading-7 lg:leading-10 xl:leading-[50px] tracking-tight font-light ${
+                      openFaq === 5 ? "text-white" : "text-gray-500"
                     } font-normal transition-all duration-300`}
                   >
                     Branding & Design
-                  </h3>
+                  </span>
                   <IoMdArrowDown
                     className={`w-[15px] block lg:mt-1 lg:w-[31px] h-[15px] lg:h-[31px] ${
                       openFaq === 5
@@ -595,9 +608,10 @@ const Services = ({ heading, redText, description, descriptionWidth }) => {
                     </p>
                     <Link
                       href="/services/branding-and-design"
+                      aria-label="Learn more about Branding and Design"
                       className="text-white block border px-4 py-2 rounded-2xl text-sm mt-3 hover:bg-white hover:text-black transition-all duration-300"
                     >
-                      View More
+                      Learn More<span className="sr-only"> about Branding and Design</span>
                     </Link>
                   </div>
                 </motion.div>
