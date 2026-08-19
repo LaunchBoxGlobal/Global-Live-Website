@@ -79,7 +79,7 @@ const HomeValueProposition = () => {
                       {value?.title}
                     </h3>
                   </div>
-                  <p className="text-base lg:text-[18px] lg:leading-[24px] mt-3 text-center lg:text-start font-light text-gray-400">
+                  <p className="text-base lg:text-[18px] lg:leading-[24px] mt-3 text-center lg:text-start font-light text-gray-500">
                     {value?.desc}
                   </p>
                 </div>

@@ -70,7 +70,7 @@ const HomeStats = () => {
                   "0+"
                 )}
               </h3>
-              <p className="text-xl lg:text-xl font-light text-gray-400 transition-all duration-300 relative -mt-3">
+              <p className="text-xl lg:text-xl font-light text-gray-500 transition-all duration-300 relative -mt-3">
                 {stat.label}
               </p>
             </div>

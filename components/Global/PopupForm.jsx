@@ -92,10 +92,11 @@ const PopupForm = () => {
       >
         <button
           type="button"
+          aria-label="Close popup"
           onClick={() => setIsOpen((prev) => !prev)}
           className="w-8 h-8 rounded-full p-1 bg-white flex items-center justify-center absolute top-2 right-2 midlg:top-[5%] midlg:right-[2%]"
         >
-          <IoClose className="w-full h-full text-gray-600" />
+          <IoClose className="w-full h-full text-gray-600" aria-hidden="true" />
         </button>
         <div className="lg:w-full midlg:w-[80%] max-w-[1297px] h-full max-h-[600px] bg-white grid grid-cols-1 lg:grid-cols-2 rounded-[46px]">
           <div className="bg-[#f9f9f9] rounded-l-[46px] hidden lg:block">
