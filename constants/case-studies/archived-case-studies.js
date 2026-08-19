@@ -34,4 +34,14 @@ export const ARCHIVED_CASE_STUDIES = [
     title: "Market Toll",
     url: "/case-studies/market-toll",
   },
+  {
+    image: "/case-studies/lookalike-match-mockup.png",
+    title: "LookAlike Match",
+    url: "/case-studies/lookalike-match",
+  },
+  {
+    image: "/case-studies/givexchange-mockup.png",
+    title: "giveXchange",
+    url: "/case-studies/givexchange",
+  },
 ];
