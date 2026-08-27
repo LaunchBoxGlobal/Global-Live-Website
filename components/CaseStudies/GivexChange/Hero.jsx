@@ -31,7 +31,11 @@ const Hero = () => {
         </p>
 
         <div className="w-full flex justify-center mt-5 z-10">
-          <Link href={`/`} target="_blank" className="z-10">
+          <Link
+            href={`https://apps.apple.com/us/app/givexchange/id6753163683`}
+            target="_blank"
+            className="z-10"
+          >
             <Image
               src={"/case-studies/usubz/download-app-store-image.svg"}
               alt="download-app-store-image"
@@ -41,7 +45,11 @@ const Hero = () => {
             />
           </Link>
 
-          <Link href={`/`} target="_blank" className="z-10">
+          <Link
+            href={`https://play.google.com/store/apps/details?id=com.launchbox.givexchange`}
+            target="_blank"
+            className="z-10"
+          >
             <Image
               src={"/case-studies/usubz/google-play-image.svg"}
               alt="google-play-image"
